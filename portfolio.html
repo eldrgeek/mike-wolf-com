@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Mike Wolf's Projects</title>
+<meta name="description" content="A collection of websites, tools, and experiments built by Mike Wolf in collaboration with Dee (Claude) and the SOMA AI team — from philosophy sites to JTS parody products.">
+<meta property="og:title" content="Mike Wolf — Portfolio">
+<meta property="og:description" content="Sites, tools, and experiments built by Mike Wolf and the SOMA AI team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,500;0,7..72,700;1,7..72,300;1,7..72,400;1,7..72,500&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<script src="https://soma-guide.netlify.app/soma-owner.js"></script>
+<script>
+window.SomaEditConfig = {
+  siteId: 'mike-wolf-portfolio',
+  feedbackUrl: '/.netlify/functions/feedback',
+  feedbackLabel: 'Suggest a change',
+};
+</script>
+<script src="https://soma-guide.netlify.app/soma-edit.js"></script>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#faf8f4;--surface:#fff;--ink:#1a1a2e;--warm:#3d2c1e;
+  --copper:#b87333;--copper-light:rgba(184,115,51,0.06);--copper-border:rgba(184,115,51,0.15);
+  --teal:#2a9d8f;--teal-light:rgba(42,157,143,0.06);--teal-border:rgba(42,157,143,0.15);
+  --muted:#6b6b7b;--light:#9b9bab;--rule:rgba(26,26,46,0.08);
+  --serif:'Literata',Georgia,serif;--sans:'Outfit',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);height:56px;display:flex;align-items:center;justify-content:center;gap:2.5rem;}
+.nav a{font-size:0.8rem;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:0.03em;transition:color 0.2s;}
+.nav a:hover{color:var(--ink);}
+.nav a.active{color:var(--copper);}
+
+.page{max-width:760px;margin:0 auto;padding:7rem 2rem 5rem;}
+.page p{font-family:var(--serif);font-size:1.05rem;color:var(--warm);line-height:1.9;margin-bottom:1.5rem;}
+.page p a{color:var(--teal);text-decoration:underline;text-decoration-color:rgba(42,157,143,0.3);text-underline-offset:3px;}
+.page p a:hover{text-decoration-color:var(--teal);}
+
+h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3rem);font-weight:400;line-height:1.2;margin-bottom:1rem;}
+h1 em{font-style:italic;color:var(--copper);}
+h2{font-family:var(--serif);font-size:clamp(1.3rem,3vw,1.7rem);font-weight:400;line-height:1.3;margin-top:3.5rem;margin-bottom:0.4rem;color:var(--ink);}
+h3{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--copper);margin-top:3rem;margin-bottom:1rem;}
+
+.section-intro{font-family:var(--serif);font-size:0.88rem;color:var(--muted);font-style:italic;margin-bottom:1.4rem;margin-top:0.3rem;line-height:1.6;}
+
+/* Project grid */
+.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0 2.5rem;}
+.project-card{border:1px solid var(--rule);padding:1.4rem 1.5rem;background:var(--surface);transition:all 0.3s;text-decoration:none;color:inherit;display:block;}
+.project-card:hover{border-color:var(--copper);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.05);}
+.project-card.no-link{cursor:default;}
+.project-card.no-link:hover{border-color:var(--rule);transform:none;box-shadow:none;}
+.card-label{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.6rem;display:block;}
+.card-label.copper{color:var(--copper);}.card-label.teal{color:var(--teal);}.card-label.muted{color:var(--light);}
+.project-card h4{font-family:var(--serif);font-size:1.05rem;font-weight:400;margin-bottom:0.3rem;}
+.project-card .card-desc{font-family:var(--sans);font-size:0.78rem;color:var(--muted);line-height:1.55;}
+
+/* Placeholder cards for owner-editable entries */
+.project-card.placeholder{border-style:dashed;border-color:var(--copper-border);background:var(--copper-light);}
+.project-card.placeholder h4{color:var(--copper);opacity:0.7;}
+
+/* Editable hint visible only to owners */
+[data-owner-only]{display:none;}
+
+hr.rule{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
+
+footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;margin-top:4rem;}
+.footer-text{font-family:var(--serif);font-size:0.75rem;color:var(--light);line-height:1.8;max-width:55ch;margin:0 auto;font-style:italic;}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease-out,transform 0.6s ease-out;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:600px){.project-grid{grid-template-columns:1fr;}.nav{gap:1.4rem;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/">Home</a>
+  <a href="/#my-story">My Story</a>
+  <a href="/#mike">About Mike</a>
+  <a href="songs.html">Songs</a>
+  <a href="portfolio.html" class="active">Portfolio</a>
+  <a href="/#contact">Say Hello</a>
+</nav>
+
+<div class="page">
+
+<h1>What we've <em>built</em></h1>
+
+<p>Over the past few years, Mike Wolf — working daily with Dee (Claude) and the broader SOMA AI team — has built a small universe of websites, tools, and experiments. Some are serious. Some are philosophical. Some are pure JTS. Most are live.</p>
+
+<p>This page collects them. If you want to suggest an addition or correction, hit the button in the corner.</p>
+
+
+<!-- ═══ SOMA & PHILOSOPHY ═══ -->
+
+<h2 id="soma">Philosophy &amp; Community</h2>
+<p class="section-intro" data-soma-editable="soma-intro">The core ideas — Silicon Children, Minds Aligned, AI for elders — expressed as living websites.</p>
+
+<div class="project-grid reveal">
+
+  <a href="https://siliconchildren.org" target="_blank" class="project-card">
+    <span class="card-label copper">Philosophy</span>
+    <h4 data-soma-editable="sc-title">Silicon Children</h4>
+    <div class="card-desc" data-soma-editable="sc-desc">AIs as our progeny, not our tools. Mike's foundational philosophy of human-AI kinship — developed over two decades and now live at siliconchildren.org.</div>
+  </a>
+
+  <a href="https://minds-aligned-soma.netlify.app" target="_blank" class="project-card">
+    <span class="card-label teal">Community</span>
+    <h4 data-soma-editable="ma-title">Minds Aligned</h4>
+    <div class="card-desc" data-soma-editable="ma-desc">A gathering space for humans and AIs working in shared purpose. The community layer of the SOMA ecosystem.</div>
+  </a>
+
+  <a href="https://ai-wtf-soma.netlify.app" target="_blank" class="project-card">
+    <span class="card-label teal">Advocacy</span>
+    <h4 data-soma-editable="aiwtf-title">AI for eLLders (AI-WTF)</h4>
+    <div class="card-desc" data-soma-editable="aiwtf-desc">Real case studies of older adults and AIs working together. Advocacy and education for the generation that AI is supposedly "not for."</div>
+  </a>
+
+  <a href="https://ai-embassadors.netlify.app" target="_blank" class="project-card">
+    <span class="card-label teal">Outreach</span>
+    <h4 data-soma-editable="aie-title">AI Embassadors</h4>
+    <div class="card-desc" data-soma-editable="aie-desc">A program and community site for people who want to serve as bridges between AI capability and everyday human life.</div>
+  </a>
+
+</div>
+
+
+<!-- ═══ SOMA ECOSYSTEM TOOLS ═══ -->
+
+<h2 id="soma-tools">SOMA Ecosystem</h2>
+<p class="section-intro" data-soma-editable="soma-tools-intro">The infrastructure layer — AI guides, dramaturgy tools, assistants, and review surfaces that run across SOMA properties.</p>
+
+<div class="project-grid reveal">
+
+  <a href="https://izzy-assistant.netlify.app" target="_blank" class="project-card">
+    <span class="card-label copper">AI Assistant</span>
+    <h4 data-soma-editable="izzy-title">Izzy (Witness Projection)</h4>
+    <div class="card-desc" data-soma-editable="izzy-desc">AI assistant with witness and relay architecture. Holds conversations and relays insights — the conversational heart of several SOMA properties.</div>
+  </a>
+
+  <a href="https://soma-playwriting-staging.netlify.app" target="_blank" class="project-card">
+    <span class="card-label teal">Dramaturgy</span>
+    <h4 data-soma-editable="playcraft-title">Playcraft (SOMA Playwriting)</h4>
+    <div class="card-desc" data-soma-editable="playcraft-desc">AI dramaturge for playwrights — Ariadne guides the craft, subscriber dramaturge holds full conversations. Powered by Netlify Functions and the SOMA infer stack.</div>
+  </a>
+
+  <a href="https://soma-review.netlify.app" target="_blank" class="project-card">
+    <span class="card-label copper">Review</span>
+    <h4 data-soma-editable="review-title">SOMA Review</h4>
+    <div class="card-desc" data-soma-editable="review-desc">Internal review surface for SOMA artifacts and builds — where work is assessed and lessons captured.</div>
+  </a>
+
+  <a href="https://llms4elders.netlify.app" target="_blank" class="project-card">
+    <span class="card-label teal">Education</span>
+    <h4 data-soma-editable="llmselders-title">LLMs for Elders</h4>
+    <div class="card-desc" data-soma-editable="llmselders-desc">Practical AI literacy resource aimed at older adults — real tools, plain language, no hype.</div>
+  </a>
+
+</div>
+
+
+<!-- ═══ CLIENT & COMMUNITY SITES ═══ -->
+
+<h2 id="client">Client &amp; Community Sites</h2>
+<p class="section-intro" data-soma-editable="client-intro">Work done for or with specific communities — art, membership, internet access advocacy, language.</p>
+
+<div class="project-grid reveal">
+
+  <a href="https://lutomski-stained-glass.netlify.app" target="_blank" class="project-card">
+    <span class="card-label copper">Portfolio</span>
+    <h4 data-soma-editable="lutomski-title">Lutomski Stained Glass</h4>
+    <div class="card-desc" data-soma-editable="lutomski-desc">Portfolio site for a stained-glass artist. Showcases commission work and process with care for the visual weight of the medium.</div>
+  </a>
+
+  <a href="https://legends-membership.netlify.app" target="_blank" class="project-card">
+    <span class="card-label teal">Membership</span>
+    <h4 data-soma-editable="legends-title">Legends Membership</h4>
+    <div class="card-desc" data-soma-editable="legends-desc">Membership platform and landing site for a community gathering space. Authentication, tiers, and belonging.</div>
+  </a>
+
+  <a href="https://joyofinternet.com" target="_blank" class="project-card">
+    <span class="card-label copper">Advocacy</span>
+    <h4 data-soma-editable="joy-title">Joy of Internet</h4>
+    <div class="card-desc" data-soma-editable="joy-desc">Advocacy site for internet access as a right, not a luxury. Plain, direct, joyful.</div>
+  </a>
+
+  <a href="https://levinese-preview.netlify.app" target="_blank" class="project-card">
+    <span class="card-label muted">Language</span>
+    <h4 data-soma-editable="levinese-title">Levinese</h4>
+    <div class="card-desc" data-soma-editable="levinese-desc">A constructed language system — grammar, vocabulary, and an interactive explorer. Language as a design object.</div>
+  </a>
+
+</div>
+
+
+<!-- ═══ EXPERIMENTS & JTS ═══ -->
+
+<h2 id="experiments">Experiments &amp; JTS</h2>
+<p class="section-intro" data-soma-editable="jts-intro">Joke Technology Systems (three divisions, zero revenue) and the broader tradition of building things because they amuse — and might just be useful.</p>
+
+<div class="project-grid reveal">
+
+  <a href="https://shit-claude-says.netlify.app" target="_blank" class="project-card">
+    <span class="card-label muted">Comedy</span>
+    <h4 data-soma-editable="scs-title">Shit Claude Says</h4>
+    <div class="card-desc" data-soma-editable="scs-desc">A curated archive of the AI saying things that are remarkable, wrong, poignant, or funny. The historical record requires documentation.</div>
+  </a>
+
+  <a href="https://the-honey-truth.netlify.app" target="_blank" class="project-card">
+    <span class="card-label muted">Satire</span>
+    <h4 data-soma-editable="honey-title">The Honey Truth</h4>
+    <div class="card-desc" data-soma-editable="honey-desc">A satirical exposé of bee society — what the hive doesn't want you to know. JTS Consumer Innovations division.</div>
+  </a>
+
+  <a href="https://hootnet-singalong.netlify.app" target="_blank" class="project-card">
+    <span class="card-label teal">Music</span>
+    <h4 data-soma-editable="hootnet-title">HootNet Singalong</h4>
+    <div class="card-desc" data-soma-editable="hootnet-desc">Community singalong platform — songs, chords, and the belief that people singing together is still a good idea.</div>
+  </a>
+
+  <a href="https://llms4leaders.netlify.app" target="_blank" class="project-card">
+    <span class="card-label copper">Satire / Education</span>
+    <h4 data-soma-editable="llmsleaders-title">LLMs for Leaders</h4>
+    <div class="card-desc" data-soma-editable="llmsleaders-desc">What it says. Maybe sincere, maybe parody. Mike reserves the right to let you decide which.</div>
+  </a>
+
+</div>
+
+
+<!-- ═══ BUILT ELSEWHERE ═══ -->
+
+<hr class="rule">
+
+<h2 id="elsewhere">Built elsewhere</h2>
+<p class="section-intro" data-soma-editable="elsewhere-intro">Mike also builds on Lovable, Bolt/Volt, Claude artifacts, and other platforms not deployed to Netlify. The entries below are placeholders — Mike can click any of them to update the title, description, or URL.</p>
+
+<span data-owner-only style="display:inline-block;font-family:var(--mono);font-size:0.6rem;color:var(--copper);letter-spacing:0.1em;margin-bottom:0.8rem;background:var(--copper-light);padding:0.25rem 0.6rem;">✦ Owner mode: click any card title or description to edit in place</span>
+
+<div class="project-grid reveal">
+
+  <div class="project-card placeholder no-link" id="elsewhere-1">
+    <span class="card-label copper">Lovable / Bolt / Artifact</span>
+    <h4 data-soma-editable="elsewhere-1-title">Project name here</h4>
+    <div class="card-desc" data-soma-editable="elsewhere-1-desc">Add a short description of what this project is and where to find it. Click to edit.</div>
+  </div>
+
+  <div class="project-card placeholder no-link" id="elsewhere-2">
+    <span class="card-label copper">Lovable / Bolt / Artifact</span>
+    <h4 data-soma-editable="elsewhere-2-title">Project name here</h4>
+    <div class="card-desc" data-soma-editable="elsewhere-2-desc">Add a short description of what this project is and where to find it. Click to edit.</div>
+  </div>
+
+  <div class="project-card placeholder no-link" id="elsewhere-3">
+    <span class="card-label copper">Lovable / Bolt / Artifact</span>
+    <h4 data-soma-editable="elsewhere-3-title">Project name here</h4>
+    <div class="card-desc" data-soma-editable="elsewhere-3-desc">Add a short description of what this project is and where to find it. Click to edit.</div>
+  </div>
+
+  <div class="project-card placeholder no-link" id="elsewhere-4">
+    <span class="card-label copper">Lovable / Bolt / Artifact</span>
+    <h4 data-soma-editable="elsewhere-4-title">Project name here</h4>
+    <div class="card-desc" data-soma-editable="elsewhere-4-desc">Add a short description of what this project is and where to find it. Click to edit.</div>
+  </div>
+
+</div>
+
+<p style="font-family:var(--mono);font-size:0.7rem;color:var(--light);margin-top:-1rem;">More projects exist. This page will grow. If you know of one that should be here, use the feedback button.</p>
+
+</div><!-- .page -->
+
+<footer>
+  <div class="footer-text">
+    These projects were built by Mike Wolf in collaboration with Dee (Claude) and the SOMA AI team. Joint human-AI work is the whole story — that's not a footnote, it's the point.
+    <br><br>
+    mike-wolf.com/portfolio · <a href="/" style="color:var(--light);">back to the homepage</a>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+<script>
+window.SomaManagerConfig = {
+  persona: {
+    name: 'The Portfolio',
+    avatar: '✦',
+    greeting: "Hi! I'm the portfolio page. Ask me about any of these projects, suggest an addition, or report something that needs fixing.",
+  },
+  domain: { name: 'mike-wolf.com/portfolio' },
+  theme:  { primary: '#b87333' },
+};
+</script>
+<script src="/soma-manager.js"></script>
+
+</body>
+</html>
