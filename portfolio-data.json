@@ -1,0 +1,178 @@
+[
+  {
+    "name": "Mushroom Madness Emporium",
+    "slug": "mushroom-madness-boutique",
+    "url": "https://mushroom-madness-boutique.lovable.app",
+    "custom_domain": null,
+    "description": "Build a parody e-commerce site called mushroom madness.",
+    "published": true,
+    "http_status": "200",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  },
+  {
+    "name": "Ink Stories",
+    "slug": "",
+    "url": "not published",
+    "custom_domain": null,
+    "description": "",
+    "published": false,
+    "http_status": "not_published",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  },
+  {
+    "name": "Abdul's Spice Trails",
+    "slug": "abduls",
+    "url": "https://abduls.lovable.app",
+    "custom_domain": null,
+    "description": "I want to build a website for abdul's cooking business.",
+    "published": true,
+    "http_status": "200",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  },
+  {
+    "name": "Abdul's Spice Routes",
+    "slug": "",
+    "url": "not published",
+    "custom_domain": null,
+    "description": "I want to build a website for abdul's cooking business.",
+    "published": false,
+    "http_status": "not_published",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  },
+  {
+    "name": "Beary Bubble Timer",
+    "slug": "",
+    "url": "not published",
+    "custom_domain": null,
+    "description": "I want to create a timer that looks realistic.",
+    "published": false,
+    "http_status": "not_published",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  },
+  {
+    "name": "Agreed Vision",
+    "slug": "ai-wtf",
+    "url": "https://ai-wtf.lovable.app",
+    "custom_domain": null,
+    "description": "Please discuss this doc with me and when we have come to a meeting of minds we can build it ",
+    "published": true,
+    "http_status": "200",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  },
+  {
+    "name": "macho-glue",
+    "slug": "macho-glue",
+    "url": "https://macho-glue.lovable.app",
+    "custom_domain": null,
+    "description": "",
+    "published": true,
+    "http_status": "200",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  },
+  {
+    "name": "Shadow Strength Empire",
+    "slug": "",
+    "url": "not published",
+    "custom_domain": null,
+    "description": "",
+    "published": false,
+    "http_status": "not_published",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  },
+  {
+    "name": "Uncle John's Game Day",
+    "slug": "wujtv",
+    "url": "https://wujtv.lovable.app",
+    "custom_domain": null,
+    "description": "",
+    "published": true,
+    "http_status": "200",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  },
+  {
+    "name": "Free Will Folly",
+    "slug": "freewill",
+    "url": "https://freewill.lovable.app",
+    "custom_domain": null,
+    "description": "I've put a button on a post in my Substack that says \\",
+    "published": true,
+    "http_status": "200",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  },
+  {
+    "name": "junekittay",
+    "slug": "junekittay",
+    "url": "https://junekittay.lovable.app",
+    "custom_domain": null,
+    "description": "",
+    "published": true,
+    "http_status": "200",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  },
+  {
+    "name": "scenespeak",
+    "slug": "scenespeak",
+    "url": "https://scenespeak.lovable.app",
+    "custom_domain": null,
+    "description": "",
+    "published": true,
+    "http_status": "200",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  },
+  {
+    "name": "sienaisnine",
+    "slug": "sienaisnine",
+    "url": "https://sienaisnine.lovable.app",
+    "custom_domain": null,
+    "description": "Please create a website according to these specifications: if you have any questions, ask me.",
+    "published": true,
+    "http_status": "200",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  },
+  {
+    "name": "condommints",
+    "slug": "condommints",
+    "url": "https://condommints.lovable.app",
+    "custom_domain": null,
+    "description": "",
+    "published": true,
+    "http_status": "200",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  },
+  {
+    "name": "Website Blueprint Hub",
+    "slug": "a-listanglers",
+    "url": "https://a-listanglers.lovable.app",
+    "custom_domain": null,
+    "description": "This is a spec for a website.",
+    "published": true,
+    "http_status": "200",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  },
+  {
+    "name": "Spark A Project",
+    "slug": "greg-transition-coach",
+    "url": "https://greg-transition-coach.lovable.app",
+    "custom_domain": null,
+    "description": "im wanting to start a new project",
+    "published": true,
+    "http_status": "302",
+    "source": "lovable",
+    "checked": "2026-06-12"
+  }
+]
