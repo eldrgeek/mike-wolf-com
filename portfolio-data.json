@@ -154,17 +154,6 @@
     "checked": "2026-06-12"
   },
   {
-    "name": "Website Blueprint Hub",
-    "slug": "a-listanglers",
-    "url": "https://a-listanglers.lovable.app",
-    "custom_domain": null,
-    "description": "This is a spec for a website.",
-    "published": true,
-    "http_status": "200",
-    "source": "lovable",
-    "checked": "2026-06-12"
-  },
-  {
     "name": "Spark A Project",
     "slug": "greg-transition-coach",
     "url": "https://greg-transition-coach.lovable.app",
