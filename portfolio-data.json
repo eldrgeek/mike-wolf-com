@@ -275,17 +275,6 @@
     "checked": "2026-06-12"
   },
   {
-    "name": "INTOO ROI Calculator Web Application",
-    "id": 53817205,
-    "url": "https://intoocalc.netlify.app",
-    "custom_domain": false,
-    "description": "Starter project for Node.js, a JavaScript runtime built on Chrome's V8 JavaScript engine.\n",
-    "published": true,
-    "http_status": "200",
-    "source": "bolt",
-    "checked": "2026-06-12"
-  },
-  {
     "name": "One and Many",
     "id": 52059480,
     "url": "https://oneandmany.netlify.app",
