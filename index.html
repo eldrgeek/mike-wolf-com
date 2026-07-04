@@ -78,6 +78,25 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
 .reveal{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease-out,transform 0.6s ease-out;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
+/* Tour card */
+.tour-card{display:grid;grid-template-columns:220px 1fr;gap:1.2rem;align-items:center;border:1px solid var(--copper-border);background:var(--copper-light);padding:1rem;margin:2.5rem 0;}
+.tour-poster{position:relative;display:block;width:100%;border:1px solid var(--rule);padding:0;background:none;cursor:pointer;}
+.tour-poster img{display:block;width:100%;height:auto;}
+.tour-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:#fff;background:rgba(26,26,46,0.25);transition:background 0.2s;}
+.tour-poster:hover .tour-play{background:rgba(26,26,46,0.45);}
+.tour-meta .tour-label{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper);display:block;margin-bottom:0.4rem;}
+.tour-meta h4{font-family:var(--serif);font-size:1.05rem;font-weight:400;margin-bottom:0.3rem;}
+.tour-meta h4 button{font:inherit;color:inherit;background:none;border:none;padding:0;cursor:pointer;text-decoration:underline;text-decoration-color:var(--copper-border);text-underline-offset:3px;}
+.tour-meta h4 button:hover{text-decoration-color:var(--copper);}
+.tour-meta .tour-desc{font-family:var(--serif);font-style:italic;font-size:0.85rem;color:var(--muted);line-height:1.6;margin:0;}
+#tour-lightbox{border:none;padding:0;background:transparent;max-width:min(92vw,960px);width:100%;margin:auto;}
+#tour-lightbox::backdrop{background:rgba(26,26,46,0.82);}
+#tour-lightbox video{display:block;width:100%;height:auto;background:#000;}
+.tour-close{position:absolute;top:0.6rem;right:0.6rem;z-index:2;font-family:var(--mono);font-size:0.75rem;color:#faf8f4;background:rgba(26,26,46,0.65);border:1px solid rgba(250,248,244,0.35);border-radius:4px;padding:0.35rem 0.6rem;cursor:pointer;letter-spacing:0.1em;}
+.tour-close:hover{background:rgba(26,26,46,0.9);}
+.tour-frame{position:relative;}
+@media(max-width:640px){.tour-card{grid-template-columns:1fr;}}
+
 @media(max-width:640px){.universe-grid{grid-template-columns:1fr;}.timeline-item{grid-template-columns:58px 1fr;}}
 </style>
 </head>
@@ -113,6 +132,29 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
   <span class="voice-sig">The Website</span>
   Thank you. I do, don't I? You should have seen me before. Actually, you can — scroll down.
 </div>
+
+<!-- ═══ TOUR CARD (Show-Don't-Tell standard, SOMA-APP-STANDARD §7) ═══ -->
+<div class="tour-card">
+  <button class="tour-poster" id="tour-open" aria-label="Play the site tour video, about two minutes">
+    <img src="videos/tour-visitor-poster.jpg" alt="The opening frame of the site tour: the home page declaring 'I am Mike's website!'" loading="lazy">
+    <span class="tour-play" aria-hidden="true">▶</span>
+  </button>
+  <div class="tour-meta">
+    <span class="tour-label">Site tour</span>
+    <h4><button id="tour-open-2">See how this site works — 2 min</button></h4>
+    <p class="tour-desc">A narrated walk through my pages — my story, my author, the portfolio, the songs. I get described in the third person. It's strange, and I like it.</p>
+  </div>
+</div>
+
+<dialog id="tour-lightbox" aria-label="Site tour video">
+  <div class="tour-frame">
+    <button class="tour-close" id="tour-close">CLOSE ✕</button>
+    <video id="tour-video" controls preload="none" poster="videos/tour-visitor-poster.jpg" playsinline>
+      <source src="videos/tour-visitor-2026-07-03.mp4" type="video/mp4">
+      <track kind="chapters" src="videos/tour-visitor.vtt" srclang="en" label="Chapters" default>
+    </video>
+  </div>
+</dialog>
 
 <p>In the meanwhile, let me tell you about myself, and about Mike.</p>
 
@@ -269,6 +311,18 @@ console.log('%c I am Mike\'s website. ', 'background: #b87333; color: #faf8f4; f
 console.log('%cI have existed since October 22, 2018.', 'color: #6b6b7b; font-size: 11px;');
 console.log('%cI was remade in 2026 with help from Claude.', 'color: #2a9d8f; font-size: 11px;');
 console.log('%cIf you are reading this, you are inspecting my source code. I am flattered.', 'color: #b87333; font-size: 11px; font-style: italic;');
+
+// Tour lightbox — opens only on explicit click; never autoplays on page load.
+(function () {
+  const box = document.getElementById('tour-lightbox');
+  const vid = document.getElementById('tour-video');
+  const open = () => { box.showModal(); vid.play().catch(() => {}); };
+  document.getElementById('tour-open').addEventListener('click', open);
+  document.getElementById('tour-open-2').addEventListener('click', open);
+  document.getElementById('tour-close').addEventListener('click', () => box.close());
+  box.addEventListener('click', (e) => { if (e.target === box) box.close(); });
+  box.addEventListener('close', () => { vid.pause(); });
+})();
 </script>
 
 
