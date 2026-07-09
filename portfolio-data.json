@@ -438,5 +438,16 @@
     "http_status": "404",
     "source": "bolt",
     "checked": "2026-06-12"
+  },
+  {
+    "name": "The Fund for Catholic Genius",
+    "slug": "fund-for-catholic-genius",
+    "url": "https://fund-for-catholic-genius.netlify.app",
+    "custom_domain": null,
+    "description": "A deadpan-institutional satirical endowment (Sandusky, OH) that funds the inference costs of Ohio's Catholic geniuses for Qualified Projects. Rigged grant form: instant APPROVED for Mark/Inarai, ecclesiastical limbo for everyone else.",
+    "published": true,
+    "http_status": "200",
+    "source": "netlify",
+    "checked": "2026-07-09"
   }
 ]
