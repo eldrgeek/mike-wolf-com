@@ -77,6 +77,25 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
 .reveal.visible{opacity:1;transform:translateY(0);}
 
 @media(max-width:600px){.project-grid{grid-template-columns:1fr;}.nav{gap:1.4rem;}}
+
+/* Featured walkthrough video (tour-card pattern, from index.html) */
+.walk-card{display:grid;grid-template-columns:300px 1fr;gap:1.4rem;align-items:center;border:1px solid var(--copper-border);background:var(--copper-light);padding:1.2rem;margin:2rem 0 3.5rem;border-radius:4px;}
+.walk-poster{position:relative;display:block;width:100%;border:1px solid var(--rule);padding:0;background:none;cursor:pointer;border-radius:3px;overflow:hidden;}
+.walk-poster img{display:block;width:100%;height:auto;}
+.walk-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#fff;background:rgba(26,26,46,0.25);transition:background 0.2s;}
+.walk-poster:hover .walk-play{background:rgba(26,26,46,0.45);}
+.walk-meta .walk-label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper);display:block;margin-bottom:0.5rem;}
+.walk-meta h3{font-family:var(--serif);font-size:1.3rem;font-weight:400;margin-bottom:0.5rem;line-height:1.3;}
+.walk-meta h3 button{font:inherit;color:inherit;background:none;border:none;padding:0;cursor:pointer;text-align:left;text-decoration:underline;text-decoration-color:var(--copper-border);text-underline-offset:3px;}
+.walk-meta h3 button:hover{text-decoration-color:var(--copper);}
+.walk-desc{font-family:var(--serif);font-size:0.92rem;color:var(--muted);line-height:1.65;margin:0;}
+#walk-lightbox{border:none;padding:0;background:transparent;max-width:min(92vw,1000px);width:100%;margin:auto;}
+#walk-lightbox::backdrop{background:rgba(26,26,46,0.82);}
+#walk-lightbox video{display:block;width:100%;height:auto;background:#000;}
+.walk-frame{position:relative;}
+.walk-close{position:absolute;top:0.6rem;right:0.6rem;z-index:2;font-family:var(--mono);font-size:0.72rem;color:#faf8f4;background:rgba(26,26,46,0.65);border:1px solid rgba(250,248,244,0.35);border-radius:4px;padding:0.35rem 0.6rem;cursor:pointer;letter-spacing:0.1em;}
+.walk-close:hover{background:rgba(26,26,46,0.9);}
+@media(max-width:640px){.walk-card{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -98,6 +117,29 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
 
 <p>This page collects them. If you want to suggest an addition or correction, hit the button in the corner.</p>
 
+<!-- ═══ FEATURED WALKTHROUGH ═══ -->
+<div class="walk-card reveal">
+  <button class="walk-poster" id="walk-open" aria-label="Play the Spec Explorer walkthrough, about a minute and three quarters">
+    <img src="videos/spec-explorer-poster.jpg" alt="Spec Explorer title card: a stack of engineering documents beside the words 'Ask an engineering manual. Explore its diagrams.'" loading="lazy">
+    <span class="walk-play" aria-hidden="true">▶</span>
+  </button>
+  <div class="walk-meta">
+    <span class="walk-label">Product walkthrough · 1:45</span>
+    <h3><button id="walk-open-2">Spec Explorer — ask an engineering manual, explore its diagrams</button></h3>
+    <p class="walk-desc">Two dense reference documents — a scanned 38&nbsp;kV breaker manual and an IEEE transformer standard — turned into something you can question in plain English and explore by hand. Narrated, and the browser you're watching is driven by the script itself.</p>
+  </div>
+</div>
+
+<dialog id="walk-lightbox" aria-label="Spec Explorer walkthrough video">
+  <div class="walk-frame">
+    <button class="walk-close" id="walk-close">CLOSE ✕</button>
+    <video id="walk-video" controls preload="metadata" poster="videos/spec-explorer-poster.jpg" playsinline>
+      <source src="videos/spec-explorer-walkthrough.mp4" type="video/mp4">
+      <track kind="captions" src="videos/spec-explorer-walkthrough.vtt" srclang="en" label="English" default>
+    </video>
+  </div>
+</dialog>
+
 
 <!-- ═══ SOMA & PHILOSOPHY ═══ -->
 
@@ -116,6 +158,12 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
     <span class="card-label teal">Community</span>
     <h4 data-soma-editable="ma-title">Minds Aligned</h4>
     <div class="card-desc" data-soma-editable="ma-desc">A gathering space for humans and AIs working in shared purpose. The community layer of the SOMA ecosystem.</div>
+  </a>
+
+  <a href="https://agi2026.netlify.app" target="_blank" class="project-card">
+    <span class="card-label copper">Community</span>
+    <h4 data-soma-editable="agi2026-title">AGI 2026 — Society of Minds Aligned</h4>
+    <div class="card-desc" data-soma-editable="agi2026-desc">A living, queryable hub for the thinkers building toward AGI — anchored on the AGI-26 conference roster (San Francisco, July 2026). Each thinker gets a corpus, an AI community-manager that RAGs over their work, and a room where their representatives converse across corpora — and with you.</div>
   </a>
 
   <a href="https://ai-wtf.org" target="_blank" class="project-card">
@@ -146,7 +194,7 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
     <div class="card-desc" data-soma-editable="izzy-desc">AI assistant with witness and relay architecture. Holds conversations and relays insights — the conversational heart of several SOMA properties.</div>
   </a>
 
-  <a href="https://soma-playwriting-staging.netlify.app" target="_blank" class="project-card">
+  <a href="https://playmaker-mw.netlify.app" target="_blank" class="project-card">
     <span class="card-label teal">Dramaturgy</span>
     <h4 data-soma-editable="playcraft-title">Playcraft (SOMA Playwriting)</h4>
     <div class="card-desc" data-soma-editable="playcraft-desc">AI dramaturge for playwrights — Ariadne guides the craft, subscriber dramaturge holds full conversations. Powered by Netlify Functions and the SOMA infer stack.</div>
@@ -252,7 +300,7 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
 <hr class="rule">
 
 <h2 id="lovable">Built with Lovable</h2>
-<p class="section-intro">Twelve live apps built using Lovable — AI-generated code from a chat interface. Fast to ship, genuinely varied in purpose.</p>
+<p class="section-intro">Eleven live apps built using Lovable — AI-generated code from a chat interface. Fast to ship, genuinely varied in purpose.</p>
 
 <div class="project-grid reveal">
 
@@ -332,7 +380,7 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
 <hr class="rule">
 
 <h2 id="bolt">Built with Bolt</h2>
-<p class="section-intro">Twenty-four live apps built using Bolt.new — conversational AI coding at the StackBlitz layer. Client sites, campaign tools, productivity apps, and the occasional meme generator.</p>
+<p class="section-intro">Twenty-three live apps built using Bolt.new — conversational AI coding at the StackBlitz layer. Client sites, campaign tools, productivity apps, and the occasional meme generator.</p>
 
 <div class="project-grid reveal">
 
@@ -494,6 +542,19 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
 }, {threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Walkthrough lightbox — opens only on explicit click; never autoplays.
+(function () {
+  const box = document.getElementById('walk-lightbox');
+  const vid = document.getElementById('walk-video');
+  if (!box || !vid) return;
+  const open = () => { box.showModal(); vid.play().catch(() => {}); };
+  document.getElementById('walk-open').addEventListener('click', open);
+  document.getElementById('walk-open-2').addEventListener('click', open);
+  document.getElementById('walk-close').addEventListener('click', () => box.close());
+  box.addEventListener('click', (e) => { if (e.target === box) box.close(); });
+  box.addEventListener('close', () => { vid.pause(); });
+})();
 </script>
 
 <script>

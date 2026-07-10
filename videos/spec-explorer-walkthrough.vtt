@@ -1,0 +1,103 @@
+WEBVTT
+
+00:00.000 --> 00:02.090
+Every engineer knows this pile.
+
+00:02.264 --> 00:06.722
+A vacuum breaker manual, hundreds of pages, and a transformer standard written in
+
+00:06.757 --> 00:08.104
+the language of committees.
+
+00:08.615 --> 00:11.633
+The Siemens book is worse than dense — it's a scan.
+
+00:11.842 --> 00:14.292
+No selectable text, nothing you can search.
+
+00:14.570 --> 00:17.136
+You squint at a page and cross-reference a legend.
+
+00:17.647 --> 00:21.455
+Spec Explorer takes those two documents and makes them something you can actually
+
+00:21.548 --> 00:21.800
+use.
+
+00:21.800 --> 00:24.819
+So here's the first thing you can do — just ask it, in plain
+
+00:24.877 --> 00:25.677
+English.
+
+00:25.724 --> 00:28.151
+How do I manually charge the closing spring?
+
+00:28.661 --> 00:32.714
+Behind the scenes, that Siemens manual was a scan — no searchable text at
+
+00:32.772 --> 00:37.125
+all — so it was read by OCR, character by character, just to recover
+
+00:37.160 --> 00:37.960
+the words.
+
+00:38.286 --> 00:41.781
+Now the answer comes straight from that text, and only that text.
+
+00:42.292 --> 00:43.499
+No invented numbers.
+
+00:43.673 --> 00:46.332
+And it cites the page it came from, so you can go and check
+
+00:46.367 --> 00:47.342
+it yourself.
+
+00:47.342 --> 00:49.327
+Now, the diagram explorer.
+
+00:49.710 --> 00:55.074
+This is Figure 15 — the stored energy operating mechanism — a scanned photograph
+
+00:55.225 --> 00:57.234
+with three dozen numbered callouts.
+
+00:57.675 --> 00:59.173
+Every one of them is clickable.
+
+00:59.684 --> 01:03.736
+Click sixty-two, and the panel tells you: that's the closing spring, and what it
+
+01:03.782 --> 01:04.582
+does.
+
+01:04.676 --> 01:08.333
+The legend you used to hunt through is right there under your cursor.
+
+01:08.342 --> 01:12.568
+Back in the explorer, open Figure 17 — the operating sequence.
+
+01:13.009 --> 01:17.154
+How the breaker closes, and how it trips, drawn as a flowchart of cryptic
+
+01:17.212 --> 01:18.234
+device codes.
+
+01:18.838 --> 01:23.249
+Click a step — the shunt trip coil, fifty-two T — and it decodes
+
+01:23.296 --> 01:25.014
+the shorthand into plain English.
+
+01:25.525 --> 01:28.079
+Every box in the diagram, translated.
+
+01:28.079 --> 01:31.632
+Two documents that used to mean squinting and cross-referencing.
+
+01:32.235 --> 01:35.556
+Now you ask them a question, and you explore them by hand.
+
+01:35.997 --> 01:40.432
+It's live, at spec-explorer-esr.netlify.app.
