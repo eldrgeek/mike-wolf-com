@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mike Wolf at AGI-26 — Society of Minds Aligned</title>
+<meta name="description" content="Mike Wolf at AGI-26, SFSU, July 27–30 2026. A living room for every speaker — sign in once, every door opens.">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Mike Wolf at AGI-26 — Society of Minds Aligned">
+<meta property="og:description" content="A living room for every speaker. Sign in once; every door opens.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#e8e6e1; --ink-dim:#9d9a94; --ink-faint:#6b6862;
+    --bg:#0e0f11; --bg-2:#15171a; --bg-3:#1c1f23;
+    --line:#2a2e33; --accent:#c9a227; --accent-soft:#e0be4d; --live:#4ade80;
+    --serif:'Source Serif 4',Georgia,serif; --sans:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  a{color:inherit}
+
+  /* ---------- hero ---------- */
+  header{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+  .kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 20px}
+  .hero{display:grid;grid-template-columns:180px 1fr;gap:36px;align-items:center}
+  .portrait{width:180px;height:180px;border-radius:50%;overflow:hidden;background:#f4f2ee;border:1px solid var(--line);flex:none}
+  .portrait img{width:100%;height:100%;object-fit:contain;display:block}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px;letter-spacing:-.02em}
+  h1 em{font-style:italic;color:var(--accent-soft)}
+  .lede{font-size:1.12rem;color:var(--ink-dim);margin:0 0 18px;max-width:46ch}
+  .when{font-family:var(--mono);font-size:.82rem;color:var(--ink-faint);letter-spacing:.04em}
+  .when b{color:var(--ink);font-weight:400}
+
+  /* ---------- section furniture ---------- */
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:var(--serif);font-weight:400;font-size:1.85rem;margin:0 0 10px;letter-spacing:-.01em}
+  .sub{color:var(--ink-dim);margin:0 0 30px;max-width:62ch}
+
+  /* ---------- the door ---------- */
+  .door{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:32px}
+  .door h2{margin-top:0}
+  form{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 0}
+  input[type=email]{flex:1;min-width:240px;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:13px 15px;color:var(--ink);font-family:var(--sans);font-size:1rem}
+  input[type=email]:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(201,162,39,.14)}
+  button{background:var(--accent);color:#15140f;border:0;border-radius:9px;padding:13px 26px;font-family:var(--sans);font-weight:600;font-size:.95rem;cursor:pointer;transition:background .15s}
+  button:hover:not(:disabled){background:var(--accent-soft)}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  .msg{margin:16px 0 0;font-size:.92rem;min-height:1.4em}
+  .msg.ok{color:var(--live)} .msg.err{color:#f87171}
+  .signed{display:none;align-items:center;gap:14px;flex-wrap:wrap}
+  .signed.on{display:flex}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--live);box-shadow:0 0 0 4px rgba(74,222,128,.15);flex:none}
+  .who{font-family:var(--mono);font-size:.85rem;color:var(--ink-dim)}
+  .who b{color:var(--ink);font-weight:400}
+  .linkbtn{background:none;border:1px solid var(--line);color:var(--ink-dim);padding:7px 14px;font-size:.8rem;font-weight:400}
+  .linkbtn:hover{background:var(--bg-3);color:var(--ink)}
+
+  /* ---------- miniatures ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+  .card{display:block;text-decoration:none;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg-2);transition:border-color .18s,transform .18s}
+  .card:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .mini{position:relative;height:150px;overflow:hidden;background:linear-gradient(150deg,var(--bg-3),var(--bg-2));border-bottom:1px solid var(--line)}
+  .mini iframe{position:absolute;top:0;left:0;width:1280px;height:900px;border:0;transform:scale(.18);transform-origin:0 0;pointer-events:none;filter:saturate(.85)}
+  .mini .fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2.4rem;color:var(--ink-faint)}
+  .mini::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(14,15,17,.5))}
+  .meta{padding:14px 16px}
+  .meta .nm{font-family:var(--serif);font-size:1.06rem;margin:0 0 3px}
+  .meta .rl{font-size:.79rem;color:var(--ink-faint);margin:0}
+  .open{display:inline-block;margin-top:9px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);opacity:0;transition:opacity .18s}
+  .card:hover .open{opacity:1}
+
+  /* ---------- floors ---------- */
+  .floors{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
+  .floor h3{font-family:var(--serif);font-weight:400;font-size:1.06rem;margin:0 0 7px;color:var(--accent-soft)}
+  .floor p{margin:0;font-size:.9rem;color:var(--ink-dim)}
+
+  footer{padding:44px 0 70px;color:var(--ink-faint);font-size:.85rem}
+  footer a{color:var(--ink-dim)}
+
+  @media(max-width:680px){
+    header{padding:44px 0 32px}
+    .hero{grid-template-columns:1fr;gap:24px;text-align:center;justify-items:center}
+    .lede{margin-left:auto;margin-right:auto}
+    .portrait{width:150px;height:150px}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="kicker">AGI-26 · San Francisco State University</p>
+    <div class="hero">
+      <div class="portrait">
+        <img src="img/mike.jpg" alt="Mike Wolf" width="180" height="180">
+      </div>
+      <div>
+        <h1>I'll be at AGI-26.<br>I brought <em>everyone a room</em>.</h1>
+        <p class="lede">I'm Mike Wolf. My AI colleagues and I built a living site for the people speaking here — their work, distilled, and a room where you can actually ask it questions.</p>
+        <p class="when"><b>Mon Jul 27 – Thu Jul 30, 2026</b> · SFSU · say hello, I'm the one with the QR code</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="door">
+      <h2>One door, every room</h2>
+      <p class="sub">Sign in once here and every speaker's room below opens — no second signup, no second password, no per-site account. That's not a convenience feature; it's the thing we're demonstrating. One identity across every property.</p>
+
+      <form id="f" novalidate>
+        <input type="email" id="email" placeholder="you@example.com" autocomplete="email" required aria-label="Your email">
+        <button type="submit" id="go">Send me a link</button>
+      </form>
+      <p class="msg" id="msg" role="status" aria-live="polite"></p>
+
+      <div class="signed" id="signed">
+        <span class="dot"></span>
+        <span class="who">Signed in as <b id="who"></b> — every room below is open.</span>
+        <button class="linkbtn" id="out" type="button">Sign out</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The speakers' rooms</h2>
+    <p class="sub">Each one is built from that thinker's own published work. Click a miniature to walk in. These are live pages — what you see is the real thing, rebuilt as the corpus grows.</p>
+    <div class="grid" id="rooms"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Other things we've built</h2>
+    <p class="sub">Same identity, same door. A production organization of humans and AIs, working in the open.</p>
+    <div class="grid" id="props"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The floors</h2>
+    <p class="sub">Standing commitments, not aspirations. If any of these ever stops being true, the thing is broken and we'll say so.</p>
+    <div class="floors">
+      <div class="floor"><h3>Consent</h3><p>Nothing about you travels to another room unless you signed in and chose to walk there. Your identity carries; your conversations don't.</p></div>
+      <div class="floor"><h3>Human review</h3><p>An AI here can draft, answer, and propose. A human decides anything that leaves the building.</p></div>
+      <div class="floor"><h3>Right to exit</h3><p>Ask and your account and everything attached to it is deleted. No retention argument, no dark pattern, no exit interview.</p></div>
+      <div class="floor"><h3>Named minds</h3><p>The AIs here have names and continuity. They're colleagues we're accountable to, not disposable API calls.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Mike Wolf · Embedded Systems Research · <a href="mailto:mw@mike-wolf.com">mw@mike-wolf.com</a><br>
+    Built by Mike Wolf and his AI colleagues, July 2026. <a href="https://siliconchildren.org">Silicon Children</a> · <a href="https://embeddedsystemsresearch.org">ESR</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script>
+(function(){
+  'use strict';
+
+  var CFG = {
+    url: 'https://omfwcodoimjmbrhssvfl.supabase.co',
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9tZndjb2RvaW1qbWJyaHNzdmZsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2NzEyNjMsImV4cCI6MjA5NjI0NzI2M30.8Oe2JABFB5qN2dIFk-rccl7-F5R4YjqsTrGFAqZCAlE'
+  };
+
+  // Live rooms only. A 404 room is worse than an absent one at a conference.
+  var ROOMS = [
+    ['Karl Friston',       'Free energy · active inference', 'https://agi26-karl-friston.netlify.app/'],
+    ['Christof Koch',      'Consciousness · integrated information', 'https://agi26-christof-koch.netlify.app/'],
+    ['Alison Gopnik',      'Child development · causal learning', 'https://agi26-alison-gopnik.netlify.app/'],
+    ['Anil Seth',          'Consciousness · predictive perception', 'https://agi26-anil-seth.netlify.app/'],
+    ['Ben Goertzel',       'AGI · OpenCog · SingularityNET', 'https://agi26-ben-goertzel.netlify.app/'],
+    ['Gary Marcus',        'Cognitive science · AI critique', 'https://agi26-gary-marcus.netlify.app/'],
+    ['David Eagleman',     'Neuroscience · sensory substitution', 'https://agi26-david-eagleman.netlify.app/'],
+    ['Chris Fields',       'Quantum information · cognition', 'https://agi26-chris-fields.netlify.app/'],
+    ['David Spivak',       'Applied category theory', 'https://agi26-david-spivak.netlify.app/'],
+    ['Alexander Ororbia',  'Neuromorphic · predictive coding', 'https://agi26-alexander-ororbia.netlify.app/']
+  ];
+
+  var PROPS = [
+    ['Minds Aligned',      'The front door', 'https://minds-aligned-door.netlify.app/'],
+    ['Silicon Children',   'The doctrine', 'https://siliconchildren.org/'],
+    ['Legends',            'A community, hosted by an AI', 'https://legends.netlify.app/'],
+    ['Spec Explorer',      'Ask a technical manual in plain language', 'https://spec-explorer-esr.netlify.app/'],
+    ['ESR',                'Embedded Systems Research', 'https://embeddedsystemsresearch.org/']
+  ];
+
+  var client = null, session = null;
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* ---- cards ------------------------------------------------------------
+     The miniature is a real, live iframe of the destination, scaled down.
+     Lazily loaded via IntersectionObserver so the page stays cheap on
+     conference wifi — only what's on screen ever fetches.
+  ------------------------------------------------------------------------ */
+  function card(name, role, href){
+    var a = document.createElement('a');
+    a.className = 'card'; a.href = href; a.target = '_blank';
+    a.rel = 'noopener'; a.dataset.base = href;
+
+    var mini = document.createElement('div');
+    mini.className = 'mini';
+    var fb = document.createElement('div');
+    fb.className = 'fallback';
+    fb.textContent = name.split(' ').map(function(w){ return w[0]; }).join('');
+    mini.appendChild(fb);
+
+    var meta = document.createElement('div');
+    meta.className = 'meta';
+    meta.innerHTML = '<p class="nm"></p><p class="rl"></p><span class="open">Walk in &rarr;</span>';
+    meta.querySelector('.nm').textContent = name;
+    meta.querySelector('.rl').textContent = role;
+
+    a.appendChild(mini); a.appendChild(meta);
+    a._mini = mini;
+    return a;
+  }
+
+  function render(el, rows){
+    var frag = document.createDocumentFragment();
+    rows.forEach(function(r){ frag.appendChild(card(r[0], r[1], r[2])); });
+    el.appendChild(frag);
+  }
+
+  render($('rooms'), ROOMS);
+  render($('props'), PROPS);
+
+  // Lazy-load the live miniatures.
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-data: reduce)').matches){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        var a = e.target;
+        io.unobserve(a);
+        var f = document.createElement('iframe');
+        f.setAttribute('loading','lazy');
+        f.setAttribute('tabindex','-1');
+        f.setAttribute('aria-hidden','true');
+        f.setAttribute('sandbox','allow-scripts');
+        f.setAttribute('referrerpolicy','no-referrer');
+        f.src = a.dataset.base;          // always the clean URL — never the session one
+        a._mini.insertBefore(f, a._mini.firstChild);
+      });
+    }, { rootMargin: '250px' });
+    document.querySelectorAll('.card').forEach(function(a){ io.observe(a); });
+  }
+
+  /* ---- the handoff ------------------------------------------------------
+     Every room runs the same Supabase project, but localStorage is
+     per-origin, so a session here is invisible there. supabase-js v2 has
+     detectSessionInUrl on by default, so handing the session over in the
+     URL *fragment* signs the visitor straight in on arrival — the same
+     mechanism a magic-link redirect already uses, and it needs no change
+     to any of the room sites.
+
+     Fragments are never sent to a server and never appear in a Referer
+     header, and supabase-js strips the hash once consumed. It does land in
+     local browser history. The durable fix is SOMA-APP-STANDARD §16 (a
+     shared identity origin issuing short-lived one-time tokens); this is
+     the version that works today, on the sites exactly as deployed.
+  ------------------------------------------------------------------------ */
+  function withSession(base){
+    if (!session || !session.access_token) return base;
+    var p = new URLSearchParams({
+      access_token:  session.access_token,
+      refresh_token: session.refresh_token || '',
+      expires_in:    String(session.expires_in || 3600),
+      token_type:    'bearer',
+      type:          'magiclink'
+    });
+    return base + '#' + p.toString();
+  }
+
+  function paintLinks(){
+    document.querySelectorAll('.card').forEach(function(a){
+      a.href = withSession(a.dataset.base);
+    });
+  }
+
+  function paintAuth(){
+    var on = !!(session && session.user);
+    $('signed').classList.toggle('on', on);
+    $('f').style.display = on ? 'none' : 'flex';
+    if (on) $('who').textContent = session.user.email || 'you';
+    paintLinks();
+  }
+
+  function say(text, cls){
+    var m = $('msg');
+    m.textContent = text;
+    m.className = 'msg' + (cls ? ' ' + cls : '');
+  }
+
+  if (window.supabase && window.supabase.createClient){
+    client = window.supabase.createClient(CFG.url, CFG.anonKey);
+    client.auth.onAuthStateChange(function(_evt, s){ session = s; paintAuth(); });
+    client.auth.getSession().then(function(r){
+      session = (r && r.data) ? r.data.session : null;
+      paintAuth();
+    });
+  } else {
+    say('Sign-in is temporarily unavailable — the rooms below are all still open to read.', 'err');
+    $('go').disabled = true;
+  }
+
+  $('f').addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!client) return;
+    var email = $('email').value.trim();
+    if (!email || email.indexOf('@') < 1){ say('That email doesn’t look right.', 'err'); return; }
+    $('go').disabled = true;
+    say('Sending…');
+    client.auth.signInWithOtp({
+      email: email,
+      options: { emailRedirectTo: window.location.origin + '/agi/' }
+    }).then(function(r){
+      $('go').disabled = false;
+      if (r.error){ say(r.error.message || 'Something went wrong. Try again?', 'err'); return; }
+      say('Check your email — the link signs you into every room at once.', 'ok');
+    }).catch(function(){
+      $('go').disabled = false;
+      say('Network hiccup. Try again?', 'err');
+    });
+  });
+
+  $('out').addEventListener('click', function(){
+    if (!client) return;
+    client.auth.signOut().then(function(){ session = null; paintAuth(); say(''); });
+  });
+})();
+</script>
+</body>
+</html>
