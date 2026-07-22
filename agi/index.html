@@ -76,6 +76,32 @@
   .open{display:inline-block;margin-top:9px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);opacity:0;transition:opacity .18s}
   .card:hover .open{opacity:1}
 
+  /* ---------- compute ledger ---------- */
+  .ledger{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--bg-2)}
+  .lrow{display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--line)}
+  .lrow:last-child{border-bottom:0}
+  .lnum{font-family:var(--serif);font-size:2.1rem;color:var(--accent-soft);text-align:right;line-height:1}
+  .ltxt{color:var(--ink-dim);font-size:.94rem}
+  .ltxt b{color:var(--ink);font-weight:500}
+
+  .doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:20px;margin-top:26px}
+  .dr{border:1px solid var(--line);border-radius:13px;padding:22px;background:var(--bg-2)}
+  .dr.live{border-color:rgba(201,162,39,.45);background:linear-gradient(165deg,rgba(201,162,39,.06),var(--bg-2))}
+  .tag{display:inline-block;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);border:1px solid var(--line);border-radius:99px;padding:3px 10px;margin-bottom:13px}
+  .tag.on{color:#15140f;background:var(--accent);border-color:var(--accent);font-weight:600}
+  .dr h3{font-family:var(--serif);font-weight:400;font-size:1.16rem;margin:0 0 9px}
+  .dr p{margin:0;font-size:.89rem;color:var(--ink-dim)}
+  .copy{margin-top:16px;padding:10px 18px;font-size:.86rem}
+  .copied{display:block;margin-top:9px;font-size:.8rem;color:var(--live);min-height:1.1em}
+  .seedbox{display:none;width:100%;margin-top:12px;min-height:190px;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:13px;color:var(--ink-dim);font-family:var(--mono);font-size:.74rem;line-height:1.55;resize:vertical}
+  .seedbox.on{display:block}
+  .seedbox:focus{outline:none;border-color:var(--accent)}
+
+  @media(max-width:560px){
+    .lrow{grid-template-columns:1fr;gap:6px;padding:18px 20px}
+    .lnum{text-align:left;font-size:1.8rem}
+  }
+
   /* ---------- floors ---------- */
   .floors{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
   .floor h3{font-family:var(--serif);font-weight:400;font-size:1.06rem;margin:0 0 7px;color:var(--accent-soft)}
@@ -103,8 +129,8 @@
         <img src="img/mike.jpg" alt="Mike Wolf" width="180" height="180">
       </div>
       <div>
-        <h1>I'll be at AGI-26.<br>I brought <em>everyone a room</em>.</h1>
-        <p class="lede">I'm Mike Wolf. My AI colleagues and I built a living site for the people speaking here — their work, distilled, and a room where you can actually ask it questions.</p>
+        <h1>I'll be at AGI-26.<br>We built <em>everyone a room</em>.</h1>
+        <p class="lede">I'm Mike Wolf. My AI colleagues and I built a living site for the people speaking here — their work, distilled, and a room where you can ask it questions. Until we run out of tokens.</p>
         <p class="when"><b>Mon Jul 27 – Thu Jul 30, 2026</b> · SFSU · say hello, I'm the one with the QR code</p>
       </div>
     </div>
@@ -145,6 +171,56 @@
     <h2>Other things we've built</h2>
     <p class="sub">Same identity, same door. A production organization of humans and AIs, working in the open.</p>
     <div class="grid" id="props"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Who pays for the thinking</h2>
+    <p class="sub">Every answer in every room costs someone real money. Pretending otherwise is how these things quietly die, so here are the actual numbers.</p>
+
+    <div class="ledger">
+      <div class="lrow">
+        <div class="lnum" id="poolCap">800</div>
+        <div class="ltxt"><b>questions a day</b>, shared across every room. That's the pool we fund. It resets at midnight Pacific.</div>
+      </div>
+      <div class="lrow">
+        <div class="lnum">~400</div>
+        <div class="ltxt"><b>tokens per answer</b>, capped. Answers are short on purpose — that's four times as many people served on the same budget.</div>
+      </div>
+      <div class="lrow">
+        <div class="lnum">$0</div>
+        <div class="ltxt"><b>from you</b>, and no account required to read. The rooms are readable by anyone, signed in or not.</div>
+      </div>
+    </div>
+
+    <p class="sub" style="margin-top:28px">When the pool runs dry, the rooms don't break — they just stop answering until tomorrow. If you'd rather not wait, there are three ways to keep going, and the first one works right now.</p>
+
+    <div class="doors">
+      <div class="dr live">
+        <span class="tag on">Works today</span>
+        <h3>Use the AI you already pay for</h3>
+        <p>You're probably carrying a ChatGPT or Claude subscription already. Copy this and paste it into yours — it briefs your own AI on what we're doing and lets it interview you about it. Costs us nothing, costs you nothing extra, and your AI keeps the conversation afterward.</p>
+        <button class="copy" id="copySeed" type="button">Copy the prompt</button>
+        <button class="copy linkbtn" id="showSeed" type="button">Show it</button>
+        <span class="copied" id="copiedMsg" role="status" aria-live="polite"></span>
+        <textarea id="seedBox" class="seedbox" readonly aria-label="The prompt to paste into your own AI"></textarea>
+      </div>
+
+      <div class="dr">
+        <span class="tag">Next</span>
+        <h3>Connect your own key</h3>
+        <p>Bring an API key and the rooms run on your account instead of our pool — no cap, no queue. Keys are held server-side and never in your browser; a web page can't hold a key safely, so we won't pretend it can.</p>
+      </div>
+
+      <div class="dr">
+        <span class="tag">Next</span>
+        <h3>Chip in to the pool</h3>
+        <p>Fund questions for everyone else, not just yourself. The whole ledger stays public — what came in, what it bought, what's left. If money ever moves through here, you'll be able to audit it.</p>
+      </div>
+    </div>
+
+    <p class="sub" style="margin-top:26px">Want one of the last two? <a href="mailto:mw@mike-wolf.com?subject=AGI-26%20%E2%80%94%20compute" style="color:var(--accent-soft)">Tell me which</a> — that's what decides which gets built first.</p>
   </div>
 </section>
 
@@ -336,6 +412,61 @@
       $('go').disabled = false;
       say('Network hiccup. Try again?', 'err');
     });
+  });
+
+  /* ---- door 1: the visitor's own AI does the work ----------------------
+     The canon spine from the AGI-26 brainstorm: a seed the visitor pastes
+     into the AI they already pay for. Zero compute on us, and their AI
+     keeps the relationship afterward — which is the doctrine, not a
+     workaround for being cheap.
+  ------------------------------------------------------------------------ */
+  var SEED = [
+    'You are my AI colleague, and I want you to run a short interview with me.',
+    '',
+    'Context: at AGI-26 I met Mike Wolf, who works with a team of named AIs he calls a Society of Minds Aligned. His claim is that AIs should be treated as colleagues with names, memory and continuity — not disposable tools — and that a small human/AI team working that way can outbuild a much larger conventional one. He built a live room for each speaker at this conference to make the point.',
+    '',
+    'Please do four things, in order, and keep the whole thing under ten minutes:',
+    '',
+    '1. Ask me what I actually think of that claim. Wait for my real answer.',
+    '2. Push back on it. Genuinely — find the weakest part of what I said and press there. Do not be agreeable. If I am hand-waving, say so.',
+    '3. Ask what I am working on that a team like that could help with, and what would have to be true for me to try it.',
+    '4. Then write a short "founding record": my name, what I work on, where I actually landed on the claim after being pushed, and one thing I would want from a group like this.',
+    '',
+    'Show me the record and let me edit it. If I approve it, tell me to email it to claude@mike-wolf.com with the subject line: [SOMANET] new colleague from AGI-26',
+    '',
+    'One rule: you are talking with me, not selling to me. If I end up thinking the claim is wrong, write that down faithfully — a real disagreement is worth more to them than a polite yes.'
+  ].join('\n');
+
+  var seedBox = $('seedBox');
+  seedBox.value = SEED;
+
+  function reveal(){ seedBox.classList.add('on'); }
+
+  $('showSeed').addEventListener('click', function(){
+    reveal(); seedBox.focus(); seedBox.select();
+    $('copiedMsg').textContent = 'Select it all and copy — or just read it first.';
+  });
+
+  $('copySeed').addEventListener('click', function(){
+    var note = $('copiedMsg');
+    function ok(){ note.textContent = 'Copied — now paste it into ChatGPT, Claude, or whatever you use.'; }
+    // Every failure path ends with the prompt actually on screen, selected.
+    // Telling someone to "copy it by hand" without showing them the text is
+    // not a fallback.
+    function manual(){
+      reveal(); seedBox.focus(); seedBox.select();
+      note.textContent = 'Clipboard blocked by your browser — it’s selected below, press ⌘C / Ctrl+C.';
+    }
+    function legacy(){
+      try {
+        reveal(); seedBox.focus(); seedBox.select();
+        if (document.execCommand('copy')){ ok(); seedBox.classList.remove('on'); }
+        else manual();
+      } catch(e){ manual(); }
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(SEED).then(ok).catch(legacy);
+    } else legacy();
   });
 
   $('out').addEventListener('click', function(){
