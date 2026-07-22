@@ -30,8 +30,10 @@
   header{padding:64px 0 40px;border-bottom:1px solid var(--line)}
   .kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 20px}
   .hero{display:grid;grid-template-columns:180px 1fr;gap:36px;align-items:center}
-  .portrait{width:180px;height:180px;border-radius:50%;overflow:hidden;background:#f4f2ee;border:1px solid var(--line);flex:none}
-  .portrait img{width:100%;height:100%;object-fit:contain;display:block}
+  .portrait{width:180px;height:180px;border-radius:50%;overflow:hidden;background:var(--bg-3);border:1px solid var(--line);flex:none}
+  /* Real headshot: fill the circle and bias the crop upward onto the face,
+     rather than the geometric centre (which lands on the collarbone). */
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 26%;display:block}
   h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px;letter-spacing:-.02em}
   h1 em{font-style:italic;color:var(--accent-soft)}
   .lede{font-size:1.12rem;color:var(--ink-dim);margin:0 0 18px;max-width:46ch}
@@ -126,7 +128,7 @@
     <p class="kicker">AGI-26 · San Francisco State University</p>
     <div class="hero">
       <div class="portrait">
-        <img src="img/mike.jpg" alt="Mike Wolf" width="180" height="180">
+        <img src="img/mike.webp" alt="Mike Wolf" width="180" height="180">
       </div>
       <div>
         <h1>I'll be at AGI-26.<br>We built <em>everyone a room</em>.</h1>
