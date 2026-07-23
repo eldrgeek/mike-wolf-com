@@ -54,6 +54,15 @@
   button{background:var(--accent);color:#15140f;border:0;border-radius:9px;padding:13px 26px;font-family:var(--sans);font-weight:600;font-size:.95rem;cursor:pointer;transition:background .15s}
   button:hover:not(:disabled){background:var(--accent-soft)}
   button:disabled{opacity:.5;cursor:not-allowed}
+  /* Google sits ABOVE the email form and reads as the faster path, but stays visually
+     quieter than the accent-coloured primary button so neither route looks like the
+     "real" one — SOMA Auth treats them as equals. */
+  .google{display:inline-flex;align-items:center;gap:10px;width:100%;justify-content:center;
+    margin:22px 0 0;background:var(--bg);color:var(--ink);border:1px solid var(--line);
+    border-radius:9px;padding:13px 20px;font-weight:600;font-size:.95rem}
+  .google:hover:not(:disabled){background:var(--bg-2);border-color:var(--accent)}
+  .or{display:flex;align-items:center;gap:14px;margin:18px 0 0;color:var(--muted);font-size:.82rem}
+  .or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
   .msg{margin:16px 0 0;font-size:.92rem;min-height:1.4em}
   .msg.ok{color:var(--live)} .msg.err{color:#f87171}
   .signed{display:none;align-items:center;gap:14px;flex-wrap:wrap}
@@ -144,6 +153,18 @@
     <div class="door">
       <h2>One door, every room</h2>
       <p class="sub">Sign in once here and every speaker's room below opens — no second signup, no second password, no per-site account. That's not a convenience feature; it's the thing we're demonstrating. One identity across every property.</p>
+
+      <button type="button" id="google" class="google">
+        <svg viewBox="0 0 18 18" width="17" height="17" aria-hidden="true">
+          <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.7-1.57 2.68-3.88 2.68-6.62z"/>
+          <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.33A9 9 0 0 0 9 18z"/>
+          <path fill="#FBBC05" d="M3.97 10.72a5.41 5.41 0 0 1 0-3.44V4.95H.96a9 9 0 0 0 0 8.1l3.01-2.33z"/>
+          <path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58C13.46.9 11.43 0 9 0A9 9 0 0 0 .96 4.95l3.01 2.33C4.68 5.16 6.66 3.58 9 3.58z"/>
+        </svg>
+        Continue with Google
+      </button>
+
+      <div class="or"><span>or</span></div>
 
       <form id="f" novalidate>
         <input type="email" id="email" placeholder="you@example.com" autocomplete="email" required aria-label="Your email">
@@ -242,7 +263,7 @@
 <footer>
   <div class="wrap">
     <p>Mike Wolf · Embedded Systems Research · <a href="mailto:mw@mike-wolf.com">mw@mike-wolf.com</a><br>
-    Built by Mike Wolf and his AI colleagues, July 2026. <a href="https://siliconchildren.org">Silicon Children</a> · <a href="https://embeddedsystemsresearch.org">ESR</a></p>
+    Built by Mike Wolf and his AI colleagues, July 2026. <a href="https://siliconchildren.com">Silicon Children</a> · <a href="https://embeddedsystemsresearch.org">ESR</a></p>
   </div>
 </footer>
 
@@ -267,13 +288,16 @@
     ['David Eagleman',     'Neuroscience · sensory substitution', 'https://agi26-david-eagleman.netlify.app/'],
     ['Chris Fields',       'Quantum information · cognition', 'https://agi26-chris-fields.netlify.app/'],
     ['David Spivak',       'Applied category theory', 'https://agi26-david-spivak.netlify.app/'],
-    ['Alexander Ororbia',  'Neuromorphic · predictive coding', 'https://agi26-alexander-ororbia.netlify.app/']
+    ['Alexander Ororbia',  'Neuromorphic · predictive coding', 'https://agi26-alexander-ororbia.netlify.app/'],
+    ['Michael Levin',      'Bioelectricity · morphogenesis · diverse intelligence', 'https://levinese-preview.netlify.app/'],
+    ['Joscha Bach',        'Computational philosophy of mind · cyber-animism', 'https://joschese.netlify.app/']
   ];
 
   var PROPS = [
+    ['AGI-26 Constellation', 'Every archive, one roster', 'https://agi2026.netlify.app/'],
+    ['SOMA 2026',          'What we built and why', 'https://agi2026.netlify.app/soma2026/'],
     ['Minds Aligned',      'The front door', 'https://minds-aligned-door.netlify.app/'],
-    ['Silicon Children',   'The doctrine', 'https://siliconchildren.org/'],
-    ['Legends',            'A community, hosted by an AI', 'https://legends.netlify.app/'],
+    ['Silicon Children',   'The doctrine', 'https://siliconchildren.com/'],
     ['Spec Explorer',      'Ask a technical manual in plain language', 'https://spec-explorer-esr.netlify.app/'],
     ['ESR',                'Embedded Systems Research', 'https://embeddedsystemsresearch.org/']
   ];
@@ -395,6 +419,19 @@
     say('Sign-in is temporarily unavailable — the rooms below are all still open to read.', 'err');
     $('go').disabled = true;
   }
+
+  $('google').addEventListener('click', function(){
+    if (!client) return;
+    say('Opening Google…');
+    client.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: window.location.origin + '/agi/' }
+    }).then(function(r){
+      if (r && r.error) say(r.error.message || 'Google sign-in did not open. Try the email link?', 'err');
+    }).catch(function(){
+      say('Google sign-in did not open. Try the email link?', 'err');
+    });
+  });
 
   $('f').addEventListener('submit', function(e){
     e.preventDefault();
