@@ -1,0 +1,18 @@
+[
+  {
+    "title": "SOMA explainer — Human Speaks, AI Writes, Human Reads",
+    "blurb": "A six-minute shareable walk through SOMA itself — the review surface on camera, a live tour into the Legends site, the board and its self-improving loop.",
+    "property": "SOMA",
+    "duration": "5:28",
+    "video": "videos/portfolio/soma-explainer-2026-07-04.mp4",
+    "poster": "videos/portfolio/soma-explainer-2026-07-04-frame-25pct.png"
+  },
+  {
+    "title": "Legends of Basketball — visitor tour",
+    "blurb": "A narrated walkthrough of the Legends membership site built for Greg Ballard and the NBRPA — what a first-time visitor sees.",
+    "property": "Legends",
+    "duration": "6:21",
+    "video": "videos/portfolio/legends-visitor-tour.mp4",
+    "poster": "videos/portfolio/legends-visitor-tour-poster.png"
+  }
+]
