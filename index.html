@@ -88,6 +88,9 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
 .signup-msg.ok{color:var(--teal);}
 .signup-msg.err{color:#a33;}
 .signup-note{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.08em;color:var(--light);margin-top:0.9rem;}
+.signup-qr{margin-top:1.4rem;display:flex;flex-direction:column;align-items:center;gap:0.35rem;}
+.signup-qr img{width:140px;height:140px;image-rendering:pixelated;background:#fff;border:8px solid #fff;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,0.1);}
+.signup-qr .signup-note{margin-top:0.15rem;}
 
 /* Inline Feedback edge tab (replaces dead VPS feedback-svc) */
 .fb-tab{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:90;writing-mode:vertical-rl;text-orientation:mixed;font-family:var(--sans);font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#faf8f4;background:var(--copper);border:none;border-radius:6px 0 0 6px;padding:0.9rem 0.45rem;cursor:pointer;box-shadow:-2px 2px 12px rgba(0,0,0,0.08);transition:background 0.2s,padding 0.2s;}
@@ -225,6 +228,10 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
   </form>
   <div class="signup-msg" id="signup-msg" role="status" aria-live="polite"></div>
   <p class="signup-note">Stored for mike-wolf.com special content only.</p>
+  <div class="signup-qr">
+    <img src="/mike-wolf-qr.png" alt="QR code linking to mike-wolf.com" width="140" height="140" loading="lazy">
+    <p class="signup-note">Scan to open mike-wolf.com on your phone</p>
+  </div>
 </div>
 
 <!-- ═══ CONTACT ═══ -->
