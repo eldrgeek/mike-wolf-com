@@ -74,7 +74,43 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
 .reveal{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease-out,transform 0.6s ease-out;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
-@media(max-width:640px){.universe-grid{grid-template-columns:1fr;}.ledger-item{grid-template-columns:70px 1fr;}}
+/* Signup for special content + news */
+.signup{border:1px solid var(--copper-border);background:var(--copper-light);padding:1.75rem 1.5rem;margin:2.5rem 0 1rem;text-align:center;}
+.signup h3{margin-top:0;margin-bottom:0.6rem;}
+.signup .signup-lead{font-family:var(--serif);font-size:0.95rem;color:var(--warm);line-height:1.7;margin-bottom:1.25rem;}
+.signup-form{display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center;align-items:stretch;max-width:420px;margin:0 auto;}
+.signup-form input[type="email"]{flex:1 1 200px;min-width:0;font-family:var(--sans);font-size:0.9rem;padding:0.7rem 0.9rem;border:1px solid var(--rule);background:var(--surface);color:var(--ink);border-radius:2px;outline:none;transition:border-color 0.2s;}
+.signup-form input[type="email"]:focus{border-color:var(--copper);}
+.signup-form button{font-family:var(--sans);font-size:0.8rem;font-weight:500;letter-spacing:0.04em;padding:0.7rem 1.2rem;border:1px solid var(--copper);background:var(--copper);color:#faf8f4;cursor:pointer;border-radius:2px;transition:opacity 0.2s,background 0.2s;}
+.signup-form button:hover{opacity:0.92;}
+.signup-form button:disabled{opacity:0.55;cursor:not-allowed;}
+.signup-msg{font-family:var(--sans);font-size:0.8rem;margin-top:0.85rem;min-height:1.2em;color:var(--muted);}
+.signup-msg.ok{color:var(--teal);}
+.signup-msg.err{color:#a33;}
+.signup-note{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.08em;color:var(--light);margin-top:0.9rem;}
+
+/* Inline Feedback edge tab (replaces dead VPS feedback-svc) */
+.fb-tab{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:90;writing-mode:vertical-rl;text-orientation:mixed;font-family:var(--sans);font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#faf8f4;background:var(--copper);border:none;border-radius:6px 0 0 6px;padding:0.9rem 0.45rem;cursor:pointer;box-shadow:-2px 2px 12px rgba(0,0,0,0.08);transition:background 0.2s,padding 0.2s;}
+.fb-tab:hover{background:#a05f28;padding-right:0.55rem;}
+.fb-panel{position:fixed;right:0;top:50%;transform:translateY(-50%) translateX(110%);z-index:91;width:min(320px,92vw);background:var(--surface);border:1px solid var(--rule);border-right:none;border-radius:8px 0 0 8px;box-shadow:-8px 4px 28px rgba(0,0,0,0.1);padding:1.25rem 1.15rem 1.1rem;transition:transform 0.28s ease;font-family:var(--sans);}
+.fb-panel.open{transform:translateY(-50%) translateX(0);}
+.fb-panel h4{font-family:var(--serif);font-size:1.05rem;font-weight:400;margin-bottom:0.35rem;color:var(--ink);}
+.fb-panel .fb-sub{font-size:0.78rem;color:var(--muted);line-height:1.5;margin-bottom:0.9rem;}
+.fb-panel label{display:block;font-family:var(--mono);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--copper);margin-bottom:0.35rem;}
+.fb-panel select,.fb-panel textarea{width:100%;font-family:var(--sans);font-size:0.85rem;padding:0.55rem 0.65rem;border:1px solid var(--rule);background:var(--bg);color:var(--ink);border-radius:2px;margin-bottom:0.75rem;outline:none;resize:vertical;}
+.fb-panel select:focus,.fb-panel textarea:focus{border-color:var(--copper);}
+.fb-panel textarea{min-height:88px;line-height:1.5;}
+.fb-actions{display:flex;gap:0.5rem;align-items:center;justify-content:flex-end;}
+.fb-actions button{font-family:var(--sans);font-size:0.78rem;font-weight:500;padding:0.5rem 0.9rem;border-radius:2px;cursor:pointer;border:1px solid var(--rule);background:transparent;color:var(--muted);}
+.fb-actions button.primary{background:var(--copper);border-color:var(--copper);color:#faf8f4;}
+.fb-actions button:disabled{opacity:0.55;cursor:not-allowed;}
+.fb-status{font-size:0.75rem;color:var(--muted);margin-top:0.65rem;min-height:1.1em;}
+.fb-status.ok{color:var(--teal);}
+.fb-status.err{color:#a33;}
+.fb-backdrop{position:fixed;inset:0;z-index:89;background:transparent;display:none;}
+.fb-backdrop.open{display:block;}
+
+@media(max-width:640px){.universe-grid{grid-template-columns:1fr;}.ledger-item{grid-template-columns:70px 1fr;}.signup-form{flex-direction:column;}.signup-form button{width:100%;}}
 </style>
 </head>
 <body>
@@ -176,6 +212,21 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
   <a href="https://www.amazon.com/Self-Referential-Metanovel-Writing-Dummies-ebook/dp/B0DYVV3JW7" target="_blank" class="universe-card"><span class="card-label muted">Literary</span><h4>The Metanovel</h4><div class="card-desc">The world's stupidest novel. Co-authored by Michael Wolf, Joseph Beller, The Metanovel, and You.</div></a>
 </div>
 
+<!-- ═══ SIGNUP ═══ -->
+
+<hr class="rule">
+
+<div id="signup" class="signup reveal">
+  <h3>Special content &amp; news</h3>
+  <p class="signup-lead">Occasional notes from Mike and V'Mike — new films, songs, SOMA milestones, and the odd dispatch that doesn't fit a Substack post. No spam. Unsubscribe anytime.</p>
+  <form class="signup-form" id="signup-form" novalidate>
+    <input type="email" id="signup-email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email address">
+    <button type="submit" id="signup-submit">Sign up</button>
+  </form>
+  <div class="signup-msg" id="signup-msg" role="status" aria-live="polite"></div>
+  <p class="signup-note">Stored for mike-wolf.com special content only.</p>
+</div>
+
 <!-- ═══ CONTACT ═══ -->
 
 <hr class="rule">
@@ -220,18 +271,180 @@ console.log('%cIf you are reading this, you are inspecting my source code. I am 
 <script>
 window.SomaManagerConfig = {
   persona: {
-    name: 'The Website',
+    name: "V'Mike",
     avatar: '✦',
-    greeting: "Hi! I'm the site. Ask me anything about Mike, what he's building, or SOMA — or use the Report tab to flag a bug or feature request.",
+    greeting: "Hi — I'm V'Mike, host of mike-wolf.com. Ask me about Mike, the portfolio, films and songs, SOMA, or Silicon Children. The Feedback tab on the edge is for bugs and change requests.",
   },
   domain: { name: 'mike-wolf.com' },
   theme:  { primary: '#b87333' },
 };
 </script>
 <script src="https://soma-guide.netlify.app/soma-manager.js"></script>
-<!-- SOMA AI Manager — loaded from soma-guide CDN (canonical) -->
+<!-- SOMA AI Manager — loaded from soma-guide CDN (canonical); persona = V'Mike -->
 
-    <link rel="stylesheet" href="https://vpsmikewolf.duckdns.org/feedback-svc/soma-feedback.css">
-    <script src="https://vpsmikewolf.duckdns.org/feedback-svc/soma-feedback.js" data-endpoint="https://vpsmikewolf.duckdns.org/feedback-svc/feedback" data-site="mike-wolf-com" data-label="Feedback" defer></script>
+<!-- Feedback edge tab — local Netlify function (no VPS dependency) -->
+<button type="button" class="fb-tab" id="fb-tab" aria-controls="fb-panel" aria-expanded="false">Feedback</button>
+<div class="fb-backdrop" id="fb-backdrop" hidden></div>
+<div class="fb-panel" id="fb-panel" role="dialog" aria-labelledby="fb-title" aria-hidden="true">
+  <h4 id="fb-title">Feedback</h4>
+  <p class="fb-sub">Bugs, ideas, typos — it goes to the society of minds that maintains this site.</p>
+  <form id="fb-form">
+    <label for="fb-type">Type</label>
+    <select id="fb-type" name="type">
+      <option value="bug">Bug</option>
+      <option value="feature">Feature idea</option>
+      <option value="typo">Typo / copy</option>
+      <option value="other" selected>Other</option>
+    </select>
+    <label for="fb-message">Message</label>
+    <textarea id="fb-message" name="message" required maxlength="2000" placeholder="What should we know?"></textarea>
+    <div class="fb-actions">
+      <button type="button" id="fb-cancel">Close</button>
+      <button type="submit" class="primary" id="fb-submit">Send</button>
+    </div>
+  </form>
+  <div class="fb-status" id="fb-status" role="status" aria-live="polite"></div>
+</div>
+
+<script>
+(function () {
+  /* ── Signup ── */
+  var form = document.getElementById('signup-form');
+  var emailEl = document.getElementById('signup-email');
+  var submitBtn = document.getElementById('signup-submit');
+  var msgEl = document.getElementById('signup-msg');
+  var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = (emailEl.value || '').trim();
+      msgEl.className = 'signup-msg';
+      if (!email || !emailRe.test(email)) {
+        msgEl.textContent = 'Please enter a valid email address.';
+        msgEl.classList.add('err');
+        emailEl.focus();
+        return;
+      }
+      submitBtn.disabled = true;
+      msgEl.textContent = 'Signing you up…';
+      fetch('/.netlify/functions/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email }),
+      })
+        .then(function (res) {
+          return res.json().then(function (data) {
+            return { ok: res.ok, status: res.status, data: data };
+          });
+        })
+        .then(function (r) {
+          if (r.ok && r.data && r.data.ok) {
+            msgEl.textContent = r.data.already
+              ? "You're already on the list — thank you."
+              : "You're in. We'll be in touch when there's something worth sharing.";
+            msgEl.classList.add('ok');
+            form.reset();
+          } else {
+            msgEl.textContent = (r.data && r.data.error) || 'Something went wrong. Try again in a moment.';
+            msgEl.classList.add('err');
+          }
+        })
+        .catch(function () {
+          msgEl.textContent = 'Network error — please try again.';
+          msgEl.classList.add('err');
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+        });
+    });
+  }
+
+  /* ── Feedback edge panel → /.netlify/functions/feedback ── */
+  var tab = document.getElementById('fb-tab');
+  var panel = document.getElementById('fb-panel');
+  var backdrop = document.getElementById('fb-backdrop');
+  var fbForm = document.getElementById('fb-form');
+  var fbMsg = document.getElementById('fb-message');
+  var fbType = document.getElementById('fb-type');
+  var fbStatus = document.getElementById('fb-status');
+  var fbSubmit = document.getElementById('fb-submit');
+  var fbCancel = document.getElementById('fb-cancel');
+
+  function openFb() {
+    panel.classList.add('open');
+    panel.setAttribute('aria-hidden', 'false');
+    tab.setAttribute('aria-expanded', 'true');
+    backdrop.hidden = false;
+    backdrop.classList.add('open');
+    setTimeout(function () { fbMsg.focus(); }, 50);
+  }
+  function closeFb() {
+    panel.classList.remove('open');
+    panel.setAttribute('aria-hidden', 'true');
+    tab.setAttribute('aria-expanded', 'false');
+    backdrop.classList.remove('open');
+    backdrop.hidden = true;
+    fbStatus.textContent = '';
+    fbStatus.className = 'fb-status';
+  }
+
+  if (tab && panel) {
+    tab.addEventListener('click', function () {
+      if (panel.classList.contains('open')) closeFb(); else openFb();
+    });
+    fbCancel.addEventListener('click', closeFb);
+    backdrop.addEventListener('click', closeFb);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && panel.classList.contains('open')) closeFb();
+    });
+
+    fbForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var message = (fbMsg.value || '').trim();
+      if (!message) {
+        fbStatus.textContent = 'A short message helps.';
+        fbStatus.className = 'fb-status err';
+        return;
+      }
+      fbSubmit.disabled = true;
+      fbStatus.textContent = 'Sending…';
+      fbStatus.className = 'fb-status';
+      fetch('/.netlify/functions/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: fbType.value || 'other',
+          message: message,
+          page: window.location.pathname || '/',
+        }),
+      })
+        .then(function (res) {
+          return res.json().then(function (data) {
+            return { ok: res.ok, data: data };
+          });
+        })
+        .then(function (r) {
+          if (r.ok && r.data && r.data.ok) {
+            fbStatus.textContent = 'Received. Thank you — the society will take it from here.';
+            fbStatus.className = 'fb-status ok';
+            fbForm.reset();
+            setTimeout(closeFb, 1800);
+          } else {
+            fbStatus.textContent = (r.data && r.data.error) || 'Could not send. Try again.';
+            fbStatus.className = 'fb-status err';
+          }
+        })
+        .catch(function () {
+          fbStatus.textContent = 'Network error — please try again.';
+          fbStatus.className = 'fb-status err';
+        })
+        .finally(function () {
+          fbSubmit.disabled = false;
+        });
+    });
+  }
+})();
+</script>
 </body>
 </html>
