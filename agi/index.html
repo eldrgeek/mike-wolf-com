@@ -175,10 +175,16 @@
     <h2>The speakers' rooms</h2>
     <p class="sub">Each one is built from that thinker's own published work. Click a miniature to walk in. These are live pages — what you see is the real thing, rebuilt as the corpus grows.</p>
     <div class="grid" id="rooms"></div>
+    <div class="scrollcue">
+      <a href="#door" aria-label="Scroll down to One door, every room">
+        <span>One door</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v14m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
-<section>
+<section id="door">
   <div class="wrap">
     <h2>One door, every room</h2>
     <p class="sub">Sign in once and every room above opens — no second signup, no second password, no per-site account. That's not a convenience feature; it's the thing we're demonstrating. One identity across every property.</p>
@@ -186,22 +192,34 @@
       <button type="button" id="openDoor">Open the door</button>
       <div class="signed" id="signed">
         <span class="dot"></span>
-        <span class="who">Signed in as <b id="who"></b> — every room is open.</span>
+        <span class="who">Signed in as <b id="who"></b> — every room is open.<span id="adminHint" style="display:none"> As admin: hit <b>✎ Edit page</b> (bottom-left), tweak any text, then <b>Lock this down</b>.</span></span>
         <button class="linkbtn" id="out" type="button">Sign out</button>
       </div>
+    </div>
+    <div class="scrollcue">
+      <a href="#props" aria-label="Scroll down to other things we've built">
+        <span>More we've built</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v14m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </div>
 </section>
 
-<section>
+<section id="props">
   <div class="wrap">
     <h2>Other things we've built</h2>
     <p class="sub">Same identity, same door. A production organization of humans and AIs, working in the open.</p>
-    <div class="grid" id="props"></div>
+    <div class="grid" id="propsGrid"></div>
+    <div class="scrollcue">
+      <a href="#compute" aria-label="Scroll down to who pays for the thinking">
+        <span>Who pays</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v14m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
-<section>
+<section id="compute">
   <div class="wrap">
     <h2>Who pays for the thinking</h2>
     <p class="sub">Every answer in every room costs someone real money. Pretending otherwise is how these things quietly die, so here are the actual numbers.</p>
@@ -248,10 +266,16 @@
     </div>
 
     <p class="sub" style="margin-top:26px">Want one of the last two? <a href="mailto:mw@mike-wolf.com?subject=AGI-26%20%E2%80%94%20compute" style="color:var(--accent-soft)">Tell me which</a> — that's what decides which gets built first.</p>
+    <div class="scrollcue">
+      <a href="#floors" aria-label="Scroll down to the floors">
+        <span>The floors</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v14m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
-<section>
+<section id="floors">
   <div class="wrap">
     <h2>The floors</h2>
     <p class="sub">Standing commitments, not aspirations. If any of these ever stops being true, the thing is broken and we'll say so.</p>
@@ -370,7 +394,7 @@
   }
 
   render($('rooms'), ROOMS);
-  render($('props'), PROPS);
+  render($('propsGrid'), PROPS);
 
   // Lazy-load the live miniatures.
   if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-data: reduce)').matches){
@@ -444,8 +468,27 @@
     var admin = on && ADMINS.indexOf((session.user.email || '').toLowerCase()) !== -1;
     window.SOMA_IS_ADMIN = admin;
     window.__somaAccessToken = on ? session.access_token : null;
-    if (admin){ try { window.dispatchEvent(new Event('soma-admin:activated')); } catch(_){} }
+    document.getElementById('adminHint').style.display = admin ? '' : 'none';
+    if (on) console.log('[agi] soma-edit gate:', session.user.email, admin ? 'ADMIN' : 'not admin');
+    if (admin) armEditor();
     paintLinks();
+  }
+
+  /* The CDN script and the auth session race each other on a slow connection —
+     keep signalling until soma-edit's bar is actually mounted, then honor ?edit /
+     #edit by jumping straight into edit mode. */
+  var _editArm = null;
+  function armEditor(){
+    if (_editArm) return;
+    var tries = 0;
+    _editArm = setInterval(function(){
+      if (!window.SOMA_IS_ADMIN || ++tries > 30){ clearInterval(_editArm); _editArm = null; return; }
+      try { window.dispatchEvent(new Event('soma-admin:activated')); } catch(_){}
+      if (window.SomaEdit && window.SomaEdit.isActive()){
+        clearInterval(_editArm); _editArm = null;
+        if (/[?#&]edit\b/.test(location.search + location.hash)) window.SomaEdit.enter();
+      }
+    }, 400);
   }
 
   function say(text, cls){
