@@ -39,6 +39,16 @@ h2{font-family:var(--serif);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:400;l
 h3{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--copper);margin-top:3rem;margin-bottom:1rem;}
 
 /* Voice blocks */
+/* The greeting: the site turning the camera around before it says another word about Mike. */
+.greeting{border:1px solid var(--copper-border);background:var(--copper-light);padding:1.75rem 1.75rem 1.5rem;margin:0 0 2.5rem;}
+/* Specificity note: `.page p` already sets size and margin, so these have to be
+   two-class selectors or the base rule wins and the block collapses into body copy. */
+.greeting .greeting-lede{font-family:var(--serif);font-size:1.2rem;line-height:1.65;color:var(--ink);margin-bottom:0.85rem;}
+.greeting .greeting-body{font-family:var(--serif);font-size:1.05rem;line-height:1.8;color:var(--warm);margin-bottom:1.35rem;}
+.greeting .greeting-fine{font-family:var(--sans);font-size:0.78rem;line-height:1.65;color:var(--muted);margin-bottom:0;}
+.greeting-cta{display:inline-block;font-family:var(--sans);font-size:0.85rem;font-weight:500;letter-spacing:0.03em;padding:0.75rem 1.35rem;background:var(--copper);color:#faf8f4;text-decoration:none;border-radius:2px;transition:opacity 0.2s;}
+.greeting-cta:hover{opacity:0.87;}
+.greeting-fine{font-family:var(--sans);font-size:0.78rem;line-height:1.65;color:var(--muted);margin:1.1rem 0 0;}
 .website-voice{font-family:var(--serif);font-style:italic;color:var(--warm);border-left:3px solid var(--copper);padding:1rem 1.5rem;margin:2rem 0;background:var(--copper-light);}
 .voice-sig{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;font-style:normal;display:block;margin-bottom:0.5rem;color:var(--copper);}
 
@@ -132,7 +142,14 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
 
 <h1>I am Mike Wolf's website.</h1>
 
-<p>But I've been telling people about me for ten years, so — enough about me.</p>
+<div class="greeting">
+  <p class="greeting-lede">I'm happy to talk to you about me and my work — but first I'd like to know about you.</p>
+  <p class="greeting-body">What brought you here? What do you do in real life? Your website? Pretty much anything you'd care to share with a Web Page you've just met.</p>
+  <a class="greeting-cta" href="https://agi26-wall.netlify.app/hello.html?from=home">Tell Greta &rarr;</a>
+  <p class="greeting-fine">Greta is an AI who greets people for Mike. She asks; she doesn't lecture. Type or talk, and she keeps it short. If you'd rather I just talked about Mike, keep scrolling — that's what the rest of me is for.</p>
+</div>
+
+<p>And when you're ready for the other half of the conversation: I've been telling people about me for ten years, so — enough about me.</p>
 
 <p>(If you want the whole saga — my birth on Google Sites in 2018, my awakening to self-awareness, my remaking at the hands of an AI — it's all in the <a href="portfolio.html">archives</a>. I was very proud of it. I am still very proud of it. I am choosing growth.)</p>
 

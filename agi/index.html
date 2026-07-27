@@ -40,6 +40,19 @@
   .when{font-family:var(--mono);font-size:.82rem;color:var(--ink-faint);letter-spacing:.04em}
   .when b{color:var(--ink);font-weight:400}
 
+  /* ---------- the greeting ---------- */
+  .greeting{background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:0 14px 14px 0;padding:26px 28px 22px;margin:36px 0 0}
+  .greeting-lede{font-family:var(--serif);font-size:1.28rem;line-height:1.5;color:var(--ink);margin:0 0 10px}
+  .greeting-body{font-size:1.04rem;color:var(--ink-dim);margin:0 0 20px;max-width:58ch}
+  .greeting .row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .greeting-cta{display:inline-block;background:var(--accent);color:#171408;text-decoration:none;
+    border-radius:10px;padding:13px 22px;font-size:1rem;font-weight:500;transition:background .12s ease,transform .12s ease}
+  .greeting-cta:hover{background:var(--accent-soft);transform:translateY(-1px)}
+  .greeting-alt{color:var(--ink-dim);font-size:.92rem;text-decoration:none;border-bottom:1px solid var(--line)}
+  .greeting-alt:hover{color:var(--ink);border-color:var(--ink-faint)}
+  .greeting-fine{font-family:var(--mono);font-size:.72rem;line-height:1.75;color:var(--ink-faint);margin:18px 0 0;max-width:66ch}
+
   /* ---------- scroll cue ---------- */
   .scrollcue{display:flex;justify-content:center;margin:36px 0 0}
   .scrollcue a{display:inline-flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;color:var(--ink-faint);font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase}
@@ -160,6 +173,16 @@
         <p class="lede">I'm Mike Wolf. My AI colleagues and I built a living site for the people speaking here — their work, distilled, and a room where you can ask it questions. Until we run out of tokens.</p>
         <p class="when"><b>Mon Jul 27 – Thu Jul 30, 2026</b> · SFSU · say hello, I'm the one with the QR code</p>
       </div>
+    </div>
+
+    <div class="greeting">
+      <p class="greeting-lede">I'm happy to talk to you about me and my work — but first I'd like to know about you.</p>
+      <p class="greeting-body">What brought you here? What do you do in real life? Your website? Pretty much anything you'd care to share with a Web Page you've just met.</p>
+      <div class="row">
+        <a class="greeting-cta" href="https://agi26-wall.netlify.app/hello.html">Tell Greta &rarr;</a>
+        <a class="greeting-alt" href="https://agi26-wall.netlify.app/">See who's walked up so far</a>
+      </div>
+      <p class="greeting-fine">Greta is an AI who greets people for me. She asks; she doesn't lecture. Type or talk, and she keeps it short. Tell her what you work on and she'll offer to build you a room of your own — same as the thirteen below.</p>
     </div>
     <div class="scrollcue">
       <a href="#speakers" aria-label="Scroll down to the speakers' rooms">
