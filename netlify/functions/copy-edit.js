@@ -84,7 +84,12 @@ exports.handler = async function (event) {
         'apikey': PUBLISHABLE,
         'Authorization': 'Bearer ' + PUBLISHABLE,
         'Content-Type': 'application/json',
-        'Prefer': 'return=representation',
+        /* No `Prefer: return=representation`. That makes PostgREST do an
+         * INSERT ... RETURNING, which needs the new row to be visible under a
+         * SELECT policy — and this table deliberately has none. The write-only
+         * guarantee is strict enough that the writer can't read its own row
+         * back, so asking for one turns every insert into an RLS violation
+         * (42501, served as 401). Cost the first live edit; worth the property. */
       },
       body: JSON.stringify(row),
     });
@@ -99,7 +104,5 @@ exports.handler = async function (event) {
     return json(502, { error: 'store rejected the edit', status: res.status });
   }
 
-  let id = null;
-  try { id = (JSON.parse(text)[0] || {}).id || null; } catch (_) {}
-  return json(200, { ok: true, id });
+  return json(200, { ok: true });
 };
