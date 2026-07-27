@@ -215,7 +215,7 @@
       <button type="button" id="openDoor">Open the door</button>
       <div class="signed" id="signed">
         <span class="dot"></span>
-        <span class="who">Signed in as <b id="who"></b> — every room is open.<span id="adminHint" style="display:none"> As admin: hit <b>✎ Edit page</b> (bottom-left), tweak any text, then <b>Lock this down</b>.</span></span>
+        <span class="who">Signed in as <b id="who"></b> — every room is open.<span id="adminHint" style="display:none"> As admin: hit <b>✎ Edit page</b> (bottom-left), tweak any text, then <b>Lock this down</b> and <b>Copy changes</b>. No sign-in needed either — <a href="?edit=1">?edit=1</a>.</span></span>
         <button class="linkbtn" id="out" type="button">Sign out</button>
       </div>
     </div>
@@ -638,6 +638,9 @@ window.SomaEditConfig = {
   authHeader: function(){ return window.__somaAccessToken ? 'Bearer ' + window.__somaAccessToken : null; }
 };
 </script>
+<!-- Owner unlock: /agi/?edit=1 turns editing on without a sign-in, ?edit=0 turns it
+     off. Loads before soma-edit.js so isOwner() is answerable when it boots. -->
+<script src="/soma-edit-unlock.js"></script>
 <script src="https://soma-guide.netlify.app/soma-edit.js" defer></script>
 </body>
 </html>

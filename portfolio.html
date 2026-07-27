@@ -19,6 +19,9 @@ window.SomaEditConfig = {
   feedbackLabel: 'Suggest a change',
 };
 </script>
+<!-- Without this, nothing on this page ever sets an editor identity, so
+     soma-edit.js loads and never mounts. /portfolio?edit=1 unlocks it. -->
+<script src="/soma-edit-unlock.js"></script>
 <script src="https://soma-guide.netlify.app/soma-edit.js"></script>
 
 <style>
