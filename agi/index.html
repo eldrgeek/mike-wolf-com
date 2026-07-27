@@ -351,7 +351,10 @@
 
   var CFG = {
     url: 'https://omfwcodoimjmbrhssvfl.supabase.co',
-    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9tZndjb2RvaW1qbWJyaHNzdmZsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2NzEyNjMsImV4cCI6MjA5NjI0NzI2M30.8Oe2JABFB5qN2dIFk-rccl7-F5R4YjqsTrGFAqZCAlE'
+    /* Publishable key. The legacy anon JWT this replaces was DISABLED project-wide
+       on 2026-07-23 during the key rotation, so every auth call from this page had
+       been 401ing — "Open the door" could not have worked for anyone since then. */
+    anonKey: 'sb_publishable_vi2qDWjozUJ5mi9dwirkLA_rj6UaqLf'
   };
 
   // Live rooms only. A 404 room is worse than an absent one at a conference.
@@ -632,7 +635,10 @@
 <script>
 window.SomaEditConfig = {
   siteId: 'mike-wolf-com/agi',
-  endpoint: '/.netlify/functions/feedback',
+  /* Not /feedback: it drops key/oldHTML/newHTML, proxies to the (currently
+     unreachable) VPS, and returns ok:true regardless — so edits reported as
+     filed were being lost. copy-edit stores the full diff and 502s honestly. */
+  endpoint: '/.netlify/functions/copy-edit',
   saveLabel: 'Lock this down',
   isAdmin: function(){ return window.SOMA_IS_ADMIN === true; },
   authHeader: function(){ return window.__somaAccessToken ? 'Bearer ' + window.__somaAccessToken : null; }
