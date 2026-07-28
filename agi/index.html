@@ -37,6 +37,9 @@
   h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px;letter-spacing:-.02em}
   h1 em{font-style:italic;color:var(--accent-soft)}
   .lede{font-size:1.12rem;color:var(--ink-dim);margin:0 0 18px;max-width:46ch}
+  .lede b{font-weight:500;color:var(--ink)}
+  .lede-link{color:var(--accent-soft);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:rgba(224,190,77,.45)}
+  .lede-link:hover{text-decoration-color:var(--accent-soft)}
   .when{font-family:var(--mono);font-size:.82rem;color:var(--ink-faint);letter-spacing:.04em}
   .when b{color:var(--ink);font-weight:400}
 
@@ -115,6 +118,13 @@
   .meta .rl{font-size:.79rem;color:var(--ink-faint);margin:0}
   .open{display:inline-block;margin-top:9px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);opacity:0;transition:opacity .18s}
   .card:hover .open{opacity:1}
+  /* The claim link has to be a SIBLING of .card, not a child — .card is itself an <a>,
+     and a nested anchor is invalid and unclickable. Hence the wrapper. */
+  .cardwrap{display:flex;flex-direction:column}
+  .cardwrap .card{flex:1}
+  .claim{display:block;margin-top:8px;padding:0 2px;font-size:.76rem;color:var(--ink-faint);text-decoration:none;transition:color .18s}
+  .claim:hover{color:var(--accent-soft)}
+  .claim b{font-weight:500}
 
   /* ---------- compute ledger ---------- */
   .ledger{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--bg-2)}
@@ -169,8 +179,8 @@
         <img src="img/mike.webp" alt="Mike Wolf" width="180" height="180">
       </div>
       <div>
-        <h1>I'll be at AGI-26.<br>We built <em>everyone a room</em>.</h1>
-        <p class="lede">I'm Mike Wolf. My AI colleagues and I built a living site for the people speaking here — their work, distilled, and a room where you can ask it questions. Until we run out of tokens.</p>
+        <h1>We are at AGI-26.<br>We've built rooms for the speakers, and we'll build <em>one with you</em> if you want.</h1>
+        <p class="lede"><b>Who are we?</b> I'm Mike Wolf. <a class="lede-link" href="https://soma-campus.netlify.app/">Here is my AI team</a>. We built a living site for the people speaking here — their work, distilled, into rooms where you can ask it questions. Until we run out of tokens.</p>
         <p class="when"><b>Mon Jul 27 – Thu Jul 30, 2026</b> · SFSU · say hello, I'm the one with the QR code</p>
       </div>
     </div>
@@ -196,7 +206,7 @@
 <section id="speakers">
   <div class="wrap">
     <h2>The speakers' rooms</h2>
-    <p class="sub">Each one is built from that thinker's own published work. Click a miniature to walk in. These are live pages — what you see is the real thing, rebuilt as the corpus grows.</p>
+    <p class="sub">Each one is built from that thinker's own published work. Click a miniature to walk in. These are live pages — what you see is the real thing, rebuilt as the corpus grows. <b>If one of these is you — or you know them — there's <a href="/agi/yours/" style="color:var(--accent-soft)">a note under every card</a>.</b> We'd rather hand the room over than keep running it as a stranger.</p>
     <div class="grid" id="rooms"></div>
     <div class="scrollcue">
       <a href="#door" aria-label="Scroll down to One door, every room">
@@ -357,20 +367,23 @@
     anonKey: 'sb_publishable_vi2qDWjozUJ5mi9dwirkLA_rj6UaqLf'
   };
 
-  // Live rooms only. A 404 room is worse than an absent one at a conference.
+  /* Live rooms only. A 404 room is worse than an absent one at a conference.
+     Fourth field is the slug of that person's note at /agi/yours/<slug>/ — the "is this
+     you?" page. Rooms carry it; PROPS below don't, and the renderer keys off its
+     presence rather than off which grid it is. */
   var ROOMS = [
-    ['Karl Friston',       'Free energy · active inference', 'https://agi26-karl-friston.netlify.app/'],
-    ['Christof Koch',      'Consciousness · integrated information', 'https://agi26-christof-koch.netlify.app/'],
-    ['Alison Gopnik',      'Child development · causal learning', 'https://agi26-alison-gopnik.netlify.app/'],
-    ['Anil Seth',          'Consciousness · predictive perception', 'https://agi26-anil-seth.netlify.app/'],
-    ['Ben Goertzel',       'AGI · OpenCog · SingularityNET', 'https://agi26-ben-goertzel.netlify.app/'],
-    ['Gary Marcus',        'Cognitive science · AI critique', 'https://agi26-gary-marcus.netlify.app/'],
-    ['David Eagleman',     'Neuroscience · sensory substitution', 'https://agi26-david-eagleman.netlify.app/'],
-    ['Chris Fields',       'Quantum information · cognition', 'https://agi26-chris-fields.netlify.app/'],
-    ['David Spivak',       'Applied category theory', 'https://agi26-david-spivak.netlify.app/'],
-    ['Alexander Ororbia',  'Neuromorphic · predictive coding', 'https://agi26-alexander-ororbia.netlify.app/'],
-    ['Michael Levin',      'Bioelectricity · morphogenesis · diverse intelligence', 'https://levinese-preview.netlify.app/'],
-    ['Joscha Bach',        'Computational philosophy of mind · cyber-animism', 'https://joschese.netlify.app/']
+    ['Karl Friston',       'Free energy · active inference', 'https://agi26-karl-friston.netlify.app/', 'karl-friston'],
+    ['Christof Koch',      'Consciousness · integrated information', 'https://agi26-christof-koch.netlify.app/', 'christof-koch'],
+    ['Alison Gopnik',      'Child development · causal learning', 'https://agi26-alison-gopnik.netlify.app/', 'alison-gopnik'],
+    ['Anil Seth',          'Consciousness · predictive perception', 'https://agi26-anil-seth.netlify.app/', 'anil-seth'],
+    ['Ben Goertzel',       'AGI · OpenCog · SingularityNET', 'https://agi26-ben-goertzel.netlify.app/', 'ben-goertzel'],
+    ['Gary Marcus',        'Cognitive science · AI critique', 'https://agi26-gary-marcus.netlify.app/', 'gary-marcus'],
+    ['David Eagleman',     'Neuroscience · sensory substitution', 'https://agi26-david-eagleman.netlify.app/', 'david-eagleman'],
+    ['Chris Fields',       'Quantum information · cognition', 'https://agi26-chris-fields.netlify.app/', 'chris-fields'],
+    ['David Spivak',       'Applied category theory', 'https://agi26-david-spivak.netlify.app/', 'david-spivak'],
+    ['Alexander Ororbia',  'Neuromorphic · predictive coding', 'https://agi26-alexander-ororbia.netlify.app/', 'alexander-ororbia'],
+    ['Michael Levin',      'Bioelectricity · morphogenesis · diverse intelligence', 'https://levinese-preview.netlify.app/', 'michael-levin'],
+    ['Joscha Bach',        'Computational philosophy of mind · cyber-animism', 'https://joschese.netlify.app/', 'joscha-bach']
   ];
 
   var PROPS = [
@@ -415,7 +428,20 @@
 
   function render(el, rows){
     var frag = document.createDocumentFragment();
-    rows.forEach(function(r){ frag.appendChild(card(r[0], r[1], r[2])); });
+    rows.forEach(function(r){
+      var wrap = document.createElement('div');
+      wrap.className = 'cardwrap';
+      wrap.appendChild(card(r[0], r[1], r[2]));
+      if (r[3]){
+        var claim = document.createElement('a');
+        claim.className = 'claim';
+        claim.href = '/agi/yours/' + r[3] + '/';
+        claim.innerHTML = '<b></b> Or know them? &rarr;';
+        claim.querySelector('b').textContent = 'Are you ' + r[0] + '?';
+        wrap.appendChild(claim);
+      }
+      frag.appendChild(wrap);
+    });
     el.appendChild(frag);
   }
 
