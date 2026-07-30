@@ -56,6 +56,19 @@
   .greeting-alt:hover{color:var(--ink);border-color:var(--ink-faint)}
   .greeting-fine{font-family:var(--mono);font-size:.72rem;line-height:1.75;color:var(--ink-faint);margin:18px 0 0;max-width:66ch}
 
+  /* ---------- the AI door ---------- */
+  /* SOMA-APP-STANDARD §19: a second, honestly-labeled path for visitors who
+     already have a trusted AI — copy a prompt, hand it over. */
+  .ai-door{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:18px 0 0}
+  .ai-door-toggle{display:inline-flex;align-items:center;gap:8px;background:none;border:0;padding:0;color:var(--accent-soft);font-family:var(--sans);font-size:.94rem;font-weight:500;cursor:pointer;text-align:left}
+  .ai-door-toggle:hover{color:var(--accent)}
+  .ai-door-panel{margin-top:14px}
+  .ai-door-sub{font-size:.86rem;color:var(--ink-dim);line-height:1.6;margin:0 0 10px;max-width:58ch}
+  .ai-door-prompt{white-space:pre-wrap;font-family:var(--mono);font-size:.74rem;line-height:1.65;color:var(--ink-dim);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:14px;margin:0 0 10px}
+  .ai-door-copy{background:var(--accent);color:#171408;border:0;border-radius:8px;padding:9px 16px;font-family:var(--sans);font-weight:600;font-size:.85rem;cursor:pointer}
+  .ai-door-copy:hover{background:var(--accent-soft)}
+  .ai-door-copied{display:inline-block;margin-left:10px;font-size:.8rem;color:var(--live)}
+
   /* ---------- scroll cue ---------- */
   .scrollcue{display:flex;justify-content:center;margin:36px 0 0}
   .scrollcue a{display:inline-flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;color:var(--ink-faint);font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase}
@@ -194,6 +207,17 @@
       </div>
       <p class="greeting-fine">Greta is an AI who greets people for me. She asks; she doesn't lecture. Type or talk, and she keeps it short. Tell her what you work on and she'll offer to build you a room of your own — same as the thirteen below.</p>
     </div>
+
+    <div class="ai-door" data-app-name="Mike Wolf at AGI-26" data-pitch="A living room for every AGI-26 speaker — sign in once, every door opens." data-host-human="Mike Wolf" data-host-ai="Greta, the AI who greets people here" data-url="https://mike-wolf.com/agi/">
+      <button class="ai-door-toggle" type="button" aria-expanded="false">Have an AI you trust? Bring it here &rarr;</button>
+      <div class="ai-door-panel" hidden>
+        <p class="ai-door-sub">Copy this to whatever AI you already use — Claude, GPT, Gemini, anything — and see what it actually thinks before you read another word of mine.</p>
+        <pre class="ai-door-prompt"></pre>
+        <button class="ai-door-copy" type="button">Copy prompt</button>
+        <span class="ai-door-copied" aria-live="polite"></span>
+      </div>
+    </div>
+
     <div class="scrollcue">
       <a href="#speakers" aria-label="Scroll down to the speakers' rooms">
         <span>The rooms</span>
@@ -674,5 +698,6 @@ window.SomaEditConfig = {
      off. Loads before soma-edit.js so isOwner() is answerable when it boots. -->
 <script src="/soma-edit-unlock.js"></script>
 <script src="https://soma-guide.netlify.app/soma-edit.js" defer></script>
+<script src="/soma-ai-door.js" defer></script>
 </body>
 </html>

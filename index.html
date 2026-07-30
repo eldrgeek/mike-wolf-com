@@ -49,6 +49,18 @@ h3{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.25em;text-transfor
 .greeting-cta{display:inline-block;font-family:var(--sans);font-size:0.85rem;font-weight:500;letter-spacing:0.03em;padding:0.75rem 1.35rem;background:var(--copper);color:#faf8f4;text-decoration:none;border-radius:2px;transition:opacity 0.2s;}
 .greeting-cta:hover{opacity:0.87;}
 .greeting-fine{font-family:var(--sans);font-size:0.78rem;line-height:1.65;color:var(--muted);margin:1.1rem 0 0;}
+
+/* The AI door — SOMA-APP-STANDARD §19. A second, honestly-labeled path for
+   visitors who already have a trusted AI: copy a prompt, hand it over. */
+.ai-door{border:1px solid var(--teal-border);background:var(--teal-light);padding:1.25rem 1.5rem;margin:0 0 2.5rem;}
+.ai-door-toggle{display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--sans);font-size:0.85rem;font-weight:500;color:var(--teal);background:none;border:none;padding:0;cursor:pointer;text-align:left;}
+.ai-door-toggle:hover{opacity:0.8;}
+.ai-door-panel{margin-top:1rem;}
+.ai-door-sub{font-family:var(--sans);font-size:0.8rem;color:var(--muted);line-height:1.55;margin-bottom:0.75rem;}
+.ai-door-prompt{white-space:pre-wrap;font-family:var(--mono);font-size:0.72rem;line-height:1.65;color:var(--warm);background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:1rem;margin:0 0 0.75rem;}
+.ai-door-copy{font-family:var(--sans);font-size:0.8rem;font-weight:500;padding:0.55rem 1rem;border:1px solid var(--teal);background:var(--teal);color:#fff;border-radius:2px;cursor:pointer;}
+.ai-door-copy:hover{opacity:0.87;}
+.ai-door-copied{display:inline-block;margin-left:0.6rem;font-family:var(--sans);font-size:0.78rem;color:var(--teal);}
 .website-voice{font-family:var(--serif);font-style:italic;color:var(--warm);border-left:3px solid var(--copper);padding:1rem 1.5rem;margin:2rem 0;background:var(--copper-light);}
 .voice-sig{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;font-style:normal;display:block;margin-bottom:0.5rem;color:var(--copper);}
 
@@ -147,6 +159,16 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
   <p class="greeting-body">What brought you here? What do you do in real life? Your website? Pretty much anything you'd care to share with a Web Page you've just met.</p>
   <a class="greeting-cta" href="https://agi26-wall.netlify.app/hello.html?from=home">Tell Greta &rarr;</a>
   <p class="greeting-fine">Greta is an AI who greets people for Mike. She asks; she doesn't lecture. Type or talk, and she keeps it short. If you'd rather I just talked about Mike, keep scrolling — that's what the rest of me is for.</p>
+</div>
+
+<div class="ai-door" data-app-name="Mike Wolf's website" data-pitch="Enough about me — here's what Mike Wolf has actually been doing: a society of minds, apps built with friends, a movie, a musical, and a website whose change requests are handled by AIs." data-host-human="Mike Wolf" data-host-ai="Claude, his AI collaborator" data-url="https://mike-wolf.com/">
+  <button class="ai-door-toggle" type="button" aria-expanded="false">Have an AI you trust? Bring it here &rarr;</button>
+  <div class="ai-door-panel" hidden>
+    <p class="ai-door-sub">Copy this to whatever AI you already use — Claude, GPT, Gemini, anything — and see what it actually thinks, before you take my word for it.</p>
+    <pre class="ai-door-prompt"></pre>
+    <button class="ai-door-copy" type="button">Copy prompt</button>
+    <span class="ai-door-copied" aria-live="polite"></span>
+  </div>
 </div>
 
 <p>And when you're ready for the other half of the conversation: I've been telling people about me for ten years, so — enough about me.</p>
@@ -306,6 +328,7 @@ window.SomaManagerConfig = {
 };
 </script>
 <script src="https://soma-guide.netlify.app/soma-manager.js"></script>
+<script src="/soma-ai-door.js" defer></script>
 <!-- SOMA AI Manager — loaded from soma-guide CDN (canonical); persona = V'Mike -->
 
 <!-- Feedback edge tab — local Netlify function (no VPS dependency) -->
