@@ -498,9 +498,20 @@ window.SomaManagerConfig = {
 
 <!-- SOMA App Standard §8 — feedback chip. songs.html and portfolio.html have
      carried this for a while; the front door did not, which is the page most
-     likely to get a "this sentence is wrong" reaction. -->
-<script src="https://vpsmikewolf.duckdns.org/feedback-svc/soma-feedback.js"
-        data-endpoint="https://vpsmikewolf.duckdns.org/feedback-svc/feedback"
+     likely to get a "this sentence is wrong" reaction.
+
+     2026-08-10 — same-origin migration (SOMA/standards/soma-feedback-proxy).
+     Script, stylesheet and submission endpoint were all pointed at one shared
+     host; when that host's cert expired on 2026-07-22 the chip vanished from
+     every site in the estate at once and nothing reported it. Now: assets are
+     served from here, and submissions go through /.netlify/functions/soma-
+     feedback, which forwards to the shared service (SOMA_FEEDBACK_ENDPOINT).
+     A shared-host outage now costs this one feature on this one site, loudly.
+     Also adds the stylesheet this page never had — the chip has been mounting
+     UNSTYLED on the front door since it was added. -->
+<link rel="stylesheet" href="/vendor/soma-feedback/soma-feedback.css">
+<script src="/vendor/soma-feedback/soma-feedback.js"
+        data-endpoint="/.netlify/functions/soma-feedback"
         data-site="mike-wolf-com" defer></script>
 
 <!--
