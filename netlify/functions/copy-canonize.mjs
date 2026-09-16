@@ -1,9 +1,11 @@
 /* copy-canonize — SOMA §17 Tier 1 publish for mike-wolf.com.
  *
- * Sibling of mike-wolf-library/netlify/functions/copy-canonize.mjs. The client
- * engine (js/live-edit.js) is byte-identical between the two sites; this file
- * is the half that is genuinely per-site, because only the site knows which
- * file on disk holds a given sentence.
+ * Sibling of mike-wolf-library/netlify/functions/copy-canonize.mjs,
+ * silicon-children-site/netlify/functions/copy-canonize.mjs and
+ * agi-2026/hub-public-functions/copy-canonize.mjs. The client engine
+ * (js/live-edit.js) is byte-identical across those sites; this file is the half
+ * that is genuinely per-site, because only the site knows which file on disk
+ * holds a given sentence.
  *
  * mike-wolf.com is plain static HTML, so this is the EASY case: the page IS
  * the source. One layer, one file, one literal string swap, one commit —
@@ -19,6 +21,14 @@
  * site_copy_edits. Two editors on one page would fight over the same nodes.
  * The standard's adoption policy is explicit that §17 is not a retrofit sweep
  * — those pages adopt this on their next substantial rebuild.
+ *
+ * 2026-09-16 (Mike Wolf's estate; Claude Opus 5, CCc): carries the four
+ * publish-function fixes in SOMA/standards/soma-live-edit/ADOPT.md §5d, ported
+ * from the minds-aligned.org function. Only whole, visible text runs match; an
+ * HTML entity in the source matches the character the DOM shows; every read
+ * and the commit use one base sha, and the ref update is not forced; a retry
+ * that finds the source already saying the new words retires the row. Trap 5
+ * (Netlify base directory) does not apply: this site builds from the repo root.
  */
 
 const APP = 'mike-wolf-com';
@@ -44,26 +54,104 @@ const json = (status, body) =>
     headers: { 'content-type': 'application/json', 'cache-control': 'no-store' },
   });
 
-/* Whitespace-flexible literal match: the DOM collapses runs of whitespace and
- * the HTML source wraps sentences across lines. Exact-byte matching would fail
- * on every wrapped paragraph, which is most of them. */
-function flexible(literal) {
-  const escaped = literal.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return new RegExp(escaped.replace(/\s+/g, '\\s+'), 'g');
+// Either spelling of a character is the same sentence to a reader. Named
+// entities for the characters these pages actually spell that way; any
+// non-ASCII character also matches its numeric forms.
+const ENTITY_ALTS = {
+  '—': ['&mdash;'],
+  '–': ['&ndash;'],
+  '’': ['&rsquo;'],
+  '‘': ['&lsquo;'],
+  '“': ['&ldquo;'],
+  '”': ['&rdquo;'],
+  '…': ['&hellip;'],
+  '→': ['&rarr;'],
+  '←': ['&larr;'],
+  'á': ['&aacute;'],
+  'é': ['&eacute;'],
+  '©': ['&copy;'],
+  '&': ['&amp;', '&#38;'],
+  '<': ['&lt;', '&#60;'],
+  '>': ['&gt;', '&#62;'],
+  '"': ['&quot;', '&#34;'],
+  "'": ['&apos;', '&#39;'],
+};
+const reEscape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+function charPattern(ch) {
+  const alts = [...(ENTITY_ALTS[ch] || [])].map(reEscape);
+  const cp = ch.codePointAt(0);
+  if (cp > 127) {
+    const hex = cp.toString(16).replace(/[a-f]/g, (d) => `[${d}${d.toUpperCase()}]`);
+    alts.push(`&#0*${cp};`, `&#[xX]0*${hex};`);
+  }
+  return alts.length ? `(?:${[reEscape(ch), ...alts].join('|')})` : reEscape(ch);
 }
 
-function patch(text, originalText, newText, occurrence) {
-  const hits = [...text.matchAll(flexible(originalText))];
+/* Whitespace-flexible, entity-tolerant literal match. The DOM collapses runs
+ * of whitespace and the source wraps sentences across lines, so exact-byte
+ * matching would fail on every wrapped paragraph. */
+export function flexible(literal) {
+  let src = '';
+  let inSpace = false;
+  for (const ch of literal) {
+    if (/\s/.test(ch)) {
+      if (!inSpace) src += '(?:\\s|&nbsp;)+';
+      inSpace = true;
+      continue;
+    }
+    inSpace = false;
+    src += charPattern(ch);
+  }
+  return new RegExp(src, 'g');
+}
+
+// Plain text written into HTML: no tags.
+const htmlText = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+/* Regions of a source file a visitor never reads as text: <head> (the engine only
+ * walks <body>), <script>, <style> and <title> bodies, comments, and the inside
+ * of tags (attributes, meta descriptions). A sentence that only matches in one of
+ * these is not the sentence the admin clicked, so those hits are dropped. */
+function hiddenRanges(text) {
+  const ranges = [];
+  for (const re of [/<head\b[^>]*>[\s\S]*?<\/head\s*>/gi, /<(script|style|title)\b[^>]*>[\s\S]*?<\/\1\s*>/gi,
+                    /<!--[\s\S]*?-->/g, /<[a-zA-Z\/!][^>]*>/g]) {
+    for (const m of text.matchAll(re)) ranges.push([m.index, m.index + m[0].length]);
+  }
+  return ranges;
+}
+/* The engine's original_text is one WHOLE text node, so a hit must also be a
+ * whole run of text in the source: markup on both sides, whitespace allowed.
+ * Otherwise a short heading would match inside a longer sentence. */
+function wholeText(text, h) {
+  const before = text.slice(Math.max(0, h.index - 200), h.index).replace(/(?:\s|&nbsp;)+$/, '');
+  const after = text.slice(h.index + h[0].length, h.index + h[0].length + 200).replace(/^(?:\s|&nbsp;)+/, '');
+  const okBefore = before === '' || />$/.test(before);
+  const okAfter = after === '' || /^</.test(after);
+  return okBefore && okAfter;
+}
+export const visibleHits = (text, re) => {
+  const ranges = hiddenRanges(text);
+  return [...text.matchAll(re)].filter((h) =>
+    !ranges.some(([a, b]) => h.index >= a && h.index < b) && wholeText(text, h));
+};
+
+export function patch(text, originalText, newText, occurrence) {
+  const hits = visibleHits(text, flexible(originalText));
   if (hits.length === 0) {
     // Idempotent: already saying the new thing is "done", not "failed".
-    const already = [...text.matchAll(flexible(newText))].length > 0;
+    const already = visibleHits(text, flexible(newText)).length > 0;
     return { changed: false, text, reason: already ? 'already-applied' : 'no-match' };
   }
   let hit;
   if (hits.length === 1) hit = hits[0];
   else if (occurrence < hits.length) hit = hits[occurrence];
   else return { changed: false, text, reason: `ambiguous:${hits.length}-matches` };
-  return { changed: true, text: text.slice(0, hit.index) + newText + text.slice(hit.index + hit[0].length) };
+  return {
+    changed: true,
+    text: text.slice(0, hit.index) + htmlText(newText) + text.slice(hit.index + hit[0].length),
+  };
 }
 
 async function gh(token, path, init = {}) {
@@ -81,9 +169,12 @@ async function gh(token, path, init = {}) {
   return body ? JSON.parse(body) : null;
 }
 
-async function readFile(token, path) {
+// Read at a COMMIT sha, never at the branch name: right after a commit, a read by
+// branch name can return the previous version, and a patch built on that would
+// silently undo the edit before it.
+async function readFile(token, path, sha) {
   try {
-    const r = await gh(token, `/repos/${REPO}/contents/${encodeURI(path)}?ref=${BRANCH}`);
+    const r = await gh(token, `/repos/${REPO}/contents/${encodeURI(path)}?ref=${sha}`);
     return Buffer.from(r.content, 'base64').toString('utf8');
   } catch (e) {
     if (String(e.message).includes('-> 404')) return null;
@@ -128,13 +219,17 @@ export default async (req) => {
   const token = process.env.GITHUB_TOKEN;
   if (!token) return json(500, { ok: false, error: 'GITHUB_TOKEN not configured' });
 
+  // One base commit for the whole operation: every read, the new tree and the
+  // commit's parent all come from it, and the ref update below is not forced.
+  const baseSha = (await gh(token, `/repos/${REPO}/git/ref/heads/${BRANCH}`)).object.sha;
+
   const preferred = ROUTE_FILES[row.route];
   const candidates = preferred ? [preferred, ...ALL_FILES.filter((f) => f !== preferred)] : ALL_FILES;
 
   const changes = [];
   const skipped = [];
   for (const path of candidates) {
-    const text = await readFile(token, path);
+    const text = await readFile(token, path, baseSha);
     if (text === null) { skipped.push(`${path}:absent`); continue; }
     const r = patch(text, row.original_text, row.new_text, row.occurrence || 0);
     if (!r.changed) { skipped.push(`${path}:${r.reason}`); continue; }
@@ -144,8 +239,6 @@ export default async (req) => {
 
   let sha = null;
   if (changes.length) {
-    const ref = await gh(token, `/repos/${REPO}/git/ref/heads/${BRANCH}`);
-    const baseSha = ref.object.sha;
     const baseCommit = await gh(token, `/repos/${REPO}/git/commits/${baseSha}`);
     const tree = [];
     for (const c of changes) {
@@ -169,11 +262,25 @@ export default async (req) => {
         tree: newTree.sha, parents: [baseSha],
       }),
     });
-    await gh(token, `/repos/${REPO}/git/refs/heads/${BRANCH}`, {
-      method: 'PATCH', body: JSON.stringify({ sha: commit.sha }),
-    });
+    try {
+      await gh(token, `/repos/${REPO}/git/refs/heads/${BRANCH}`, {
+        method: 'PATCH', body: JSON.stringify({ sha: commit.sha, force: false }),
+      });
+    } catch (e) {
+      // Someone else moved the branch between our read and our write. Nothing
+      // was published; the row stays a draft, and saying so beats clobbering.
+      if (String(e.message).includes('-> 422')) {
+        return json(409, { ok: false, error: 'the site changed while publishing — publish again' });
+      }
+      throw e;
+    }
     sha = commit.sha;
   }
+
+  // A retry after a lost response finds the source already saying the new
+  // words. That is a source that has caught up (read back, not assumed), so it
+  // retires the row like a fresh commit would.
+  const caughtUp = !sha && skipped.find((s) => s.endsWith(':already-applied'));
 
   // The page IS the source here, so once the commit lands the source has
   // genuinely caught up — this is the one place a row can honestly go straight
@@ -182,16 +289,16 @@ export default async (req) => {
     method: 'PATCH',
     headers: { prefer: 'return=minimal' },
     body: JSON.stringify(
-      sha
+      sha || caughtUp
         ? { status: 'retired', canonical_at: new Date().toISOString(),
-            retired_at: new Date().toISOString(), note: `commit:${sha}` }
+            retired_at: new Date().toISOString(), note: sha ? `commit:${sha}` : caughtUp }
         : { status: 'canonical', canonical_at: new Date().toISOString(),
             note: `pending:${skipped.join(', ')}` }
     ),
   });
 
   return json(200, {
-    ok: true, committed: Boolean(sha), sha,
+    ok: true, committed: Boolean(sha), sha, alreadyApplied: Boolean(caughtUp),
     files: changes.map((c) => c.path), skipped,
     reason: changes.length ? null : (skipped.join(', ') || 'no candidate files'),
   });
