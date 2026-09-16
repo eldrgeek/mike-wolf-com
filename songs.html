@@ -180,7 +180,7 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 1.5rem;text-align:center;
   <div class="entry-tags">
     <span class="tag tag-form">Poem</span>
   </div>
-  <div class="lyrics"><span class="lyrics-label">Lyrics</span>Please, please be my Valentine.
+  <div class="lyrics" data-no-edit><span class="lyrics-label">Lyrics</span>Please, please be my Valentine.
 And let me love you all the time
 And listen to you as you whine
 About the things that cross your mind
@@ -286,7 +286,7 @@ Why I love you</div>
     <span class="tag tag-form">Poem</span>
   </div>
   <p class="context">Photographed in Pages. Appeared in the middle of the night.</p>
-  <div class="lyrics"><span class="lyrics-label">Lyrics</span>I'll follow your lead
+  <div class="lyrics" data-no-edit><span class="lyrics-label">Lyrics</span>I'll follow your lead
 I'll let you set the speed
 I don't need to know
 You set the pace
@@ -319,7 +319,7 @@ Let love be our guide</div>
     <span class="tag tag-form">Poem</span>
     <span class="tag tag-genre">Work in process</span>
   </div>
-  <div class="lyrics"><span class="lyrics-label">Work in process</span>Whatever I do
+  <div class="lyrics" data-no-edit><span class="lyrics-label">Work in process</span>Whatever I do
 I first share with you
 You're the first one I think of
 The first one to see
@@ -358,7 +358,7 @@ And for me</div>
     <a class="link-btn primary" href="https://suno.com/song/29ba3a5d-3c34-47ec-8d86-99dc48ef1cca" target="_blank" rel="noopener">Listen on Suno</a>
     <a class="link-btn" href="https://claude.ai/share/cd8b6e0e-2fb3-4173-9e56-e7e0259818f6" target="_blank" rel="noopener">Conversation with Claude</a>
   </div>
-  <div class="lyrics"><span class="lyrics-label">Lyrics &mdash; Jan 21 version</span>[Verse 1]
+  <div class="lyrics" data-no-edit><span class="lyrics-label">Lyrics &mdash; Jan 21 version</span>[Verse 1]
 January 27 is coming soon
 As it comes&mdash;and will come&mdash;every year
 And of course that day reminds me of you
@@ -511,7 +511,7 @@ And I hear you say&hellip;go on.
     <span class="tag tag-place">An exchange</span>
   </div>
   <p class="context">Jan sent Mike a poem she'd written November 30, 2025. He wrote back: "Great find!"</p>
-  <div class="lyrics"><span class="lyrics-label">From Jan</span>I'm wondering, if perhaps,
+  <div class="lyrics" data-no-edit><span class="lyrics-label">From Jan</span>I'm wondering, if perhaps,
 There is a way to share my naps.
 Then maybe I could take a snooze,
 And send you something you could use.
@@ -612,7 +612,10 @@ My favorite insomniac.</div>
     appLabel: 'mike-wolf.com',
     stickyKey: K,
     api: '/api/copy-canonize',
-    skip: ['.ai-door-prompt', '.ai-door-copied'],
+    // .lyrics: each block also carries data-no-edit; this covers songs added later.
+    // Lyrics show their line breaks (white-space: pre-line), but the engine saves the
+    // edited text with whitespace collapsed, so a published lyric edit would flatten it.
+    skip: ['.ai-door-prompt', '.ai-door-copied', '.lyrics'],
     userContentMessage: 'Not editable — that text is generated, not site copy.'
   };
 
