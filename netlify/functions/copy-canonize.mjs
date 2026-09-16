@@ -85,7 +85,9 @@ function charPattern(ch) {
     const hex = cp.toString(16).replace(/[a-f]/g, (d) => `[${d}${d.toUpperCase()}]`);
     alts.push(`&#0*${cp};`, `&#[xX]0*${hex};`);
   }
-  return alts.length ? `(?:${[reEscape(ch), ...alts].join('|')})` : reEscape(ch);
+  // Longer spellings first, the raw character last: a text ending in "&" would
+  // otherwise match the "&" of "&amp;", and the whole-text check then rejects it.
+  return alts.length ? `(?:${[...alts, reEscape(ch)].join('|')})` : reEscape(ch);
 }
 
 /* Whitespace-flexible, entity-tolerant literal match. The DOM collapses runs

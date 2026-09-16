@@ -62,6 +62,17 @@ test('trap 2: new words are written as text, never as markup', () => {
   assert.ok(r.text.includes('<h3>A &lt;b&gt; &amp; B</h3>'));
 });
 
+test('trap 2: a text ending in "&" is found where the file spells it "&amp;"', () => {
+  // Found 2026-09-16: the raw "&" was tried before "&amp;", so the match stopped
+  // at the "&" and the whole-text check rejected it. The undo could not land.
+  const edited = patch(index, 'Special content & news', 'Special content &', 0);
+  assert.ok(edited.changed);
+  assert.ok(edited.text.includes('<h3>Special content &amp;</h3>'));
+  const undone = patch(edited.text, 'Special content &', 'Special content & news', 0);
+  assert.ok(undone.changed, undone.reason);
+  assert.equal(hits(undone.text, 'Special content & news').length, 1);
+});
+
 test('trap 4: edit, undo, and a retry of the undo', () => {
   const was = 'December 2025 — March 2026';
   const now = 'December 2025 — March 2026 (test)';
