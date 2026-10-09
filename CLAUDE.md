@@ -21,8 +21,8 @@ last_reviewed: 2026-06-23
   `?edit=1`, sign in as an app admin (`is_app_admin('mike-wolf-com')` — the DB
   is asked, there is no email allow-list), click a sentence, type, Enter.
   **Make canonical** rewrites the string in the HTML file itself via the GitHub
-  API; Netlify redeploys from master and a logged-out visitor reads it from
-  static HTML. The row goes straight to `retired` — here the page *is* the
+  API; within about a minute the VPS sync (below) copies master to the public
+  site and a logged-out visitor reads it from static HTML. The row goes straight to `retired` — here the page *is* the
   source, so it has genuinely caught up.
 - **Two editors live in this repo.** `portfolio.html` and `agi/index.html` still
   run the older `soma-edit.js` from soma-guide (DOM-selector-keyed, files into
@@ -39,7 +39,24 @@ last_reviewed: 2026-06-23
   flag, or an existing SOMA Auth session is present. Measured: 10 requests, 0
   to supabase.co.
 
+**Where the public site is served from (since 2026-09-07): the VPS, not Netlify**
+- `mike-wolf.com` and `www` resolve to the VPS (217.77.6.197). nginx
+  (`/etc/nginx/sites-enabled/mike-wolf-com`) serves static files from
+  `/var/www/mike-wolf-com`, and proxies only `/.netlify/functions/*` and
+  `/api/copy-canonize` to the Netlify project `mike-wolf-com`, which still runs the
+  functions and still deploys on every push (nobody browses it).
+- **Push to master = deploy.** A cron job on the VPS, every minute, fetches master
+  into `/opt/mike-wolf-com-sync/src` and rsyncs it into the web root when the commit
+  changes (measured 2026-10-09: 20–60 s from push to live). Source of the script:
+  `~/Projects/_estate/vps/mike-wolf-com-sync.sh`; proof log
+  `/opt/mike-wolf-com-sync/logs/sync-proof.log`; liveness row
+  `vps.cron.mike-wolf-com-sync`. Do not scp pages to the VPS by hand any more: the
+  next sync overwrites anything that is not in git.
+- `soma-owner.js` exists only on the VPS. It carries the shared SOMA owner-gate
+  secret, so it is gitignored and the pre-push secret gate refuses it; the sync
+  protects it from deletion.
+
 **Gotchas**
-- Pure static — `netlify.toml` has empty build command, `publish = "."`. Edit HTML directly; no build step.
+- Pure static — no build step. Edit HTML directly; the VPS serves the repo files as they are.
 - `soma-manager.js` reads `window.SomaManagerConfig`; endpoints default to `/.netlify/functions/{ask,feedback}` which must exist on the deployed site.
 - `netlify env` on this account cannot set **scoped** env vars ("Upgrade your Netlify account to set specific scopes"); `GITHUB_TOKEN` is set unscoped via the API. `netlify env:set` also has no `--stdin`, so redirect its output and verify by fingerprint only.
