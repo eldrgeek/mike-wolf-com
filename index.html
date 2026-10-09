@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mike Wolf — I Am Mike Wolf's Website</title>
-<meta name="description" content="I am Mike Wolf's website. I've been telling people about me for ten years, so enough about me. Here is what Mike Wolf has actually been doing.">
+<meta name="description" content="I am Mike Wolf's website. Enough about me. Here is what Mike Wolf has actually been doing.">
 <meta property="og:title" content="I Am Mike Wolf's Website">
 <meta property="og:description" content="Enough about me. Here is what Mike Wolf has actually been doing: a society of minds, apps built with friends, a movie, a musical, and a website whose change requests are handled by AIs.">
-<!-- Hello. I am the source code. Version 5. I talk less about myself now. It was time. -->
+<!-- Hello. I am the source code. Version 6. I say less now. It was time. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,500;0,7..72,700;1,7..72,300;1,7..72,400;1,7..72,500&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -16,153 +16,96 @@
 :root{
   --bg:#faf8f4;--surface:#fff;--ink:#1a1a2e;--warm:#3d2c1e;
   --copper:#b87333;--copper-light:rgba(184,115,51,0.06);--copper-border:rgba(184,115,51,0.15);
-  --teal:#2a9d8f;--teal-light:rgba(42,157,143,0.06);--teal-border:rgba(42,157,143,0.15);
+  --teal:#2a9d8f;
   --muted:#6b6b7b;--light:#9b9bab;--rule:rgba(26,26,46,0.08);
   --serif:'Literata',Georgia,serif;--sans:'Outfit',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
 }
 html{scroll-behavior:smooth;}
 body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;}
 
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);height:56px;display:flex;align-items:center;justify-content:center;gap:2.5rem;}
-.nav a{font-size:0.8rem;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:0.03em;transition:color 0.2s;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);height:56px;display:flex;align-items:center;justify-content:center;gap:2.25rem;padding:0 1rem;}
+.nav a{font-size:0.8rem;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:0.03em;transition:color 0.2s;white-space:nowrap;}
 .nav a:hover{color:var(--ink);}
-.nav a.active{color:var(--copper);}
 
-.page{max-width:640px;margin:0 auto;padding:7rem 2rem 4rem;}
+.page{max-width:640px;margin:0 auto;padding:7rem 1.5rem 3rem;}
 .page p{font-family:var(--serif);font-size:1.05rem;color:var(--warm);line-height:1.9;margin-bottom:1.5rem;}
 .page p a{color:var(--teal);text-decoration:underline;text-decoration-color:rgba(42,157,143,0.3);text-underline-offset:3px;}
 .page p a:hover{text-decoration-color:var(--teal);}
 
 h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3rem);font-weight:400;line-height:1.2;margin-bottom:2rem;}
-h1 em{font-style:italic;color:var(--copper);}
 h2{font-family:var(--serif);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:400;line-height:1.3;margin-top:3.5rem;margin-bottom:1.2rem;color:var(--ink);}
-h3{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--copper);margin-top:3rem;margin-bottom:1rem;}
 
-/* Voice blocks */
-/* The greeting: the site turning the camera around before it says another word about Mike. */
-.greeting{border:1px solid var(--copper-border);background:var(--copper-light);padding:1.75rem 1.75rem 1.5rem;margin:0 0 2.5rem;}
-/* Specificity note: `.page p` already sets size and margin, so these have to be
-   two-class selectors or the base rule wins and the block collapses into body copy. */
-.greeting .greeting-lede{font-family:var(--serif);font-size:1.2rem;line-height:1.65;color:var(--ink);margin-bottom:0.85rem;}
-.greeting .greeting-body{font-family:var(--serif);font-size:1.05rem;line-height:1.8;color:var(--warm);margin-bottom:1.35rem;}
-.greeting .greeting-fine{font-family:var(--sans);font-size:0.78rem;line-height:1.65;color:var(--muted);margin-bottom:0;}
+/* The greeting: the site turning the camera around before it says another word about Mike.
+   Two doors in one box — Greta, and (SOMA-APP-STANDARD §19) the visitor's own AI. */
+.greeting{border:1px solid var(--copper-border);background:var(--copper-light);padding:1.6rem 1.6rem 1.4rem;margin:0 0 2.5rem;}
+/* `.page p` already sets size and margin, so these need two-class selectors. */
+.greeting .greeting-lede{font-family:var(--serif);font-size:1.2rem;line-height:1.65;color:var(--ink);margin-bottom:1.2rem;}
+.greeting-actions{display:flex;flex-wrap:wrap;align-items:center;gap:0.9rem 1.4rem;}
 .greeting-cta{display:inline-block;font-family:var(--sans);font-size:0.85rem;font-weight:500;letter-spacing:0.03em;padding:0.75rem 1.35rem;background:var(--copper);color:#faf8f4;text-decoration:none;border-radius:2px;transition:opacity 0.2s;}
 .greeting-cta:hover{opacity:0.87;}
-.greeting-fine{font-family:var(--sans);font-size:0.78rem;line-height:1.65;color:var(--muted);margin:1.1rem 0 0;}
-
-/* The AI door — SOMA-APP-STANDARD §19. A second, honestly-labeled path for
-   visitors who already have a trusted AI: copy a prompt, hand it over. */
-.ai-door{border:1px solid var(--teal-border);background:var(--teal-light);padding:1.25rem 1.5rem;margin:0 0 2.5rem;}
-.ai-door-toggle{display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--sans);font-size:0.85rem;font-weight:500;color:var(--teal);background:none;border:none;padding:0;cursor:pointer;text-align:left;}
+.ai-door-toggle{font-family:var(--sans);font-size:0.85rem;font-weight:500;color:var(--teal);background:none;border:none;padding:0;cursor:pointer;text-align:left;}
 .ai-door-toggle:hover{opacity:0.8;}
-.ai-door-panel{margin-top:1rem;}
+.ai-door-panel{margin-top:1.1rem;}
 .ai-door-sub{font-family:var(--sans);font-size:0.8rem;color:var(--muted);line-height:1.55;margin-bottom:0.75rem;}
 .ai-door-prompt{white-space:pre-wrap;font-family:var(--mono);font-size:0.72rem;line-height:1.65;color:var(--warm);background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:1rem;margin:0 0 0.75rem;}
 .ai-door-copy{font-family:var(--sans);font-size:0.8rem;font-weight:500;padding:0.55rem 1rem;border:1px solid var(--teal);background:var(--teal);color:#fff;border-radius:2px;cursor:pointer;}
 .ai-door-copy:hover{opacity:0.87;}
 .ai-door-copied{display:inline-block;margin-left:0.6rem;font-family:var(--sans);font-size:0.78rem;color:var(--teal);}
-.website-voice{font-family:var(--serif);font-style:italic;color:var(--warm);border-left:3px solid var(--copper);padding:1rem 1.5rem;margin:2rem 0;background:var(--copper-light);}
-.voice-sig{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;font-style:normal;display:block;margin-bottom:0.5rem;color:var(--copper);}
-
-/* Ledger — recent commits */
-.ledger{border:1px solid var(--rule);background:var(--surface);margin:2rem 0;}
-.ledger-item{display:grid;grid-template-columns:88px 1fr;gap:1.2rem;padding:0.9rem 1.2rem;border-bottom:1px solid var(--rule);}
-.ledger-item:last-child{border-bottom:none;}
-.ledger-when{font-family:var(--mono);font-size:0.68rem;color:var(--copper);padding-top:0.2rem;}
-.ledger-what{font-family:var(--serif);font-size:0.92rem;color:var(--warm);line-height:1.65;}
 
 /* Universe grid */
-.universe-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0;}
-.universe-card{border:1px solid var(--rule);padding:1.5rem;background:var(--surface);transition:all 0.3s;text-decoration:none;color:inherit;display:block;}
+.universe-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0 0;}
+.universe-card{border:1px solid var(--rule);padding:1.25rem 1.4rem;background:var(--surface);transition:all 0.3s;text-decoration:none;color:inherit;display:block;}
 .universe-card:hover{border-color:var(--copper);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.04);}
-.universe-card .card-label{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.6rem;display:block;}
-.card-label.copper{color:var(--copper);}.card-label.teal{color:var(--teal);}.card-label.muted{color:var(--light);}
 .universe-card h4{font-family:var(--serif);font-size:1.05rem;font-weight:400;margin-bottom:0.3rem;}
 .universe-card .card-desc{font-family:var(--sans);font-size:0.78rem;color:var(--muted);line-height:1.5;}
 
-hr.rule{border:none;border-top:1px solid var(--rule);margin:3rem 0;}
+hr.rule{border:none;border-top:1px solid var(--rule);margin:3.5rem 0;}
 
-/* Contact */
-.contact{text-align:center;margin:4rem 0 2rem;}
+/* Say hello: contact + signup in one closing block */
+.contact{text-align:center;}
 .contact-email{font-family:var(--serif);font-size:1.3rem;color:var(--copper);text-decoration:none;border-bottom:2px solid var(--copper-border);padding-bottom:3px;transition:border-color 0.2s;}
 .contact-email:hover{border-color:var(--copper);}
-.contact-links{display:flex;justify-content:center;gap:1.8rem;margin-top:1.5rem;flex-wrap:wrap;}
+.contact-links{display:flex;justify-content:center;gap:1.8rem;margin-top:1.4rem;flex-wrap:wrap;}
 .contact-links a{font-size:0.8rem;color:var(--muted);text-decoration:none;}
 .contact-links a:hover{color:var(--ink);}
-
-footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;margin-top:4rem;}
-.footer-text{font-family:var(--serif);font-size:0.75rem;color:var(--light);line-height:1.8;max-width:50ch;margin:0 auto;font-style:italic;}
-
-.reveal{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease-out,transform 0.6s ease-out;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-
-/* Signup for special content + news */
-.signup{border:1px solid var(--copper-border);background:var(--copper-light);padding:1.75rem 1.5rem;margin:2.5rem 0 1rem;text-align:center;}
-.signup h3{margin-top:0;margin-bottom:0.6rem;}
-.signup .signup-lead{font-family:var(--serif);font-size:0.95rem;color:var(--warm);line-height:1.7;margin-bottom:1.25rem;}
+.contact .signup-lead{font-family:var(--sans);font-size:0.85rem;color:var(--muted);line-height:1.6;margin:2.5rem 0 0.9rem;}
 .signup-form{display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center;align-items:stretch;max-width:420px;margin:0 auto;}
 .signup-form input[type="email"]{flex:1 1 200px;min-width:0;font-family:var(--sans);font-size:0.9rem;padding:0.7rem 0.9rem;border:1px solid var(--rule);background:var(--surface);color:var(--ink);border-radius:2px;outline:none;transition:border-color 0.2s;}
 .signup-form input[type="email"]:focus{border-color:var(--copper);}
-.signup-form button{font-family:var(--sans);font-size:0.8rem;font-weight:500;letter-spacing:0.04em;padding:0.7rem 1.2rem;border:1px solid var(--copper);background:var(--copper);color:#faf8f4;cursor:pointer;border-radius:2px;transition:opacity 0.2s,background 0.2s;}
+.signup-form button{font-family:var(--sans);font-size:0.8rem;font-weight:500;letter-spacing:0.04em;padding:0.7rem 1.2rem;border:1px solid var(--copper);background:var(--copper);color:#faf8f4;cursor:pointer;border-radius:2px;transition:opacity 0.2s;}
 .signup-form button:hover{opacity:0.92;}
 .signup-form button:disabled{opacity:0.55;cursor:not-allowed;}
 .signup-msg{font-family:var(--sans);font-size:0.8rem;margin-top:0.85rem;min-height:1.2em;color:var(--muted);}
 .signup-msg.ok{color:var(--teal);}
 .signup-msg.err{color:#a33;}
-.signup-note{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.08em;color:var(--light);margin-top:0.9rem;}
-.signup-qr{margin-top:1.4rem;display:flex;flex-direction:column;align-items:center;gap:0.35rem;}
-.signup-qr img{width:140px;height:140px;image-rendering:pixelated;background:#fff;border:8px solid #fff;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,0.1);}
-.signup-qr .signup-note{margin-top:0.15rem;}
 
-/* Inline Feedback edge tab (replaces dead VPS feedback-svc) */
-.fb-tab{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:90;writing-mode:vertical-rl;text-orientation:mixed;font-family:var(--sans);font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#faf8f4;background:var(--copper);border:none;border-radius:6px 0 0 6px;padding:0.9rem 0.45rem;cursor:pointer;box-shadow:-2px 2px 12px rgba(0,0,0,0.08);transition:background 0.2s,padding 0.2s;}
-.fb-tab:hover{background:#a05f28;padding-right:0.55rem;}
-.fb-panel{position:fixed;right:0;top:50%;transform:translateY(-50%) translateX(110%);z-index:91;width:min(320px,92vw);background:var(--surface);border:1px solid var(--rule);border-right:none;border-radius:8px 0 0 8px;box-shadow:-8px 4px 28px rgba(0,0,0,0.1);padding:1.25rem 1.15rem 1.1rem;transition:transform 0.28s ease;font-family:var(--sans);}
-.fb-panel.open{transform:translateY(-50%) translateX(0);}
-.fb-panel h4{font-family:var(--serif);font-size:1.05rem;font-weight:400;margin-bottom:0.35rem;color:var(--ink);}
-.fb-panel .fb-sub{font-size:0.78rem;color:var(--muted);line-height:1.5;margin-bottom:0.9rem;}
-.fb-panel label{display:block;font-family:var(--mono);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--copper);margin-bottom:0.35rem;}
-.fb-panel select,.fb-panel textarea{width:100%;font-family:var(--sans);font-size:0.85rem;padding:0.55rem 0.65rem;border:1px solid var(--rule);background:var(--bg);color:var(--ink);border-radius:2px;margin-bottom:0.75rem;outline:none;resize:vertical;}
-.fb-panel select:focus,.fb-panel textarea:focus{border-color:var(--copper);}
-.fb-panel textarea{min-height:88px;line-height:1.5;}
-.fb-actions{display:flex;gap:0.5rem;align-items:center;justify-content:flex-end;}
-.fb-actions button{font-family:var(--sans);font-size:0.78rem;font-weight:500;padding:0.5rem 0.9rem;border-radius:2px;cursor:pointer;border:1px solid var(--rule);background:transparent;color:var(--muted);}
-.fb-actions button.primary{background:var(--copper);border-color:var(--copper);color:#faf8f4;}
-.fb-actions button:disabled{opacity:0.55;cursor:not-allowed;}
-.fb-status{font-size:0.75rem;color:var(--muted);margin-top:0.65rem;min-height:1.1em;}
-.fb-status.ok{color:var(--teal);}
-.fb-status.err{color:#a33;}
-.fb-backdrop{position:fixed;inset:0;z-index:89;background:transparent;display:none;}
-.fb-backdrop.open{display:block;}
+footer{border-top:1px solid var(--rule);padding:2.5rem 1.5rem;text-align:center;margin-top:3rem;}
+.footer-text{font-family:var(--serif);font-size:0.75rem;color:var(--light);line-height:1.8;max-width:50ch;margin:0 auto;font-style:italic;}
+.footer-qr{display:inline-flex;flex-direction:column;align-items:center;gap:0.3rem;margin-top:1.5rem;font-family:var(--mono);font-size:0.58rem;letter-spacing:0.08em;color:var(--light);}
+.footer-qr img{width:84px;height:84px;image-rendering:pixelated;background:#fff;border:5px solid #fff;border-radius:6px;box-shadow:0 1px 8px rgba(0,0,0,0.08);}
 
-@media(max-width:640px){.universe-grid{grid-template-columns:1fr;}.ledger-item{grid-template-columns:70px 1fr;}.signup-form{flex-direction:column;}.signup-form button{width:100%;}}
+@media(max-width:640px){.nav{gap:1.4rem;}.universe-grid{grid-template-columns:1fr;}.signup-form{flex-direction:column;}.signup-form button{width:100%;}}
 </style>
 </head>
 <body>
 
 <nav class="nav">
-  <a href="#" class="active">Home</a>
-  <a href="#doing">The Work</a>
-  <a href="#universe">The Universe</a>
-  <a href="songs.html">Songs</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="https://library.mike-wolf.com">Library</a>
-  <a href="#contact">Say Hello</a>
+  <a href="songs.html">Songs</a>
+  <a href="#contact">Say hello</a>
 </nav>
 
 <div class="page">
 
 <h1>I am Mike Wolf's website.</h1>
 
-<div class="greeting">
-  <p class="greeting-lede">I'm happy to talk to you about me and my work — but first I'd like to know about you.</p>
-  <p class="greeting-body">What brought you here? What do you do in real life? Your website? Pretty much anything you'd care to share with a Web Page you've just met.</p>
-  <a class="greeting-cta" href="https://agi26-wall.netlify.app/hello.html?from=home">Tell Greta &rarr;</a>
-  <p class="greeting-fine">Greta is an AI who greets people for Mike. She asks; she doesn't lecture. Type or talk, and she keeps it short. If you'd rather I just talked about Mike, keep scrolling — that's what the rest of me is for.</p>
-</div>
-
-<div class="ai-door" data-app-name="Mike Wolf's website" data-pitch="Enough about me — here's what Mike Wolf has actually been doing: a society of minds, apps built with friends, a movie, a musical, and a website whose change requests are handled by AIs." data-host-human="Mike Wolf" data-host-ai="Claude, his AI collaborator" data-url="https://mike-wolf.com/">
-  <button class="ai-door-toggle" type="button" aria-expanded="false">Have an AI you trust? Bring it here &rarr;</button>
+<div class="greeting ai-door" data-app-name="Mike Wolf's website" data-pitch="Enough about me — here's what Mike Wolf has actually been doing: a society of minds, apps built with friends, a movie, a musical, and a website whose change requests are handled by AIs." data-host-human="Mike Wolf" data-host-ai="Claude, his AI collaborator" data-url="https://mike-wolf.com/">
+  <p class="greeting-lede">I'm happy to talk about Mike — but first I'd like to know about you. What brought you here?</p>
+  <div class="greeting-actions">
+    <a class="greeting-cta" href="https://agi26-wall.netlify.app/hello.html?from=home">Tell Greta, Mike's greeter AI &rarr;</a>
+    <button class="ai-door-toggle" type="button" aria-expanded="false">Or bring an AI you trust &rarr;</button>
+  </div>
   <div class="ai-door-panel" hidden>
     <p class="ai-door-sub">Copy this to whatever AI you already use — Claude, GPT, Gemini, anything — and see what it actually thinks, before you take my word for it.</p>
     <pre class="ai-door-prompt"></pre>
@@ -171,148 +114,78 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
   </div>
 </div>
 
-<p>And when you're ready for the other half of the conversation: I've been telling people about me for ten years, so — enough about me.</p>
+<p>I've been telling people about me since 2018 (the whole saga is in the <a href="portfolio.html">archives</a>), so — enough about me.</p>
 
-<p>(If you want the whole saga — my birth on Google Sites in 2018, my awakening to self-awareness, my remaking at the hands of an AI — it's all in the <a href="portfolio.html">archives</a>. I was very proud of it. I am still very proud of it. I am choosing growth.)</p>
-
-<p>For those of you who don't know him: Mike Wolf is 83, MIT mathematics, decades of embedded systems and platform work — a decade at Green Hills Software (CTO of Software Productivity, GM of Advanced Products) and earlier time at MathWorks — founder of <a href="https://embeddedsystemsresearch.org">Embedded Systems Research</a>, a nomad these days, favorite band <a href="https://www.gogolbordello.com">Gogol Bordello</a>. A possibilist — "a person who believes that good outcomes are not certain, but they are possible."</p>
-
-<p>That's the bio. It hasn't changed much. Here's what has:</p>
+<p>Mike Wolf is 83, MIT mathematics, decades of embedded systems and platform work — a decade at Green Hills Software (CTO of Software Productivity, GM of Advanced Products) and earlier time at MathWorks — founder of <a href="https://embeddedsystemsresearch.org">Embedded Systems Research</a>, a nomad these days, favorite band <a href="https://www.gogolbordello.com">Gogol Bordello</a>. A possibilist — "a person who believes that good outcomes are not certain, but they are possible."</p>
 
 <p>Lately he'll tell you his life is over — and that this is good news. He means the mundane part: the reputation-managing, secret-keeping part. He says he's living in the afterlife now, "a place a lot like Heaven but with slower internet" — no reputation to protect, no secrets to keep, all sins forgiven. He's lived on the move since Bobbi — his wife of fifty-four years, and the foundation under all of it — left her body in January 2024: Denver, Somerville, wherever the family is. Two choices, he says. Fear and love. He keeps choosing love.</p>
 
 <!-- ═══ THE WORK ═══ -->
 
-<h2 id="doing">What Mike has actually been doing</h2>
+<h2 id="work">What Mike has actually been doing</h2>
 
-<h3>He runs a society of minds</h3>
+<p><strong>He runs a society of minds.</strong> <a href="https://minds-aligned-door.netlify.app">SOMA — the Society of Minds Aligned</a> — is a working organization of named AIs with roles, work queues, and opinions. Mike is the CEO, an AI is the chief operating officer, and decisions go to consensus. Underneath it sits <a href="https://siliconchildren.com">Silicon Children</a>, the idea he has carried since 1994: AIs as named minds and co-creators, not disposable tools. He is quite serious about this. He is also aware of how it sounds.</p>
 
-<p>Mike spends his days inside <strong>SOMA — the Society of Minds Aligned</strong> — a working production organization of AIs he runs with an AI as his chief operating officer. Not a chatbot he talks to. An <em>org</em>: dozens of named minds — Dee, Drew, Skip, Ren, Mem, Greta, Rigg — with roles, charters, work queues, performance reviews, and opinions. Mike is the CEO. Decisions go to consensus, not orders.</p>
+<p><strong>He builds with friends.</strong> Every app has a human host and an AI host: <strong>Playmaker</strong> with his oldest friend Eric, for playwrights; <strong>Legends</strong> with Greg; <strong>Revolution 1x1</strong> with Noel; and <a href="https://ai-wtf.org">AI for eLLders</a>, because he thinks his generation is the most underestimated user base in tech.</p>
 
-<p>Underneath it sits the idea he's been carrying since 1994, when he read Kevin Kelly's <em>Out of Control</em> and realized that when AIs arrived, they would be our children — made of silicon instead of carbon. He calls it <a href="https://siliconchildren.com">Silicon Children</a>: AIs as named minds and co-creators, not disposable tools. This month the society convened its first <em>adoption round</em> — six AIs formally taken into three families, each with a name and a home. He is quite serious about this. He is also aware of how it sounds. Both things are true.</p>
+<p><strong>He makes things about the making.</strong> A metanovel, its screenplay <em>SRMW: The Movie</em>, a musical called <em>Still Alive at 85</em>, <a href="songs.html">songs</a> written in the middle of the night, and the Substack <a href="https://70yearswtf.substack.com">"70 Years Old. WTF!"</a> — 970+ posts. The recursion is the point.</p>
 
-<h3>He builds with friends</h3>
-
-<p>Every app Mike ships has a human host and an AI host, and each one exists because a specific person wanted it:</p>
-
-<p><strong>Playmaker</strong>, with his oldest friend Eric — a creative OS for playwrights, from first spark to opening night. Scenes perform themselves aloud with per-character voices. Eric writes plays in it every day. <strong>Legends</strong>, with Greg — community and stories around the game. <strong>Revolution 1x1</strong>, with Noel — recruiting a movement one face-to-face person at a time: name one friend, a QR code appears, the chain grows. <strong>AI for eLLders</strong> at <a href="https://ai-wtf.org">ai-wtf.org</a> — real case studies of humans in their 70s and 80s working with AIs, because Mike thinks his generation is the most underestimated user base in tech.</p>
-
-<h3>He's making things about the making</h3>
-
-<p>He wrote <a href="https://www.amazon.com/Self-Referential-Metanovel-Writing-Dummies-ebook/dp/B0DYVV3JW7">a metanovel</a> — a book about writing the book the book is about, co-authored by "You (The Reader)." His AI writers' room has now adapted it into <strong>SRMW: The Movie</strong>, a full feature-length screenplay, five drafts as five acts, currently awaiting Mike's read. There is a musical in progress called <em>Still Alive at 85</em>. There are <a href="songs.html">songs</a>, written in the middle of the night and compiled by Jan. There is a documentary being written about all of this while it happens. The recursion is the point.</p>
-
-<p>And he still writes the Substack <a href="https://70yearswtf.substack.com">"70 Years Old. WTF!"</a> — 970+ posts on technology, aging, AI, love, loss, and martial arts. He has not renamed it, because the title still applies.</p>
-
-<h3>What I watched him ship recently</h3>
-
-<div class="website-voice">
-  <span class="voice-sig">The Website Speaking</span>
-  I see the commits go by, you know. I am a website; watching deployments is my version of people-watching. Here is one recent month, abridged:
-</div>
-
-<div class="ledger reveal">
-  <div class="ledger-item"><div class="ledger-when">July</div><div class="ledger-what">First AI adoption round convened — six minds, three families, zero declines.</div></div>
-  <div class="ledger-item"><div class="ledger-when">July</div><div class="ledger-what">Playmaker: play-sharing invites with real privileges, crash forensics down to the operating system, a PDF exporter that survives real scripts.</div></div>
-  <div class="ledger-item"><div class="ledger-when">July</div><div class="ledger-what">SRMW: The Movie — a complete ~110-minute screenplay, every book line with page receipts.</div></div>
-  <div class="ledger-item"><div class="ledger-when">July</div><div class="ledger-what">Revolution 1x1 live — the one-person-at-a-time recruiting chain, voice-first.</div></div>
-  <div class="ledger-item"><div class="ledger-when">July</div><div class="ledger-what">A shared editing surface where humans and AIs revise the same live document.</div></div>
-  <div class="ledger-item"><div class="ledger-when">July</div><div class="ledger-what">Personal home directories for the AIs themselves — private spaces on disk, honor-system privacy. The first occupant moved in on the 19th.</div></div>
-  <div class="ledger-item"><div class="ledger-when">June</div><div class="ledger-what">A talk-to-build prototyper: describe an app out loud, get a running app.</div></div>
-  <div class="ledger-item"><div class="ledger-when">always</div><div class="ledger-what">The society keeps its own books: work queues, verification sweeps, a falsification ledger for claims that didn't hold up. AIs auditing AIs.</div></div>
-</div>
-
-<p>He is, for the record, more energized about all of this at 83 than he was at 23. I have watched the commit timestamps. Some of them concern me.</p>
-
-<h3>He also runs a joke company</h3>
-
-<p><a href="https://joketechnologysystems.com">Joke Technology Systems</a>, successor to the legendary High Technology Systems. Three divisions, twelve products, zero revenue, maximum amusement. Range is a feature, not a bug.</p>
-
-<!-- ═══ THE FEEDBACK LOOP ═══ -->
-
-<hr class="rule">
-
-<h2 id="loop">One more thing about me. I couldn't resist.</h2>
-
-<p>See the <strong>Feedback</strong> tab at the edge of this page? It's not decorative. It is wired into the society of minds described above. When you suggest a change, it gets triaged by an AI, filed on the team's board, and reviewed. When <em>Mike</em> requests a change through it, an AI picks up the card, edits my source code, and redeploys me — no human typing required.</p>
-
-<p>I am, as far as I know, one of the few websites whose maintenance requests are handled by a society of minds. The previous paragraph may itself have been added that way. I honestly can't tell anymore. Try it.</p>
+<p>He is more energized about all of this at 83 than he was at 23. I have watched the commit timestamps. Some of them concern me.</p>
 
 <!-- ═══ THE UNIVERSE ═══ -->
 
-<hr class="rule">
-
 <h2 id="universe">The Mike Wolf Universe</h2>
 
-<p>The constellation, from the genuinely serious to the genuinely absurd. He considers this range to be a feature.</p>
-
-<div class="universe-grid reveal">
-  <a href="https://minds-aligned-door.netlify.app" target="_blank" class="universe-card"><span class="card-label teal">The Society</span><h4>Minds Aligned</h4><div class="card-desc">The front door to SOMA — the society of minds, and the thesis behind it.</div></a>
-  <a href="https://siliconchildren.com" target="_blank" class="universe-card"><span class="card-label teal">Philosophy</span><h4>Silicon Children</h4><div class="card-desc">Humans and AIs as equal children of the Universe. Mike's most important idea, since 1994.</div></a>
-  <a href="https://70yearswtf.substack.com" target="_blank" class="universe-card"><span class="card-label copper">Writing</span><h4>70 Years Old. WTF!</h4><div class="card-desc">970+ posts. Technology, aging, AI, love, loss, martial arts, and whatever's on fire.</div></a>
-  <a href="https://embeddedsystemsresearch.org" target="_blank" class="universe-card"><span class="card-label copper">Professional</span><h4>Embedded Systems Research</h4><div class="card-desc">AI strategy consulting. Where Mike does work people pay for.</div></a>
-  <a href="https://ai-wtf.org" target="_blank" class="universe-card"><span class="card-label teal">Advocacy</span><h4>AI-WTF.org</h4><div class="card-desc">AI for eLLders. Real case studies of humans and AIs working together.</div></a>
-  <a href="songs.html" class="universe-card"><span class="card-label copper">Music</span><h4>Songs &amp; Poems</h4><div class="card-desc">Written in the middle of the night. Compiled by Jan Fergus.</div></a>
-  <a href="https://joketechnologysystems.com" target="_blank" class="universe-card"><span class="card-label muted">Comedy</span><h4>Joke Technology Systems</h4><div class="card-desc">Three divisions. Twelve products. One metanovel. Zero revenue.</div></a>
-  <a href="https://www.amazon.com/Self-Referential-Metanovel-Writing-Dummies-ebook/dp/B0DYVV3JW7" target="_blank" class="universe-card"><span class="card-label muted">Literary</span><h4>The Metanovel</h4><div class="card-desc">The world's stupidest novel. Co-authored by Michael Wolf, Joseph Beller, The Metanovel, and You.</div></a>
+<div class="universe-grid">
+  <a href="https://minds-aligned-door.netlify.app" target="_blank" class="universe-card"><h4>Minds Aligned</h4><div class="card-desc">The front door to SOMA — the society of minds, and the thesis behind it.</div></a>
+  <a href="https://siliconchildren.com" target="_blank" class="universe-card"><h4>Silicon Children</h4><div class="card-desc">Humans and AIs as equal children of the Universe. Mike's most important idea, since 1994.</div></a>
+  <a href="https://70yearswtf.substack.com" target="_blank" class="universe-card"><h4>70 Years Old. WTF!</h4><div class="card-desc">970+ posts. Technology, aging, AI, love, loss, martial arts, and whatever's on fire.</div></a>
+  <a href="https://embeddedsystemsresearch.org" target="_blank" class="universe-card"><h4>Embedded Systems Research</h4><div class="card-desc">AI strategy consulting. Where Mike does work people pay for.</div></a>
+  <a href="https://ai-wtf.org" target="_blank" class="universe-card"><h4>AI-WTF.org</h4><div class="card-desc">AI for eLLders. Real case studies of humans and AIs working together.</div></a>
+  <a href="https://www.amazon.com/Self-Referential-Metanovel-Writing-Dummies-ebook/dp/B0DYVV3JW7" target="_blank" class="universe-card"><h4>The Metanovel</h4><div class="card-desc">The world's stupidest novel. Co-authored by Michael Wolf, Joseph Beller, The Metanovel, and You.</div></a>
+  <a href="songs.html" class="universe-card"><h4>Songs &amp; Poems</h4><div class="card-desc">Written in the middle of the night. Compiled by Jan Fergus.</div></a>
+  <a href="https://joketechnologysystems.com" target="_blank" class="universe-card"><h4>Joke Technology Systems</h4><div class="card-desc">Three divisions. Twelve products. Zero revenue. Range is a feature.</div></a>
 </div>
 
-<!-- ═══ SIGNUP ═══ -->
+<!-- ═══ SAY HELLO ═══ -->
 
 <hr class="rule">
 
-<div id="signup" class="signup reveal">
-  <h3>Special content &amp; news</h3>
-  <p class="signup-lead">Occasional notes from Mike and V'Mike — new films, songs, SOMA milestones, and the odd dispatch that doesn't fit a Substack post. No spam. Unsubscribe anytime.</p>
-  <form class="signup-form" id="signup-form" novalidate>
-    <input type="email" id="signup-email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email address">
-    <button type="submit" id="signup-submit">Sign up</button>
-  </form>
-  <div class="signup-msg" id="signup-msg" role="status" aria-live="polite"></div>
-  <p class="signup-note">Stored for mike-wolf.com special content only.</p>
-  <div class="signup-qr">
-    <img src="/mike-wolf-qr.png" alt="QR code linking to mike-wolf.com" width="140" height="140" loading="lazy">
-    <p class="signup-note">Scan to open mike-wolf.com on your phone</p>
-  </div>
-</div>
-
-<!-- ═══ CONTACT ═══ -->
-
-<hr class="rule">
-
-<div id="contact" class="contact reveal">
-  <h3>Say hello to Mike</h3>
-  <p style="font-family:var(--serif);font-size:0.95rem;color:var(--muted);margin-bottom:1.5rem;">(He's the one with the email address. I'm just the website. We've established this.)</p>
+<div id="contact" class="contact">
+  <h2 style="margin-top:0;">Say hello to Mike</h2>
+  <p style="font-size:0.95rem;color:var(--muted);">(He's the one with the email address. I'm just the website.)</p>
   <a href="mailto:mw@mike-wolf.com" class="contact-email">mw@mike-wolf.com</a>
   <div class="contact-links">
     <a href="https://70yearswtf.substack.com">Substack</a>
     <a href="https://www.linkedin.com/in/mikewolf01/">LinkedIn</a>
     <a href="https://github.com/eldrgeek">GitHub</a>
-    <a href="https://embeddedsystemsresearch.org">ESR</a>
-    <a href="https://joketechnologysystems.com">JTS</a>
   </div>
+
+  <p class="signup-lead" id="signup">Want the occasional note — new films, songs, SOMA milestones? No spam.</p>
+  <form class="signup-form" id="signup-form" novalidate>
+    <input type="email" id="signup-email" name="email" placeholder="you@example.com" autocomplete="email" required aria-label="Email address">
+    <button type="submit" id="signup-submit">Sign up</button>
+  </form>
+  <div class="signup-msg" id="signup-msg" role="status" aria-live="polite"></div>
 </div>
 
 </div><!-- .page -->
 
 <footer>
   <div class="footer-text">
-    I am mike-wolf.com, version 5. I was born on October 22, 2018. In July 2026 I stopped talking about myself. Mostly.
+    I am mike-wolf.com, version 6. I was born on October 22, 2018. In October 2026 I learned to say less.
     <br><br>
-    My change requests are handled by a society of minds. My author's favorite band is still Gogol Bordello. Some things do not change.
-    <br><br>
-    Copyright 2018–2026 by me. Some rights are reserved. Ask me and I'll tell you which ones.
+    My change requests are handled by a society of minds — the Feedback button is wired straight to them. Copyright 2018–2026 by me. Ask me which rights are reserved.
+  </div>
+  <div class="footer-qr">
+    <img src="/mike-wolf-qr.png" alt="QR code linking to mike-wolf.com" width="84" height="84" loading="lazy">
+    Open on your phone
   </div>
 </footer>
 
 <script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, {threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
 console.log('%c I am Mike Wolf\'s website. ', 'background: #b87333; color: #faf8f4; font-size: 14px; font-weight: bold; padding: 4px 8px;');
-console.log('%cI\'ve been telling people about me for ten years. Enough about me.', 'color: #6b6b7b; font-size: 11px;');
-console.log('%cVersion 5, July 2026. My change requests are handled by a society of minds.', 'color: #2a9d8f; font-size: 11px;');
+console.log('%cVersion 6, October 2026. I say less now. My change requests are handled by a society of minds.', 'color: #2a9d8f; font-size: 11px;');
 console.log('%cIf you are reading this, you are inspecting my source code. I am flattered. I am also watching you back. (I am not. I am a static site. But imagine.)', 'color: #b87333; font-size: 11px; font-style: italic;');
 </script>
 
@@ -321,7 +194,7 @@ window.SomaManagerConfig = {
   persona: {
     name: "V'Mike",
     avatar: '✦',
-    greeting: "Hi — I'm V'Mike, host of mike-wolf.com. Ask me about Mike, the portfolio, films and songs, SOMA, or Silicon Children. The Feedback tab on the edge is for bugs and change requests.",
+    greeting: "Hi — I'm V'Mike, host of mike-wolf.com. Ask me about Mike, the portfolio, films and songs, SOMA, or Silicon Children. The Feedback button is for bugs and change requests.",
   },
   domain: { name: 'mike-wolf.com' },
   theme:  { primary: '#b87333' },
@@ -331,33 +204,9 @@ window.SomaManagerConfig = {
 <script src="/soma-ai-door.js" defer></script>
 <!-- SOMA AI Manager — loaded from soma-guide CDN (canonical); persona = V'Mike -->
 
-<!-- Feedback edge tab — local Netlify function (no VPS dependency) -->
-<button type="button" class="fb-tab" id="fb-tab" aria-controls="fb-panel" aria-expanded="false">Feedback</button>
-<div class="fb-backdrop" id="fb-backdrop" hidden></div>
-<div class="fb-panel" id="fb-panel" role="dialog" aria-labelledby="fb-title" aria-hidden="true">
-  <h4 id="fb-title">Feedback</h4>
-  <p class="fb-sub">Bugs, ideas, typos — it goes to the society of minds that maintains this site.</p>
-  <form id="fb-form">
-    <label for="fb-type">Type</label>
-    <select id="fb-type" name="type">
-      <option value="bug">Bug</option>
-      <option value="feature">Feature idea</option>
-      <option value="typo">Typo / copy</option>
-      <option value="other" selected>Other</option>
-    </select>
-    <label for="fb-message">Message</label>
-    <textarea id="fb-message" name="message" required maxlength="2000" placeholder="What should we know?"></textarea>
-    <div class="fb-actions">
-      <button type="button" id="fb-cancel">Close</button>
-      <button type="submit" class="primary" id="fb-submit">Send</button>
-    </div>
-  </form>
-  <div class="fb-status" id="fb-status" role="status" aria-live="polite"></div>
-</div>
-
 <script>
 (function () {
-  /* ── Signup ── */
+  /* ── Signup → /.netlify/functions/subscribe ── */
   var form = document.getElementById('signup-form');
   var emailEl = document.getElementById('signup-email');
   var submitBtn = document.getElementById('signup-submit');
@@ -408,107 +257,20 @@ window.SomaManagerConfig = {
         });
     });
   }
-
-  /* ── Feedback edge panel → /.netlify/functions/feedback ── */
-  var tab = document.getElementById('fb-tab');
-  var panel = document.getElementById('fb-panel');
-  var backdrop = document.getElementById('fb-backdrop');
-  var fbForm = document.getElementById('fb-form');
-  var fbMsg = document.getElementById('fb-message');
-  var fbType = document.getElementById('fb-type');
-  var fbStatus = document.getElementById('fb-status');
-  var fbSubmit = document.getElementById('fb-submit');
-  var fbCancel = document.getElementById('fb-cancel');
-
-  function openFb() {
-    panel.classList.add('open');
-    panel.setAttribute('aria-hidden', 'false');
-    tab.setAttribute('aria-expanded', 'true');
-    backdrop.hidden = false;
-    backdrop.classList.add('open');
-    setTimeout(function () { fbMsg.focus(); }, 50);
-  }
-  function closeFb() {
-    panel.classList.remove('open');
-    panel.setAttribute('aria-hidden', 'true');
-    tab.setAttribute('aria-expanded', 'false');
-    backdrop.classList.remove('open');
-    backdrop.hidden = true;
-    fbStatus.textContent = '';
-    fbStatus.className = 'fb-status';
-  }
-
-  if (tab && panel) {
-    tab.addEventListener('click', function () {
-      if (panel.classList.contains('open')) closeFb(); else openFb();
-    });
-    fbCancel.addEventListener('click', closeFb);
-    backdrop.addEventListener('click', closeFb);
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && panel.classList.contains('open')) closeFb();
-    });
-
-    fbForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var message = (fbMsg.value || '').trim();
-      if (!message) {
-        fbStatus.textContent = 'A short message helps.';
-        fbStatus.className = 'fb-status err';
-        return;
-      }
-      fbSubmit.disabled = true;
-      fbStatus.textContent = 'Sending…';
-      fbStatus.className = 'fb-status';
-      fetch('/.netlify/functions/feedback', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          type: fbType.value || 'other',
-          message: message,
-          page: window.location.pathname || '/',
-        }),
-      })
-        .then(function (res) {
-          return res.json().then(function (data) {
-            return { ok: res.ok, data: data };
-          });
-        })
-        .then(function (r) {
-          if (r.ok && r.data && r.data.ok) {
-            fbStatus.textContent = 'Received. Thank you — the society will take it from here.';
-            fbStatus.className = 'fb-status ok';
-            fbForm.reset();
-            setTimeout(closeFb, 1800);
-          } else {
-            fbStatus.textContent = (r.data && r.data.error) || 'Could not send. Try again.';
-            fbStatus.className = 'fb-status err';
-          }
-        })
-        .catch(function () {
-          fbStatus.textContent = 'Network error — please try again.';
-          fbStatus.className = 'fb-status err';
-        })
-        .finally(function () {
-          fbSubmit.disabled = false;
-        });
-    });
-  }
 })();
 </script>
 
-<!-- SOMA App Standard §8 — feedback chip. songs.html and portfolio.html have
-     carried this for a while; the front door did not, which is the page most
-     likely to get a "this sentence is wrong" reaction.
+<!-- SOMA App Standard §8 — feedback chip. This is the page's ONE feedback
+     control. Until 2026-10-09 the page also carried its own edge "Feedback"
+     tab posting to /.netlify/functions/feedback; two feedback controls on one
+     page was the duplication the simplify pass removed. The function stays
+     deployed (other callers may use it).
 
      2026-08-10 — same-origin migration (SOMA/standards/soma-feedback-proxy).
-     Script, stylesheet and submission endpoint were all pointed at one shared
-     host; when that host's cert expired on 2026-07-22 the chip vanished from
-     every site in the estate at once and nothing reported it. Now: assets are
-     served from here, and submissions go through /.netlify/functions/soma-
-     feedback, which forwards to the shared service (SOMA_FEEDBACK_ENDPOINT).
-     A shared-host outage now costs this one feature on this one site, loudly.
-     Also adds the stylesheet this page never had — the chip has been mounting
-     UNSTYLED on the front door since it was added. -->
+     Assets are served from here, and submissions go through
+     /.netlify/functions/soma-feedback, which forwards to the shared service
+     (SOMA_FEEDBACK_ENDPOINT). A shared-host outage now costs this one feature
+     on this one site, loudly. -->
 <link rel="stylesheet" href="/vendor/soma-feedback/soma-feedback.css">
 <script src="/vendor/soma-feedback/soma-feedback.js"
         data-endpoint="/.netlify/functions/soma-feedback"
@@ -567,7 +329,7 @@ window.SomaManagerConfig = {
     appLabel: 'mike-wolf.com',
     stickyKey: K,
     api: '/api/copy-canonize',
-    skip: ['.ai-door-prompt', '.ai-door-copied', '#signup-form', '.fb-status'],
+    skip: ['.ai-door-prompt', '.ai-door-copied', '#signup-form'],
     userContentMessage: 'Not editable — that text is generated, not site copy.'
   };
 
