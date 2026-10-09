@@ -2,3 +2,7 @@
 node_modules/
 .netlify/
 .claude/
+
+# soma-owner.js carries the shared SOMA owner-gate secret (client-side, cosmetic,
+# not a security boundary). It is served from the VPS copy; keep it out of git.
+soma-owner.js

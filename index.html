@@ -86,6 +86,11 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 1.5rem;text-align:center;
 
 @media(max-width:640px){.nav{gap:1.4rem;}.universe-grid{grid-template-columns:1fr;}.signup-form{flex-direction:column;}.signup-form button{width:100%;}}
 </style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1a1a2e">
 </head>
 <body>
 
@@ -200,9 +205,14 @@ window.SomaManagerConfig = {
   theme:  { primary: '#b87333' },
 };
 </script>
-<script src="https://soma-guide.netlify.app/soma-manager.js"></script>
+<script src="/soma-manager.js"></script>
+<!-- SOMA AI Manager — VENDORED same-origin 2026-08-11. Was
+     https://soma-guide.netlify.app/soma-manager.js, which has been a hard 404
+     (the whole soma-guide site 404s, root included), so the widget silently
+     never loaded on the live front door. Same failure class as the feedback
+     chip fixed in a3d84b8: a cross-origin single point of failure that fails
+     without a console error anyone was watching. Keep this file local. -->
 <script src="/soma-ai-door.js" defer></script>
-<!-- SOMA AI Manager — loaded from soma-guide CDN (canonical); persona = V'Mike -->
 
 <script>
 (function () {

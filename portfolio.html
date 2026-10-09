@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,500;0,7..72,700;1,7..72,300;1,7..72,400;1,7..72,500&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
-<script src="https://soma-guide.netlify.app/soma-owner.js"></script>
+<script src="/soma-owner.js"></script>
 <script>
 window.SomaEditConfig = {
   siteId: 'mike-wolf-portfolio',
@@ -22,7 +22,7 @@ window.SomaEditConfig = {
 <!-- Without this, nothing on this page ever sets an editor identity, so
      soma-edit.js loads and never mounts. /portfolio?edit=1 unlocks it. -->
 <script src="/soma-edit-unlock.js"></script>
-<script src="https://soma-guide.netlify.app/soma-edit.js"></script>
+<script src="/soma-edit.js"></script>
 
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -100,6 +100,11 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
 .walk-close:hover{background:rgba(26,26,46,0.9);}
 @media(max-width:640px){.walk-card{grid-template-columns:1fr;}}
 </style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1a1a2e">
 </head>
 <body>
 
@@ -248,6 +253,28 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;text-align:center;ma
     <span class="card-label muted">Language</span>
     <h4 data-soma-editable="levinese-title">Levinese</h4>
     <div class="card-desc" data-soma-editable="levinese-desc">A constructed language system — grammar, vocabulary, and an interactive explorer. Language as a design object.</div>
+  </a>
+
+</div>
+
+
+<!-- ═══ WRITING & FILM ═══ -->
+
+<h2 id="writing">Writing &amp; Film</h2>
+<p class="section-intro" data-soma-editable="writing-intro">The books, and what the AI writers' room is doing with them.</p>
+
+<div class="project-grid reveal">
+
+  <a href="https://srmw.mike-wolf.com" target="_blank" class="project-card">
+    <span class="card-label copper">Literary</span>
+    <h4 data-soma-editable="srmw-title">Self-Referential Metanovel Writing for D*mmies</h4>
+    <div class="card-desc" data-soma-editable="srmw-desc">A book about writing the book the book is about — 220 pages, 43 chapters, bylined to five authors including The Metanovel itself and you, the reader. The whole thing is free at the library; the Kindle edition is for sale; and the property's own site runs a production board for <em>SRMW: The Movie</em> that lists what's still blocked rather than a trailer it can't back up. Its centerpiece exhibit is a 2024 AI podcast about the book that gets a fact about Mike's life wrong, twice — playing inside a page that pauses it mid-sentence and shows you the text it misread.</div>
+  </a>
+
+  <a href="https://library.mike-wolf.com" target="_blank" class="project-card">
+    <span class="card-label teal">Archive</span>
+    <h4 data-soma-editable="library-title">The Library</h4>
+    <div class="card-desc" data-soma-editable="library-desc">Ten years of Mike's writing in one searchable archive — the full 70YearsWTF Substack, SRMW, Silicon Children, AI WTF — plus a dictionary of the dialect that runs through all of it. Static, offline-searchable, and free to read.</div>
   </a>
 
 </div>
@@ -572,7 +599,13 @@ window.SomaManagerConfig = {
   theme:  { primary: '#b87333' },
 };
 </script>
-<script src="https://soma-guide.netlify.app/soma-manager.js"></script>
+<script src="/soma-manager.js"></script>
+<!-- SOMA AI Manager — VENDORED same-origin 2026-08-11. Was
+     https://soma-guide.netlify.app/soma-manager.js, which has been a hard 404
+     (the whole soma-guide site 404s, root included), so the widget silently
+     never loaded on the live front door. Same failure class as the feedback
+     chip fixed in a3d84b8: a cross-origin single point of failure that fails
+     without a console error anyone was watching. Keep this file local. -->
 
     <link rel="stylesheet" href="/vendor/soma-feedback/soma-feedback.css">
     <!-- 2026-08-10 same-origin migration: SOMA/standards/soma-feedback-proxy. See index.html. -->
