@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Works — everything Mike Wolf and his AI team have made</title>
+<meta name="description" content="One searchable list of everything Mike Wolf and his AI team have made — sites, apps, code, writing and films — wherever each one lives, in the order it was made.">
+<meta property="og:title" content="Mike Wolf — Works">
+<meta property="og:description" content="Everything we have made, wherever it lives, in the order we made it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,500;1,7..72,300;1,7..72,400&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1a1a2e">
+<!--
+  works.html — reads /works.json, which ~/Projects/_estate/bin/works builds from Netlify,
+  GitHub, the estate changelog, the portfolio, Substack and Claude artifacts (nightly, and
+  whenever a changelog line ships). Public records only in that file. Team-only records live
+  in Supabase table works_team and load only after a team member signs in.
+  Built 2026-10-16 (Mike Wolf + Claude Opus 5.5, CCc session efc7e504, bead es-it0).
+-->
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#faf8f4;--surface:#fff;--ink:#1a1a2e;--warm:#3d2c1e;
+  --copper:#b87333;--copper-light:rgba(184,115,51,0.07);--copper-border:rgba(184,115,51,0.22);
+  --teal:#2a9d8f;--teal-light:rgba(42,157,143,0.07);--teal-border:rgba(42,157,143,0.22);
+  --plum:#7b4b94;--plum-light:rgba(123,75,148,0.08);
+  --muted:#6b6b7b;--light:#8b8b9b;--rule:rgba(26,26,46,0.09);
+  --serif:'Literata',Georgia,serif;--sans:'Outfit',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);height:56px;display:flex;align-items:center;justify-content:center;gap:2.2rem;padding:0 1rem;overflow-x:auto;}
+.nav a{font-size:0.8rem;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:0.03em;white-space:nowrap;}
+.nav a:hover{color:var(--ink);} .nav a.active{color:var(--copper);}
+
+.page{max-width:860px;margin:0 auto;padding:6.5rem 1.25rem 4rem;}
+h1{font-family:var(--serif);font-size:clamp(2rem,5vw,2.9rem);font-weight:400;line-height:1.2;margin-bottom:0.8rem;}
+h1 em{font-style:italic;color:var(--copper);}
+.lede{font-family:var(--serif);font-size:1.05rem;color:var(--warm);line-height:1.8;max-width:62ch;margin-bottom:0.6rem;}
+.meta-line{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;color:var(--light);margin-bottom:1.8rem;}
+.meta-line button{font:inherit;color:var(--teal);background:none;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:0;}
+
+.controls{position:sticky;top:56px;z-index:50;background:rgba(250,248,244,0.96);backdrop-filter:blur(8px);padding:0.8rem 0 0.7rem;border-bottom:1px solid var(--rule);margin-bottom:1.5rem;}
+.search{width:100%;font:inherit;font-size:1rem;padding:0.65rem 0.9rem;border:1px solid var(--rule);background:var(--surface);border-radius:6px;color:var(--ink);}
+.search:focus{outline:2px solid var(--copper-border);border-color:var(--copper);}
+.row{display:flex;flex-wrap:wrap;gap:0.4rem;align-items:center;margin-top:0.6rem;}
+.chip{font:inherit;font-size:0.76rem;padding:0.28rem 0.7rem;border:1px solid var(--rule);background:var(--surface);border-radius:999px;cursor:pointer;color:var(--muted);}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg);}
+.chip .n{opacity:0.65;margin-left:0.25rem;font-size:0.7rem;}
+select.chip{appearance:none;padding-right:1.6rem;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 12px) 55%,calc(100% - 8px) 55%;background-size:4px 4px;background-repeat:no-repeat;max-width:100%;}
+label.toggle{font-size:0.76rem;color:var(--muted);display:inline-flex;gap:0.35rem;align-items:center;margin-left:auto;cursor:pointer;}
+.result-count{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.08em;color:var(--light);margin-top:0.55rem;}
+
+.month{margin:2.2rem 0 0.6rem;font-family:var(--mono);font-size:0.66rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--copper);display:flex;align-items:center;gap:0.8rem;}
+.month::after{content:'';flex:1;border-top:1px solid var(--copper-border);}
+.item{display:grid;grid-template-columns:4.2rem 1fr;gap:0.9rem;padding:0.85rem 0;border-bottom:1px solid var(--rule);}
+.item .d{font-family:var(--mono);font-size:0.68rem;color:var(--light);padding-top:0.28rem;}
+.item h3{font-family:var(--serif);font-size:1.08rem;font-weight:400;line-height:1.35;}
+.item h3 a{text-decoration:none;border-bottom:1px solid var(--copper-border);}
+.item h3 a:hover{border-bottom-color:var(--copper);}
+.item .story{font-family:var(--serif);font-size:0.9rem;color:var(--warm);line-height:1.6;margin-top:0.25rem;}
+.tags{display:flex;flex-wrap:wrap;gap:0.35rem 0.7rem;margin-top:0.4rem;font-size:0.72rem;color:var(--muted);}
+.tag{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.08rem 0.45rem;border-radius:3px;background:var(--teal-light);color:var(--teal);}
+.tag.k-code{background:rgba(26,26,46,0.06);color:var(--muted);}
+.tag.k-writing{background:var(--copper-light);color:var(--copper);}
+.tag.k-film,.tag.k-artifact{background:var(--plum-light);color:var(--plum);}
+.tag.off{background:rgba(160,60,60,0.08);color:#a03c3c;}
+.tag.team{background:var(--ink);color:var(--bg);}
+.tags a{color:var(--teal);}
+.why{font-size:0.72rem;color:var(--plum);font-style:italic;}
+.empty{font-family:var(--serif);color:var(--muted);padding:2rem 0;text-align:center;}
+
+.team-panel{border:1px solid var(--copper-border);background:var(--copper-light);border-radius:6px;padding:1rem 1.1rem;margin:0 0 1.6rem;display:none;}
+.team-panel.open{display:block;}
+.team-panel p{font-size:0.86rem;color:var(--warm);margin-bottom:0.6rem;}
+.team-panel form{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.team-panel input{flex:1 1 14rem;font:inherit;padding:0.5rem 0.7rem;border:1px solid var(--rule);border-radius:4px;}
+.btn{font:inherit;font-size:0.85rem;padding:0.5rem 0.9rem;border-radius:4px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer;}
+.btn.ghost{background:transparent;color:var(--ink);}
+
+footer{border-top:1px solid var(--rule);padding:2.5rem 1.25rem;text-align:center;margin-top:3rem;}
+.footer-text{font-family:var(--serif);font-size:0.78rem;color:var(--light);line-height:1.8;max-width:58ch;margin:0 auto;font-style:italic;}
+@media(max-width:600px){
+  .nav{justify-content:flex-start;gap:1.3rem;}
+  .item{grid-template-columns:1fr;gap:0.15rem;}
+  .item .d{padding-top:0;}
+  label.toggle{margin-left:0;}
+  .controls{position:static;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/">Home</a>
+  <a href="/#my-story">My Story</a>
+  <a href="songs.html">Songs</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="works.html" class="active">Works</a>
+  <a href="https://library.mike-wolf.com">Library</a>
+  <a href="/#contact">Say Hello</a>
+</nav>
+
+<div class="page">
+  <h1>Everything we've <em>made</em></h1>
+  <p class="lede">Every site, app, piece of code, essay and film that I have made with my AI team, in one list, wherever it lives. Newest first. Each entry says what it is, where to find it, and, where we wrote it down, how it came to be.</p>
+  <p class="meta-line" id="meta">Loading…</p>
+
+  <div class="team-panel" id="team-panel" aria-live="polite"></div>
+
+  <div class="controls">
+    <input class="search" id="q" type="search" placeholder="Search titles, stories, projects…" aria-label="Search the works" autocomplete="off">
+    <div class="row" id="kinds" role="group" aria-label="Kind"></div>
+    <div class="row">
+      <select class="chip" id="project" aria-label="Project"></select>
+      <label class="toggle"><input type="checkbox" id="offline"> Include things that are offline</label>
+    </div>
+    <div class="result-count" id="count"></div>
+  </div>
+
+  <div id="list"><p class="empty">Loading the works…</p></div>
+</div>
+
+<footer>
+  <div class="footer-text">
+    This list builds itself. Every night a script sweeps the places our work lands — Netlify, GitHub, our Substacks, the estate changelog — and every time we ship, the changelog line adds the new thing here. Some things are team-only: work for clients, work with partners, and anything about a private person.
+    <br><br>
+    mike-wolf.com/works · <a href="/" style="color:var(--light);">back to the homepage</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var KINDS = [['all', 'Everything'], ['site', 'Sites'], ['app', 'Apps'], ['code', 'Code'], ['writing', 'Writing'], ['film', 'Films'], ['artifact', 'Artifacts']];
+  var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var S = { pub: [], team: [], q: '', kind: 'all', project: 'all', offline: false, generated: null, teamCount: 0 };
+  var $ = function (id) { return document.getElementById(id); };
+
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function safeUrl(u) { return /^https?:\/\//i.test(u || '') ? u : '#'; }
+
+  // URL state, so a search can be shared: /works.html?q=levin&kind=site
+  function readUrl() {
+    var p = new URLSearchParams(location.search);
+    S.q = p.get('q') || ''; S.kind = p.get('kind') || 'all'; S.project = p.get('project') || 'all'; S.offline = p.get('offline') === '1';
+  }
+  function writeUrl() {
+    var p = new URLSearchParams();
+    if (S.q) p.set('q', S.q); if (S.kind !== 'all') p.set('kind', S.kind);
+    if (S.project !== 'all') p.set('project', S.project); if (S.offline) p.set('offline', '1');
+    var qs = p.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+  }
+
+  function all() { return S.pub.concat(S.team); }
+  function offline(w) { return w.state === 'down' || w.state === 'gone'; }
+  function matches(w, ignoreKind) {
+    if (!S.offline && offline(w)) return false;
+    if (!ignoreKind && S.kind !== 'all' && w.kind !== S.kind) return false;
+    if (S.project !== 'all' && w.project !== S.project) return false;
+    if (!S.q) return true;
+    var hay = [w.title, w.story, w.project, w.where, w.url, w.makers, w.kind].join(' ').toLowerCase();
+    return S.q.toLowerCase().split(/\s+/).every(function (t) { return hay.indexOf(t) >= 0; });
+  }
+
+  function renderControls() {
+    var counts = {};
+    all().forEach(function (w) { if (matches(w, true)) { counts[w.kind] = (counts[w.kind] || 0) + 1; counts.all = (counts.all || 0) + 1; } });
+    $('kinds').innerHTML = KINDS.filter(function (k) { return k[0] === 'all' || counts[k[0]]; }).map(function (k) {
+      return '<button class="chip" data-kind="' + k[0] + '" aria-pressed="' + (S.kind === k[0]) + '">' + k[1] + '<span class="n">' + (counts[k[0]] || 0) + '</span></button>';
+    }).join('');
+    var projects = {};
+    all().forEach(function (w) { projects[w.project] = (projects[w.project] || 0) + 1; });
+    var names = Object.keys(projects).sort(function (a, b) { return projects[b] - projects[a]; });
+    $('project').innerHTML = '<option value="all">All projects</option>' + names.map(function (n) {
+      return '<option value="' + esc(n) + '"' + (S.project === n ? ' selected' : '') + '>' + esc(n) + ' (' + projects[n] + ')</option>';
+    }).join('');
+    $('q').value = S.q; $('offline').checked = S.offline;
+  }
+
+  function item(w) {
+    var d = w.date ? new Date(w.date + 'T12:00:00Z') : null;
+    var tags = '<span class="tag k-' + esc(w.kind) + '">' + esc(w.kind) + '</span>';
+    if (w._team) tags += '<span class="tag team">team only</span>';
+    if (offline(w)) tags += '<span class="tag off">offline</span>';
+    if (w.state === 'gated') tags += '<span class="tag">sign-in</span>';
+    tags += '<span>' + esc(w.project) + '</span><span>' + esc(w.where) + '</span>';
+    if (w.makers) tags += '<span>by ' + esc(w.makers) + '</span>';
+    if (w.links && w.links.source) tags += '<a href="' + esc(safeUrl(w.links.source)) + '" rel="noopener" target="_blank">source</a>';
+    if (w.chapters > 1) tags += '<span>' + w.chapters + ' changelog entries</span>';
+    return '<article class="item"><div class="d">' + (d ? MONTHS[d.getUTCMonth()].slice(0, 3) + ' ' + d.getUTCDate() : '—') + '</div><div>' +
+      '<h3><a href="' + esc(safeUrl(w.url)) + '" rel="noopener" target="_blank">' + esc(w.title) + '</a></h3>' +
+      (w.story ? '<p class="story">' + esc(w.story) + '</p>' : '') +
+      '<div class="tags">' + tags + '</div>' +
+      (w._team && w.why ? '<div class="why">Team-only because: ' + esc(w.why) + '</div>' : '') +
+      '</div></article>';
+  }
+
+  function render() {
+    renderControls();
+    var rows = all().filter(function (w) { return matches(w); });
+    rows.sort(function (a, b) { return (b.date || '0000').localeCompare(a.date || '0000') || a.title.localeCompare(b.title); });
+    $('count').textContent = rows.length + (rows.length === 1 ? ' thing' : ' things') + (S.q || S.kind !== 'all' || S.project !== 'all' ? ' match' : '');
+    if (!rows.length) { $('list').innerHTML = '<p class="empty">Nothing matches. Try fewer words, or include things that are offline.</p>'; return; }
+    var html = '', last = null;
+    rows.forEach(function (w) {
+      var key = w.date ? w.date.slice(0, 7) : 'undated';
+      if (key !== last) {
+        html += '<h2 class="month">' + (key === 'undated' ? 'Undated' : MONTHS[+key.slice(5, 7) - 1] + ' ' + key.slice(0, 4)) + '</h2>';
+        last = key;
+      }
+      html += item(w);
+    });
+    $('list').innerHTML = html;
+  }
+
+  function meta() {
+    var g = S.generated ? new Date(S.generated) : null;
+    var t = S.pub.length + ' public things';
+    if (S.team.length) t += ' · ' + S.team.length + ' team-only things loaded';
+    else if (S.teamCount) t += ' · ' + S.teamCount + ' more are team-only — <button id="team-open">team sign-in</button>';
+    if (g) t += ' · updated ' + g.toISOString().slice(0, 10);
+    $('meta').innerHTML = t;
+    var b = $('team-open'); if (b) b.addEventListener('click', openTeam);
+  }
+
+  // ---- team sign-in: nothing below loads for an ordinary visitor ----
+  var authReady = null;
+  function js(src) { return new Promise(function (ok, bad) { var s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = bad; document.head.appendChild(s); }); }
+  function loadAuth() {
+    if (!authReady) authReady = js('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js')
+      .then(function () { return js('/js/soma-auth-config.js'); })
+      .then(function () { return js('/js/soma-auth.js'); })
+      .then(function () {
+        return new Promise(function (ok) {
+          window.SomaAuth.onAuthStateChange(function (ev, session) { if (ev === 'INITIAL_SESSION' || ev === 'SIGNED_IN') ok(session); if (ev === 'SIGNED_IN') loadTeam(session); });
+          window.SomaAuth.init();
+        });
+      });
+    return authReady;
+  }
+  function panel(html) { var p = $('team-panel'); p.innerHTML = html; p.classList.add('open'); }
+  function openTeam() {
+    panel('<p>Loading sign-in…</p>');
+    loadAuth().then(function (session) {
+      if (session) return loadTeam(session);
+      panel('<p>Team members see the team-only works here. Sign in with your email and we will send you a link.</p>' +
+        '<form id="team-form"><input type="email" id="team-email" required placeholder="you@example.com" aria-label="Email">' +
+        '<button class="btn" type="submit">Email me a link</button>' +
+        '<button class="btn ghost" type="button" id="team-google">Sign in with Google</button></form>');
+      $('team-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        window.SomaAuth.signInWithOtp($('team-email').value.trim(), { emailRedirectTo: location.origin + location.pathname + '?team=1', shouldCreateUser: false })
+          .then(function (r) { panel(r && r.error ? '<p>That did not work: ' + esc(r.error.message) + '</p>' : '<p>Check your email for the sign-in link.</p>'); });
+      });
+      $('team-google').addEventListener('click', function () {
+        window.SomaAuth.signInWithOAuth('google', { redirectTo: location.origin + location.pathname + '?team=1' });
+      });
+    }).catch(function () { panel('<p>Sign-in could not load. Try again in a moment.</p>'); });
+  }
+  function loadTeam(session) {
+    if (!session) return;
+    var email = (session.user && session.user.email) || 'you';
+    return window.SomaAuth.getClient().from('works_team').select('record').then(function (r) {
+      if (r.error) { panel('<p>Signed in as ' + esc(email) + ', but the team list did not load: ' + esc(r.error.message) + '</p>'); return; }
+      S.team = (r.data || []).map(function (x) { var w = x.record; w._team = true; return w; });
+      panel(S.team.length
+        ? '<p>Signed in as ' + esc(email) + '. Showing ' + S.team.length + ' team-only things alongside the public ones. <button class="btn ghost" id="team-out">Sign out</button></p>'
+        : '<p>Signed in as ' + esc(email) + '. This account does not have team access yet; ask Mike to add it. <button class="btn ghost" id="team-out">Sign out</button></p>');
+      $('team-out').addEventListener('click', function () { window.SomaAuth.signOut().then(function () { S.team = []; $('team-panel').classList.remove('open'); meta(); render(); }); });
+      meta(); render();
+    });
+  }
+  function hasSession() {
+    try {
+      return [localStorage, sessionStorage].some(function (st) {
+        for (var i = 0; i < st.length; i++) { var k = st.key(i); if (k && k.indexOf('sb-') === 0 && k.indexOf('-auth-token') > 0) return true; }
+        return false;
+      });
+    } catch (e) { return false; }
+  }
+
+  // ---- wiring ----
+  readUrl();
+  $('q').addEventListener('input', function (e) { S.q = e.target.value.trim(); writeUrl(); render(); });
+  $('kinds').addEventListener('click', function (e) { var b = e.target.closest('[data-kind]'); if (!b) return; S.kind = b.dataset.kind; writeUrl(); render(); });
+  $('project').addEventListener('change', function (e) { S.project = e.target.value; writeUrl(); render(); });
+  $('offline').addEventListener('change', function (e) { S.offline = e.target.checked; writeUrl(); render(); });
+
+  fetch('/works.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (doc) {
+    S.pub = doc.works || []; S.generated = doc.generated; S.teamCount = (doc.counts && doc.counts.team_only) || 0;
+    meta(); render();
+    if (/[?&]team=1\b/.test(location.search) || /access_token|code=/.test(location.href) || hasSession()) openTeam();
+  }).catch(function () { $('list').innerHTML = '<p class="empty">The works list did not load. Refresh to try again.</p>'; $('meta').textContent = ''; });
+})();
+</script>
+
+<script>
+window.SomaManagerConfig = {
+  persona: {
+    name: 'The Works',
+    avatar: '✦',
+    greeting: "Hi! I'm the works list. Ask me where something is, suggest something we've missed, or report a wrong entry.",
+  },
+  domain: { name: 'mike-wolf.com/works' },
+  theme:  { primary: '#b87333' },
+};
+</script>
+<script src="/soma-manager.js"></script>
+<link rel="stylesheet" href="/vendor/soma-feedback/soma-feedback.css">
+<script src="/vendor/soma-feedback/soma-feedback.js" data-endpoint="/.netlify/functions/soma-feedback" data-site="mike-wolf-com" defer></script>
+</body>
+</html>
