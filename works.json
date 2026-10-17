@@ -2,9 +2,9 @@
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
 "public": 310,
-"team_only": 288
+"team_only": 289
 },
-"generated": "2026-10-17T04:25:12Z",
+"generated": "2026-10-17T08:36:05Z",
 "works": [
 {
 "chapters": 1,
@@ -15,7 +15,7 @@
 "state": "live",
 "story": "Soon, everyone will work with an AI partner that knows them. Free tools to design that partnership well, made by people working with their own AI partners.",
 "title": "The Future of Work, demonstrated",
-"updated": "2026-10-13",
+"updated": "2026-10-16",
 "url": "https://tfow.ai-wtf.org",
 "where": "Netlify"
 },
@@ -1181,7 +1181,7 @@
 "project": "SOMA",
 "state": "down",
 "title": "Soma Guide",
-"updated": "2026-10-16",
+"updated": "2026-10-17",
 "url": "https://soma-guide.netlify.app",
 "where": "Netlify"
 },
@@ -1443,7 +1443,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-10-16",
+"updated": "2026-10-17",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
