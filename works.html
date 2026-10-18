@@ -14,7 +14,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#1a1a2e">
-<link rel="manifest" href="/works.webmanifest">
+<link rel="manifest" href="/works.manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Works">
@@ -40,7 +40,7 @@
   and the page shows a "wiki" link on each work and beside a chosen project. Nothing about the wiki is in
   this file or in works.json; an ordinary visitor never loads the row.
   Launcher mode, 2026-10-18 (Mike Wolf + Claude Opus 5.5, CCc session cb9a6599): ?launch=1, or the page opened
-  from a home-screen icon (works.webmanifest), shows only the search box and one tappable row per thing, opens on
+  from a home-screen icon (works.manifest.json), shows only the search box and one tappable row per thing, opens on
   "Sites & apps" sorted by last deploy, focuses the search, and opens the top result on Go. Replaces the earlier
   "mike-launcher" Dispatch, whose Netlify site was deleted 2026-08-03. Search on both views now falls back to the
   closest matches (typos, swapped letters, letters in order) when no record contains every word exactly.
