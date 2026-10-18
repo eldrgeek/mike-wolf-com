@@ -14,6 +14,21 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#1a1a2e">
+<link rel="manifest" href="/works.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Works">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<script>
+  // Launcher mode: ?launch=1, or opened from the home-screen icon. Set before first paint so the
+  // full page never flashes. The manifest's start_url carries launch=1; the standalone checks cover
+  // an icon saved from a plain works.html URL.
+  (function () {
+    var standalone = false;
+    try { standalone = navigator.standalone === true || matchMedia('(display-mode: standalone)').matches; } catch (e) {}
+    if (/[?&]launch=1\b/.test(location.search) || standalone) document.documentElement.classList.add('launch');
+  })();
+</script>
 <!--
   works.html — reads /works.json, which ~/Projects/_estate/bin/works builds from Netlify,
   GitHub, the estate changelog, the portfolio, Substack, Claude artifacts and our Accords (nightly, and
@@ -24,6 +39,11 @@
   signs in, one team-only works_team row (id _wiki-links) maps projects to pages of the private estate wiki,
   and the page shows a "wiki" link on each work and beside a chosen project. Nothing about the wiki is in
   this file or in works.json; an ordinary visitor never loads the row.
+  Launcher mode, 2026-10-18 (Mike Wolf + Claude Opus 5.5, CCc session cb9a6599): ?launch=1, or the page opened
+  from a home-screen icon (works.webmanifest), shows only the search box and one tappable row per thing, opens on
+  "Sites & apps" sorted by last deploy, focuses the search, and opens the top result on Go. Replaces the earlier
+  "mike-launcher" Dispatch, whose Netlify site was deleted 2026-08-03. Search on both views now falls back to the
+  closest matches (typos, swapped letters, letters in order) when no record contains every word exactly.
 -->
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -96,6 +116,25 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 1.25rem;text-align:center
   label.toggle{margin-left:0;}
   .controls{position:static;}
 }
+
+/* Launcher mode (html.launch): the search box first, one tappable row per thing, nothing else. */
+.host,.close-note{display:none;}
+.launch .nav,.launch h1,.launch .lede,.launch .meta-line,.launch footer,.launch .row-filters,.launch .item .d,.launch .tags,.launch .why{display:none;}
+.launch .page{padding:0.6rem 0.9rem 5rem;}
+.launch .controls{position:sticky;top:0;margin:0 -0.9rem 0.4rem;padding:0.6rem 0.9rem 0.5rem;}
+.launch .search{font-size:1.05rem;padding:0.75rem 0.9rem;}
+.launch .chip{font-size:0.82rem;padding:0.4rem 0.85rem;flex:0 0 auto;}
+.launch #kinds{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0.55rem -0.9rem 0;padding:0 0.9rem;}
+.launch #kinds::-webkit-scrollbar{display:none;}
+.launch .month{margin:1.1rem 0 0.2rem;}
+.launch .item{display:block;position:relative;padding:0.7rem 0.1rem;min-height:3.2rem;}
+.launch .item h3{font-size:1.05rem;}
+.launch .item h3 a{border-bottom:none;}
+.launch .item h3 a::after{content:'';position:absolute;inset:0;}
+.launch .item:active{background:var(--copper-light);}
+.launch .item .story{font-size:0.82rem;margin-top:0.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.launch .host{display:block;font-family:var(--mono);font-size:0.66rem;color:var(--teal);margin-top:0.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.close-note.on{display:block;font-family:var(--serif);font-size:0.86rem;color:var(--muted);margin:1rem 0 0.2rem;font-style:italic;}
 </style>
 </head>
 <body>
@@ -120,13 +159,14 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 1.25rem;text-align:center
   <div class="controls">
     <input class="search" id="q" type="search" placeholder="Search titles, stories, projects…" aria-label="Search the works" autocomplete="off">
     <div class="row" id="kinds" role="group" aria-label="Kind"></div>
-    <div class="row">
+    <div class="row row-filters">
       <select class="chip" id="project" aria-label="Project"></select>
       <label class="toggle"><input type="checkbox" id="offline"> Include things that are offline</label>
     </div>
     <div class="result-count" id="count"></div>
   </div>
 
+  <p class="close-note" id="close-note"></p>
   <div id="list"><p class="empty">Loading the works…</p></div>
 </div>
 
@@ -144,6 +184,11 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 1.25rem;text-align:center
   var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var S = { pub: [], team: [], q: '', kind: 'all', project: 'all', offline: false, generated: null, teamCount: 0, wiki: null };
   var $ = function (id) { return document.getElementById(id); };
+  // Launcher mode (html.launch, set in <head>): opens on "Sites & apps", sorted by last deploy, search focused.
+  var LAUNCH = document.documentElement.classList.contains('launch');
+  var LAUNCH_PARAM = /[?&]launch=1\b/.test(location.search);
+  if (LAUNCH) KINDS.unshift(['open', 'Sites & apps']);
+  var DEFAULT_KIND = LAUNCH ? 'open' : 'all';
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function safeUrl(u) { return /^https?:\/\//i.test(u || '') ? u : '#'; }
@@ -151,11 +196,12 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 1.25rem;text-align:center
   // URL state, so a search can be shared: /works.html?q=levin&kind=site
   function readUrl() {
     var p = new URLSearchParams(location.search);
-    S.q = p.get('q') || ''; S.kind = p.get('kind') || 'all'; S.project = p.get('project') || 'all'; S.offline = p.get('offline') === '1';
+    S.q = p.get('q') || ''; S.kind = p.get('kind') || DEFAULT_KIND; S.project = p.get('project') || 'all'; S.offline = p.get('offline') === '1';
   }
   function writeUrl() {
     var p = new URLSearchParams();
-    if (S.q) p.set('q', S.q); if (S.kind !== 'all') p.set('kind', S.kind);
+    if (LAUNCH_PARAM) p.set('launch', '1');
+    if (S.q) p.set('q', S.q); if (S.kind !== DEFAULT_KIND) p.set('kind', S.kind);
     if (S.project !== 'all') p.set('project', S.project); if (S.offline) p.set('offline', '1');
     var qs = p.toString();
     history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
@@ -165,19 +211,71 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 1.25rem;text-align:center
   // The private wiki page for a project, only once a signed-in team member has loaded the team-only map.
   function wikiFor(project) { var slug = S.wiki && S.wiki.projects && Object.prototype.hasOwnProperty.call(S.wiki.projects, project) && S.wiki.projects[project]; return slug ? S.wiki.base + encodeURIComponent(slug) : ''; }
   function offline(w) { return w.state === 'down' || w.state === 'gone'; }
-  function matches(w, ignoreKind) {
-    if (!S.offline && offline(w)) return false;
-    if (!ignoreKind && S.kind !== 'all' && w.kind !== S.kind) return false;
-    if (S.project !== 'all' && w.project !== S.project) return false;
-    if (!S.q) return true;
-    var hay = [w.title, w.story, w.project, w.where, w.url, w.makers, w.kind].join(' ').toLowerCase();
-    return S.q.toLowerCase().split(/\s+/).every(function (t) { return hay.indexOf(t) >= 0; });
+  function kindOk(w, kind) { return kind === 'all' || (kind === 'open' ? w.kind === 'site' || w.kind === 'app' : w.kind === kind); }
+  function hayOf(w) { return [w.title, w.story, w.project, w.where, w.url, w.makers, w.kind].join(' ').toLowerCase(); }
+
+  // Typo tolerance, used only when no record contains every word exactly. The cost of one query
+  // word against one record word: 0 if it is inside the word; else the edit distance (with swaps)
+  // to the closest prefix of the word, allowed up to 1 for 4-7 letters and 2 for 8+; else 2.5 if
+  // its letters appear in order in a word that starts with the same letter (plmkr -> playmaker).
+  function editToPrefix(t, w) {
+    var n = t.length, m = w.length, prev2 = null, prev = [], cur, i, j, best = Infinity;
+    for (j = 0; j <= m; j++) prev[j] = j;
+    for (i = 1; i <= n; i++) {
+      cur = [i];
+      for (j = 1; j <= m; j++) {
+        var c = t[i - 1] === w[j - 1] ? 0 : 1;
+        cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + c);
+        if (prev2 && i > 1 && j > 1 && t[i - 1] === w[j - 2] && t[i - 2] === w[j - 1]) cur[j] = Math.min(cur[j], prev2[j - 2] + 1);
+      }
+      prev2 = prev; prev = cur;
+    }
+    for (j = 1; j <= m; j++) best = Math.min(best, prev[j]);
+    return best;
+  }
+  function inOrder(t, w) { var k = 0; for (var i = 0; i < w.length && k < t.length; i++) if (w[i] === t[k]) k++; return k === t.length; }
+  function wordCost(t, w) {
+    if (w.indexOf(t) >= 0) return 0;
+    var max = t.length >= 8 ? 2 : t.length >= 4 ? 1 : 0;
+    if (max) { var d = editToPrefix(t, w); if (d <= max) return d; }
+    if (t.length >= 3 && w[0] === t[0] && inOrder(t, w)) return 2.5;
+    return Infinity;
+  }
+  function bestCost(t, words) { var b = Infinity; for (var i = 0; i < words.length && b > 0; i++) b = Math.min(b, wordCost(t, words[i])); return b; }
+  function words(x) { return String(x || '').toLowerCase().split(/[^a-z0-9]+/).filter(Boolean); }
+  function closeness(w, toks) {
+    if (!w._tw) { w._tw = words(w.title); w._rw = words(hayOf(w)); }
+    var total = 0;
+    for (var i = 0; i < toks.length; i++) {
+      var c = Math.min(bestCost(toks[i], w._tw), bestCost(toks[i], w._rw) + 0.5);   // a hit in the title ranks first
+      if (c === Infinity) return Infinity;
+      total += c;
+    }
+    return total;
   }
 
-  function renderControls() {
+  // The search, as a function of kind: forKind(k) gives the records of kind k that pass the offline and
+  // project filters and contain every query word; if none do, the closest matches of that kind instead.
+  // Closeness is scored at most once per render and only when some kind has no exact match.
+  function selector() {
+    var base = all().filter(function (w) { return (S.offline || !offline(w)) && (S.project === 'all' || w.project === S.project); });
+    var toks = S.q.toLowerCase().split(/\s+/).filter(Boolean);
+    var exact = !toks.length ? base : base.filter(function (w) { var hay = hayOf(w); return toks.every(function (t) { return hay.indexOf(t) >= 0; }); });
+    var scored = null;
+    return function forKind(kind) {
+      var rows = exact.filter(function (w) { return kindOk(w, kind); });
+      if (rows.length || !toks.length) return { rows: rows, fuzzy: false };
+      if (!scored) scored = base.filter(function (w) { w._cost = closeness(w, toks); return w._cost < Infinity; });
+      rows = scored.filter(function (w) { return kindOk(w, kind); });
+      var best = rows.reduce(function (b, w) { return Math.min(b, w._cost); }, Infinity);
+      return { rows: rows.filter(function (w) { return w._cost <= best + 1.5; }), fuzzy: true };
+    };
+  }
+
+  function renderControls(forKind) {
     var counts = {};
-    all().forEach(function (w) { if (matches(w, true)) { counts[w.kind] = (counts[w.kind] || 0) + 1; counts.all = (counts.all || 0) + 1; } });
-    $('kinds').innerHTML = KINDS.filter(function (k) { return k[0] === 'all' || counts[k[0]]; }).map(function (k) {
+    KINDS.forEach(function (k) { counts[k[0]] = forKind(k[0]).rows.length; });
+    $('kinds').innerHTML = KINDS.filter(function (k) { return k[0] === 'all' || k[0] === S.kind || counts[k[0]]; }).map(function (k) {
       return '<button class="chip" data-kind="' + k[0] + '" aria-pressed="' + (S.kind === k[0]) + '">' + k[1] + '<span class="n">' + (counts[k[0]] || 0) + '</span></button>';
     }).join('');
     var projects = {};
@@ -201,25 +299,34 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 1.25rem;text-align:center
     if (wp) tags += '<a class="wiki-link" href="' + esc(wp) + '" rel="noopener" target="_blank" title="The private wiki page for ' + esc(w.project) + '">wiki</a>';
     if (w.links && w.links.source) tags += '<a href="' + esc(safeUrl(w.links.source)) + '" rel="noopener" target="_blank">source</a>';
     if (w.chapters > 1) tags += '<span>' + w.chapters + ' changelog entries</span>';
+    var host = String(w.url || '').replace(/^https?:\/\/(www\.)?/i, '').replace(/\/$/, '');
     return '<article class="item"><div class="d">' + (d ? MONTHS[d.getUTCMonth()].slice(0, 3) + ' ' + d.getUTCDate() : '—') + '</div><div>' +
       '<h3><a href="' + esc(safeUrl(w.url)) + '" rel="noopener" target="_blank">' + esc(w.title) + '</a></h3>' +
+      '<div class="host">' + esc(host) + '</div>' +
       (w.story ? '<p class="story">' + esc(w.story) + '</p>' : '') +
       '<div class="tags">' + tags + '</div>' +
       (w._team && w.why ? '<div class="why">Team-only because: ' + esc(w.why) + '</div>' : '') +
       '</div></article>';
   }
 
+  // Launcher mode sorts by the last deploy or push (updated); the full page by the date a thing was made.
+  function when(w) { return (LAUNCH && w.updated) || w.date || ''; }
+
   function render() {
-    renderControls();
-    var rows = all().filter(function (w) { return matches(w); });
-    rows.sort(function (a, b) { return (b.date || '0000').localeCompare(a.date || '0000') || a.title.localeCompare(b.title); });
+    var forKind = selector();
+    renderControls(forKind);
+    var sel = forKind(S.kind), rows = sel.rows;
+    rows.sort(function (a, b) { return (sel.fuzzy ? a._cost - b._cost : 0) || (when(b) || '0000').localeCompare(when(a) || '0000') || a.title.localeCompare(b.title); });
     var wl = S.project !== 'all' && wikiFor(S.project);
-    $('count').innerHTML = esc(rows.length + (rows.length === 1 ? ' thing' : ' things') + (S.q || S.kind !== 'all' || S.project !== 'all' ? ' match' : '')) +
+    $('count').innerHTML = esc(rows.length + (rows.length === 1 ? ' thing' : ' things') + (S.q || S.kind !== DEFAULT_KIND || S.project !== 'all' ? (rows.length === 1 ? ' matches' : ' match') : '')) +
       (wl ? ' · <a class="wiki-link" href="' + esc(wl) + '" rel="noopener" target="_blank">wiki page for ' + esc(S.project) + '</a>' : '');
-    if (!rows.length) { $('list').innerHTML = '<p class="empty">Nothing matches. Try fewer words, or include things that are offline.</p>'; return; }
+    var note = $('close-note');
+    note.textContent = sel.fuzzy && rows.length ? 'Nothing contains \u201c' + S.q + '\u201d exactly. These are the closest matches.' : '';
+    note.classList.toggle('on', !!(sel.fuzzy && rows.length));
+    if (!rows.length) { $('list').innerHTML = '<p class="empty">Nothing matches. Try fewer words' + (LAUNCH ? ', or Everything.' : ', or include things that are offline.') + '</p>'; return; }
     var html = '', last = null;
     rows.forEach(function (w) {
-      var key = w.date ? w.date.slice(0, 7) : 'undated';
+      var key = sel.fuzzy ? last : when(w) ? when(w).slice(0, 7) : 'undated';
       if (key !== last) {
         html += '<h2 class="month">' + (key === 'undated' ? 'Undated' : MONTHS[+key.slice(5, 7) - 1] + ' ' + key.slice(0, 4)) + '</h2>';
         last = key;
@@ -304,10 +411,21 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 1.25rem;text-align:center
   $('kinds').addEventListener('click', function (e) { var b = e.target.closest('[data-kind]'); if (!b) return; S.kind = b.dataset.kind; writeUrl(); render(); });
   $('project').addEventListener('change', function (e) { S.project = e.target.value; writeUrl(); render(); });
   $('offline').addEventListener('change', function (e) { S.offline = e.target.checked; writeUrl(); render(); });
+  if (LAUNCH) {
+    $('q').setAttribute('enterkeyhint', 'go');
+    $('q').setAttribute('placeholder', 'Search sites and apps…');
+    // Go / Enter opens the top result, so "lev" + Go lands on Levinese.
+    $('q').addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter') return;
+      var a = document.querySelector('#list .item h3 a');
+      if (a && a.href && a.getAttribute('href') !== '#') { e.preventDefault(); window.open(a.href, '_blank', 'noopener'); }
+    });
+  }
 
   fetch('/works.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (doc) {
     S.pub = doc.works || []; S.generated = doc.generated; S.teamCount = (doc.counts && doc.counts.team_only) || 0;
     meta(); render();
+    if (LAUNCH) $('q').focus({ preventScroll: true });   // iOS opens the keyboard only after a tap; elsewhere the cursor is ready
     if (/[?&]team=1\b/.test(location.search) || /access_token|code=/.test(location.href) || hasSession()) openTeam();
   }).catch(function () { $('list').innerHTML = '<p class="empty">The works list did not load. Refresh to try again.</p>'; $('meta').textContent = ''; });
 })();
