@@ -20,6 +20,10 @@
   whenever a changelog line ships). Public records only in that file. Team-only records live
   in Supabase table works_team and load only after a team member signs in.
   Built 2026-10-16 (Mike Wolf + Claude Opus 5.5, CCc session efc7e504, bead es-it0).
+  Wiki links, 2026-10-18 (Mike Wolf + Claude Opus 5.5, CCc session dd13ff36, bead es-21d): after a team member
+  signs in, one team-only works_team row (id _wiki-links) maps projects to pages of the private estate wiki,
+  and the page shows a "wiki" link on each work and beside a chosen project. Nothing about the wiki is in
+  this file or in works.json; an ordinary visitor never loads the row.
 -->
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -138,7 +142,7 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 1.25rem;text-align:center
 (function () {
   var KINDS = [['all', 'Everything'], ['site', 'Sites'], ['app', 'Apps'], ['code', 'Code'], ['writing', 'Writing'], ['film', 'Films'], ['artifact', 'Artifacts'], ['accord', 'Accords']];
   var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  var S = { pub: [], team: [], q: '', kind: 'all', project: 'all', offline: false, generated: null, teamCount: 0 };
+  var S = { pub: [], team: [], q: '', kind: 'all', project: 'all', offline: false, generated: null, teamCount: 0, wiki: null };
   var $ = function (id) { return document.getElementById(id); };
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
@@ -158,6 +162,8 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 1.25rem;text-align:center
   }
 
   function all() { return S.pub.concat(S.team); }
+  // The private wiki page for a project, only once a signed-in team member has loaded the team-only map.
+  function wikiFor(project) { var slug = S.wiki && S.wiki.projects && Object.prototype.hasOwnProperty.call(S.wiki.projects, project) && S.wiki.projects[project]; return slug ? S.wiki.base + encodeURIComponent(slug) : ''; }
   function offline(w) { return w.state === 'down' || w.state === 'gone'; }
   function matches(w, ignoreKind) {
     if (!S.offline && offline(w)) return false;
@@ -191,6 +197,8 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 1.25rem;text-align:center
     if (w.state === 'gated') tags += '<span class="tag">sign-in</span>';
     tags += '<span>' + esc(w.project) + '</span><span>' + esc(w.where) + '</span>';
     if (w.makers) tags += '<span>by ' + esc(w.makers) + '</span>';
+    var wp = wikiFor(w.project);
+    if (wp) tags += '<a class="wiki-link" href="' + esc(wp) + '" rel="noopener" target="_blank" title="The private wiki page for ' + esc(w.project) + '">wiki</a>';
     if (w.links && w.links.source) tags += '<a href="' + esc(safeUrl(w.links.source)) + '" rel="noopener" target="_blank">source</a>';
     if (w.chapters > 1) tags += '<span>' + w.chapters + ' changelog entries</span>';
     return '<article class="item"><div class="d">' + (d ? MONTHS[d.getUTCMonth()].slice(0, 3) + ' ' + d.getUTCDate() : '—') + '</div><div>' +
@@ -205,7 +213,9 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 1.25rem;text-align:center
     renderControls();
     var rows = all().filter(function (w) { return matches(w); });
     rows.sort(function (a, b) { return (b.date || '0000').localeCompare(a.date || '0000') || a.title.localeCompare(b.title); });
-    $('count').textContent = rows.length + (rows.length === 1 ? ' thing' : ' things') + (S.q || S.kind !== 'all' || S.project !== 'all' ? ' match' : '');
+    var wl = S.project !== 'all' && wikiFor(S.project);
+    $('count').innerHTML = esc(rows.length + (rows.length === 1 ? ' thing' : ' things') + (S.q || S.kind !== 'all' || S.project !== 'all' ? ' match' : '')) +
+      (wl ? ' · <a class="wiki-link" href="' + esc(wl) + '" rel="noopener" target="_blank">wiki page for ' + esc(S.project) + '</a>' : '');
     if (!rows.length) { $('list').innerHTML = '<p class="empty">Nothing matches. Try fewer words, or include things that are offline.</p>'; return; }
     var html = '', last = null;
     rows.forEach(function (w) {
@@ -268,11 +278,14 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 1.25rem;text-align:center
     var email = (session.user && session.user.email) || 'you';
     return window.SomaAuth.getClient().from('works_team').select('record').then(function (r) {
       if (r.error) { panel('<p>Signed in as ' + esc(email) + ', but the team list did not load: ' + esc(r.error.message) + '</p>'); return; }
-      S.team = (r.data || []).map(function (x) { var w = x.record; w._team = true; return w; });
+      var recs = (r.data || []).map(function (x) { return x.record; }).filter(Boolean);
+      var map = recs.filter(function (w) { return w.id === '_wiki-links'; })[0];
+      S.wiki = map && map.wiki && /^https:\/\//.test(map.wiki.base || '') ? map.wiki : null;
+      S.team = recs.filter(function (w) { return w.kind !== 'meta'; }).map(function (w) { w._team = true; return w; });
       panel(S.team.length
         ? '<p>Signed in as ' + esc(email) + '. Showing ' + S.team.length + ' team-only things alongside the public ones. <button class="btn ghost" id="team-out">Sign out</button></p>'
         : '<p>Signed in as ' + esc(email) + '. This account does not have team access yet; ask Mike to add it. <button class="btn ghost" id="team-out">Sign out</button></p>');
-      $('team-out').addEventListener('click', function () { window.SomaAuth.signOut().then(function () { S.team = []; $('team-panel').classList.remove('open'); meta(); render(); }); });
+      $('team-out').addEventListener('click', function () { window.SomaAuth.signOut().then(function () { S.team = []; S.wiki = null; $('team-panel').classList.remove('open'); meta(); render(); }); });
       meta(); render();
     });
   }
