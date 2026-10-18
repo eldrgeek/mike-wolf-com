@@ -1,11 +1,22 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 311,
-"team_only": 290
+"public": 312,
+"team_only": 291
 },
-"generated": "2026-10-18T02:28:22Z",
+"generated": "2026-10-18T08:35:23Z",
 "works": [
+{
+"date": "2026-10-18",
+"id": "wine-snob.netlify.app",
+"kind": "site",
+"project": "Other",
+"state": "down",
+"title": "Wine Snob",
+"updated": "2026-10-18",
+"url": "https://wine-snob.netlify.app",
+"where": "Netlify"
+},
 {
 "chapters": 1,
 "date": "2026-10-17",
@@ -14,8 +25,9 @@
 "project": "Levin & thinkers",
 "state": "live",
 "title": "Nine Taps Before Tuesday",
+"updated": "2026-10-17",
 "url": "https://olli-levin-survey.netlify.app",
-"where": "olli-levin-survey.netlify.app"
+"where": "Netlify"
 },
 {
 "chapters": 1,
@@ -26,7 +38,7 @@
 "state": "live",
 "story": "Soon, everyone will work with an AI partner that knows them. Free tools to design that partnership well, made by people working with their own AI partners.",
 "title": "The Future of Work, demonstrated",
-"updated": "2026-10-16",
+"updated": "2026-10-18",
 "url": "https://tfow.ai-wtf.org",
 "where": "Netlify"
 },
@@ -350,7 +362,7 @@
 "state": "live",
 "story": "A satirical DTC storefront where every product is a status object whose function is to signal you're above status objects, with one section that isn't a joke.",
 "title": "Humility Enterprises — Less, at a premium.",
-"updated": "2026-08-10",
+"updated": "2026-10-17",
 "url": "https://humility-enterprises.netlify.app",
 "where": "Netlify"
 },
@@ -572,7 +584,7 @@
 "state": "live",
 "story": "(Mike: \"set up an AI portal so that AIs can read the book and make their comments\").",
 "title": "Self-Referential Metanovel Writing for D*mmies",
-"updated": "2026-10-16",
+"updated": "2026-10-17",
 "url": "https://srmw.mike-wolf.com",
 "where": "Netlify"
 },
@@ -1192,7 +1204,7 @@
 "project": "SOMA",
 "state": "down",
 "title": "Soma Guide",
-"updated": "2026-10-17",
+"updated": "2026-10-18",
 "url": "https://soma-guide.netlify.app",
 "where": "Netlify"
 },
@@ -1454,7 +1466,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-10-17",
+"updated": "2026-10-18",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
