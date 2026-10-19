@@ -2,9 +2,9 @@
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
 "public": 312,
-"team_only": 291
+"team_only": 293
 },
-"generated": "2026-10-18T23:25:33Z",
+"generated": "2026-10-19T10:23:08Z",
 "works": [
 {
 "date": "2026-10-18",
@@ -844,9 +844,9 @@
 "id": "soma-reels.netlify.app",
 "kind": "site",
 "project": "SOMA",
-"state": "live",
+"state": "down",
 "story": "Soma-reels",
-"title": "SOMA Show Reels",
+"title": "Soma Reels",
 "updated": "2026-07-12",
 "url": "https://soma-reels.netlify.app",
 "where": "Netlify"
