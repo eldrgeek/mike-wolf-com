@@ -1,11 +1,22 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 312,
-"team_only": 293
+"public": 313,
+"team_only": 295
 },
-"generated": "2026-10-20T08:00:01Z",
+"generated": "2026-10-20T08:35:26Z",
 "works": [
+{
+"date": "2026-10-19",
+"id": "soma-forge.netlify.app",
+"kind": "site",
+"project": "SOMA",
+"state": "live",
+"title": "SOMA Puppet Runtime",
+"updated": "2026-10-19",
+"url": "https://soma-forge.netlify.app",
+"where": "Netlify"
+},
 {
 "date": "2026-10-18",
 "id": "wine-snob.netlify.app",
@@ -584,7 +595,7 @@
 "state": "live",
 "story": "(Mike: \"set up an AI portal so that AIs can read the book and make their comments\").",
 "title": "Self-Referential Metanovel Writing for D*mmies",
-"updated": "2026-10-17",
+"updated": "2026-10-19",
 "url": "https://srmw.mike-wolf.com",
 "where": "Netlify"
 },
@@ -667,7 +678,7 @@
 "state": "live",
 "story": "Community-seed published (GitHub + Netlify community-seed.netlify.app) — two-stage seed prompts (Sherpa/Founding) live.",
 "title": "Community Seed",
-"updated": "2026-09-29",
+"updated": "2026-10-18",
 "url": "https://community-seed.netlify.app",
 "where": "Netlify"
 },
@@ -1204,7 +1215,7 @@
 "project": "SOMA",
 "state": "down",
 "title": "Soma Guide",
-"updated": "2026-10-18",
+"updated": "2026-10-19",
 "url": "https://soma-guide.netlify.app",
 "where": "Netlify"
 },
@@ -1466,7 +1477,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-10-18",
+"updated": "2026-10-20",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
@@ -2823,7 +2834,7 @@
 "state": "live",
 "story": "Created with CodeSandbox",
 "title": "Eldr Hoot Material Firebase React",
-"updated": "2026-10-16",
+"updated": "2026-10-18",
 "url": "https://github.com/eldrgeek/eldr-Hoot-Material-Firebase-React",
 "where": "GitHub"
 },
