@@ -4,9 +4,10 @@
 "public": 313,
 "team_only": 295
 },
-"generated": "2026-10-21T05:02:44Z",
+"generated": "2026-10-21T05:07:41Z",
 "works": [
 {
+"chapters": 1,
 "date": "2026-10-19",
 "id": "soma-forge.netlify.app",
 "kind": "site",
