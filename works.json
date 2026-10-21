@@ -1,11 +1,47 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 313,
+"public": 316,
 "team_only": 299
 },
-"generated": "2026-10-21T14:13:31Z",
+"generated": "2026-10-21T14:21:18Z",
 "works": [
+{
+"chapters": 1,
+"date": "2026-10-21",
+"id": "soma-speech.netlify.app/soma-speech.js",
+"kind": "site",
+"project": "SOMA",
+"state": "live",
+"story": "Soma-speech LIVE: a mic button that dictates into any text box, added with one script tag — soma-speech.netlify.app (no sign-in)",
+"title": "soma-speech.netlify.app/soma-speech.js",
+"url": "https://soma-speech.netlify.app/soma-speech.js",
+"where": "soma-speech.netlify.app"
+},
+{
+"chapters": 1,
+"date": "2026-10-21",
+"id": "soma-speech.netlify.app/test",
+"kind": "site",
+"project": "SOMA",
+"state": "live",
+"story": "Soma-speech LIVE: a mic button that dictates into any text box, added with one script tag — soma-speech.netlify.app (no sign-in)",
+"title": "soma-speech browser test (running)",
+"url": "https://soma-speech.netlify.app/test/",
+"where": "soma-speech.netlify.app"
+},
+{
+"chapters": 1,
+"date": "2026-10-21",
+"id": "soma-speech.netlify.app",
+"kind": "site",
+"project": "SOMA",
+"state": "live",
+"story": "Soma-speech LIVE: a mic button that dictates into any text box, added with one script tag — soma-speech.netlify.app (no sign-in)",
+"title": "SOMA Speech",
+"url": "https://soma-speech.netlify.app",
+"where": "soma-speech.netlify.app"
+},
 {
 "chapters": 1,
 "date": "2026-10-19",
