@@ -2,9 +2,9 @@
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
 "public": 313,
-"team_only": 295
+"team_only": 298
 },
-"generated": "2026-10-21T08:15:24Z",
+"generated": "2026-10-21T08:35:20Z",
 "works": [
 {
 "chapters": 1,
@@ -14,7 +14,7 @@
 "project": "SOMA",
 "state": "live",
 "title": "SOMA Puppet Runtime",
-"updated": "2026-10-19",
+"updated": "2026-10-21",
 "url": "https://soma-forge.netlify.app",
 "where": "Netlify"
 },
@@ -37,7 +37,7 @@
 "project": "Levin & thinkers",
 "state": "live",
 "title": "Nine Taps Before Tuesday",
-"updated": "2026-10-17",
+"updated": "2026-10-21",
 "url": "https://olli-levin-survey.netlify.app",
 "where": "Netlify"
 },
@@ -50,7 +50,7 @@
 "state": "live",
 "story": "Soon, everyone will work with an AI partner that knows them. Free tools to design that partnership well, made by people working with their own AI partners.",
 "title": "The Future of Work, demonstrated",
-"updated": "2026-10-18",
+"updated": "2026-10-20",
 "url": "https://tfow.ai-wtf.org",
 "where": "Netlify"
 },
@@ -596,7 +596,7 @@
 "state": "live",
 "story": "(Mike: \"set up an AI portal so that AIs can read the book and make their comments\").",
 "title": "Self-Referential Metanovel Writing for D*mmies",
-"updated": "2026-10-19",
+"updated": "2026-10-20",
 "url": "https://srmw.mike-wolf.com",
 "where": "Netlify"
 },
@@ -679,7 +679,7 @@
 "state": "live",
 "story": "Community-seed published (GitHub + Netlify community-seed.netlify.app) — two-stage seed prompts (Sherpa/Founding) live.",
 "title": "Community Seed",
-"updated": "2026-10-18",
+"updated": "2026-10-20",
 "url": "https://community-seed.netlify.app",
 "where": "Netlify"
 },
@@ -1202,7 +1202,7 @@
 "project": "SOMA",
 "state": "live",
 "title": "Pulse Core",
-"updated": "2026-07-30",
+"updated": "2026-10-21",
 "url": "https://github.com/eldrgeek/pulse-core",
 "where": "GitHub"
 },
@@ -1216,7 +1216,7 @@
 "project": "SOMA",
 "state": "down",
 "title": "Soma Guide",
-"updated": "2026-10-19",
+"updated": "2026-10-21",
 "url": "https://soma-guide.netlify.app",
 "where": "Netlify"
 },
@@ -1233,7 +1233,7 @@
 "state": "live",
 "story": "Morph's answers stop vanishing, Mark Lesser's two dictionary corrections are live, and the Levinese dictionary opens with a \"watch this first\" video.",
 "title": "Levinese",
-"updated": "2026-09-22",
+"updated": "2026-10-21",
 "url": "https://levinese-preview.netlify.app",
 "where": "Netlify"
 },
@@ -1478,7 +1478,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-10-20",
+"updated": "2026-10-21",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
@@ -1877,7 +1877,7 @@
 "project": "AI WTF",
 "state": "live",
 "title": "70Yearsblog",
-"updated": "2025-09-18",
+"updated": "2026-10-20",
 "url": "https://github.com/eldrgeek/70YearsBLOG",
 "where": "GitHub"
 },
