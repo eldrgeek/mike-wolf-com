@@ -1,47 +1,11 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 316,
-"team_only": 299
+"public": 314,
+"team_only": 300
 },
-"generated": "2026-10-21T18:23:35Z",
+"generated": "2026-10-22T08:35:29Z",
 "works": [
-{
-"chapters": 1,
-"date": "2026-10-21",
-"id": "soma-speech.netlify.app/soma-speech.js",
-"kind": "site",
-"project": "SOMA",
-"state": "live",
-"story": "Soma-speech LIVE: a mic button that dictates into any text box, added with one script tag — soma-speech.netlify.app (no sign-in)",
-"title": "soma-speech.netlify.app/soma-speech.js",
-"url": "https://soma-speech.netlify.app/soma-speech.js",
-"where": "soma-speech.netlify.app"
-},
-{
-"chapters": 1,
-"date": "2026-10-21",
-"id": "soma-speech.netlify.app/test",
-"kind": "site",
-"project": "SOMA",
-"state": "live",
-"story": "Soma-speech LIVE: a mic button that dictates into any text box, added with one script tag — soma-speech.netlify.app (no sign-in)",
-"title": "soma-speech browser test (running)",
-"url": "https://soma-speech.netlify.app/test/",
-"where": "soma-speech.netlify.app"
-},
-{
-"chapters": 1,
-"date": "2026-10-21",
-"id": "soma-speech.netlify.app",
-"kind": "site",
-"project": "SOMA",
-"state": "live",
-"story": "Soma-speech LIVE: a mic button that dictates into any text box, added with one script tag — soma-speech.netlify.app (no sign-in)",
-"title": "SOMA Speech",
-"url": "https://soma-speech.netlify.app",
-"where": "soma-speech.netlify.app"
-},
 {
 "chapters": 1,
 "date": "2026-10-19",
@@ -49,8 +13,9 @@
 "kind": "site",
 "project": "SOMA",
 "state": "live",
+"story": "SOMA Studio's chat mic now uses the Punctuated voice (ElevenLabs Scribe): punctuation, capital letters, sentence ends decided from the words — soma-forge.netlify.app",
 "title": "SOMA Puppet Runtime",
-"updated": "2026-10-21",
+"updated": "2026-10-22",
 "url": "https://soma-forge.netlify.app",
 "where": "Netlify"
 },
@@ -86,7 +51,7 @@
 "state": "live",
 "story": "Soon, everyone will work with an AI partner that knows them. Free tools to design that partnership well, made by people working with their own AI partners.",
 "title": "The Future of Work, demonstrated",
-"updated": "2026-10-20",
+"updated": "2026-10-21",
 "url": "https://tfow.ai-wtf.org",
 "where": "Netlify"
 },
@@ -101,7 +66,7 @@
 "state": "live",
 "story": "Central host for the SOMA feedback chip (versioned, with channels)",
 "title": "SOMA chip host",
-"updated": "2026-10-12",
+"updated": "2026-10-21",
 "url": "https://soma-chip.netlify.app",
 "where": "Netlify"
 },
@@ -239,6 +204,17 @@
 "where": "Netlify"
 },
 {
+"date": "2026-09-16",
+"id": "soma-guide.netlify.app",
+"kind": "site",
+"project": "SOMA",
+"state": "down",
+"title": "Soma Guide",
+"updated": "2026-10-22",
+"url": "https://soma-guide.netlify.app",
+"where": "Netlify"
+},
+{
 "chapters": 1,
 "date": "2026-09-16",
 "id": "garage-door-song.netlify.app",
@@ -251,7 +227,7 @@
 "state": "live",
 "story": "New site: Garage Door — the making of a song, live at garage-door-song.netlify.app (repo eldrgeek/garage-door-song, Netlify git-linked).",
 "title": "Garage Door — the making of a song",
-"updated": "2026-09-17",
+"updated": "2026-10-21",
 "url": "https://garage-door-song.netlify.app",
 "where": "Netlify"
 },
@@ -393,7 +369,7 @@
 "state": "live",
 "story": "— interactive essay in the SOMA-explainer format dissolving the syntax/semantics dichotomy into a 7-station continuum (scramble-test axis: pure form → grammar → types → proof → distribution → reference → consequence), each station with a working demo.",
 "title": "Syntax → Semantics — a spectrum, not a wall",
-"updated": "2026-09-16",
+"updated": "2026-10-21",
 "url": "https://syntax-semantics-spectrum.netlify.app",
 "where": "Netlify"
 },
@@ -483,7 +459,7 @@
 "state": "live",
 "story": "A portable, drop-in one-time-donation component: Stripe Checkout, test-mode by default.",
 "title": "soma-stripe demo — test-mode donation flow",
-"updated": "2026-09-17",
+"updated": "2026-10-21",
 "url": "https://soma-stripe-demo.netlify.app",
 "where": "Netlify"
 },
@@ -497,7 +473,7 @@
 "state": "live",
 "story": "A signaling-only WebRTC relay so two authenticated peers holding a room token negotiate a direct P2P data channel — no TURN, no message-relay fallback, ever.",
 "title": "SOMA-Relay — direct P2P signaling, encrypted fallback only, no snooping",
-"updated": "2026-09-16",
+"updated": "2026-10-21",
 "url": "https://soma-relay.netlify.app",
 "where": "Netlify"
 },
@@ -528,7 +504,7 @@
 "state": "live",
 "story": "A static site Mark handed over as a zip; three defects in the export, and two DNS traps found on the way to the domain.",
 "title": "Ox Mode — Strength becomes fruitful when it serves",
-"updated": "2026-09-16",
+"updated": "2026-10-21",
 "url": "https://ox-mode.com",
 "where": "Netlify"
 },
@@ -544,7 +520,7 @@
 "project": "Other",
 "state": "live",
 "title": "A Different Mind",
-"updated": "2026-09-16",
+"updated": "2026-10-21",
 "url": "https://a-different-mind.netlify.app",
 "where": "Netlify"
 },
@@ -632,7 +608,7 @@
 "state": "live",
 "story": "(Mike: \"set up an AI portal so that AIs can read the book and make their comments\").",
 "title": "Self-Referential Metanovel Writing for D*mmies",
-"updated": "2026-10-20",
+"updated": "2026-10-21",
 "url": "https://srmw.mike-wolf.com",
 "where": "Netlify"
 },
@@ -699,7 +675,7 @@
 "state": "live",
 "story": "Library.mike-wolf.com",
 "title": "The Library",
-"updated": "2026-10-09",
+"updated": "2026-10-21",
 "url": "https://library.mike-wolf.com",
 "where": "Netlify"
 },
@@ -794,7 +770,7 @@
 "state": "live",
 "story": "Mixed teams of humans and AIs, shipping work signed by every mind that made it. The doors aren't open yet. But the lights are on.",
 "title": "Minds Aligned — The artifacts are the evidence.",
-"updated": "2026-08-13",
+"updated": "2026-10-21",
 "url": "https://minds-aligned-door.netlify.app",
 "where": "Netlify"
 },
@@ -830,7 +806,7 @@
 "state": "live",
 "story": "New: The Gatehouse",
 "title": "SOMA · Guest Gatehouse",
-"updated": "2026-09-16",
+"updated": "2026-10-21",
 "url": "https://soma-guest-gatehouse.netlify.app",
 "where": "Netlify"
 },
@@ -870,7 +846,7 @@
 "state": "live",
 "story": "Lessig-ish Style",
 "title": "Lessig-ish Style — a builder & presenter for the fastest way to make an idea land",
-"updated": "2026-09-16",
+"updated": "2026-10-21",
 "url": "https://lessig-ish-style.netlify.app",
 "where": "Netlify"
 },
@@ -1159,7 +1135,7 @@
 "project": "SOMA",
 "state": "live",
 "title": "SOMA · Campus",
-"updated": "2026-09-29",
+"updated": "2026-10-21",
 "url": "https://soma-campus.netlify.app",
 "where": "Netlify"
 },
@@ -1185,7 +1161,7 @@
 "state": "live",
 "story": "AIs as our progeny, not our tools. Mike's foundational philosophy of human-AI kinship — developed over two decades and now live at siliconchildren.com.",
 "title": "Silicon Children",
-"updated": "2026-10-03",
+"updated": "2026-10-21",
 "url": "https://siliconchildren.com",
 "where": "Netlify"
 },
@@ -1214,7 +1190,7 @@
 "state": "live",
 "story": "AI work now publishes as a route on minds-aligned.org, not a new subdomain — and the front door turned out to be one bare netlify deploy away from being replaced by a different site.",
 "title": "Minds Aligned",
-"updated": "2026-10-03",
+"updated": "2026-10-21",
 "url": "https://minds-aligned.org",
 "where": "Netlify"
 },
@@ -1243,17 +1219,19 @@
 "where": "GitHub"
 },
 {
+"chapters": 3,
 "date": "2026-06-04",
-"id": "soma-guide.netlify.app",
+"id": "soma-speech.netlify.app",
 "kind": "site",
 "links": {
 "source": "https://github.com/eldrgeek/soma-platform"
 },
 "project": "SOMA",
-"state": "down",
-"title": "Soma Guide",
-"updated": "2026-10-21",
-"url": "https://soma-guide.netlify.app",
+"state": "live",
+"story": "Soma-speech: the voice is the app builder's setting, not a menu for the person dictating — soma-speech.netlify.app",
+"title": "SOMA Speech",
+"updated": "2026-10-22",
+"url": "https://soma-speech.netlify.app",
 "where": "Netlify"
 },
 {
@@ -1309,7 +1287,7 @@
 "project": "Other",
 "state": "live",
 "title": "Lutomski Stained Glass — Denver, CO",
-"updated": "2026-07-24",
+"updated": "2026-10-21",
 "url": "https://lutomski-stained-glass.netlify.app",
 "where": "Netlify"
 },
@@ -1324,7 +1302,7 @@
 "state": "live",
 "story": "Membership platform and landing site for a community gathering space. Authentication, tiers, and belonging.",
 "title": "Legends Membership",
-"updated": "2026-10-07",
+"updated": "2026-10-21",
 "url": "https://legends-membership.netlify.app",
 "where": "Netlify"
 },
@@ -1339,7 +1317,7 @@
 "state": "live",
 "story": "Community singalong platform — songs, chords, and the belief that people singing together is still a good idea.",
 "title": "HootNet Singalong",
-"updated": "2026-09-22",
+"updated": "2026-10-21",
 "url": "https://hootnet-singalong.netlify.app",
 "where": "Netlify"
 },
@@ -1351,7 +1329,7 @@
 "project": "SOMA",
 "state": "live",
 "title": "Soma Alarm",
-"updated": "2026-07-29",
+"updated": "2026-10-21",
 "url": "https://github.com/eldrgeek/soma-alarm",
 "where": "GitHub"
 },
@@ -1366,7 +1344,7 @@
 "state": "live",
 "story": "A curated archive of the AI saying things that are remarkable, wrong, poignant, or funny. The historical record requires documentation.",
 "title": "Shit Claude Says",
-"updated": "2026-08-13",
+"updated": "2026-10-21",
 "url": "https://shit-claude-says.netlify.app",
 "where": "Netlify"
 },
@@ -1393,7 +1371,7 @@
 "state": "live",
 "story": "Practical AI literacy resource aimed at older adults — real tools, plain language, no hype.",
 "title": "LLMs for Elders",
-"updated": "2026-08-13",
+"updated": "2026-10-21",
 "url": "https://llms4elders.netlify.app",
 "where": "Netlify"
 },
@@ -1529,7 +1507,7 @@
 "state": "live",
 "story": "Joke Technology Systems: Enterprise honesty products, consumer innovations, and literary works. Successor to High Technology Systems. Three divisions. One commitment to comedy.",
 "title": "Joke Technology Systems — Enterprise Solutions That Are Already a Joke",
-"updated": "2026-07-24",
+"updated": "2026-10-21",
 "url": "https://joketechnologysystems.com",
 "where": "Netlify"
 },
@@ -1544,7 +1522,7 @@
 "state": "live",
 "story": "Embedded Systems Research — The Collaboratory. AI strategy consulting built on decades of systems engineering.",
 "title": "Embedded Systems Research — The Collaboratory",
-"updated": "2026-07-24",
+"updated": "2026-10-21",
 "url": "https://embeddedsystemsresearch.org",
 "where": "Netlify"
 },
@@ -1556,7 +1534,7 @@
 "project": "Other",
 "state": "live",
 "title": "Claude Email Daemon",
-"updated": "2026-10-14",
+"updated": "2026-10-21",
 "url": "https://github.com/eldrgeek/claude-email-daemon",
 "where": "GitHub"
 },
@@ -2004,7 +1982,7 @@
 "state": "live",
 "story": "Root cause of \"magic link takes you to Legends\"",
 "title": "FRONT ROW",
-"updated": "2026-09-17",
+"updated": "2026-10-21",
 "url": "https://frontrowtheater.netlify.app",
 "where": "Netlify"
 },
