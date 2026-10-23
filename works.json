@@ -2,10 +2,21 @@
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
 "public": 314,
-"team_only": 301
+"team_only": 302
 },
-"generated": "2026-10-22T13:06:03Z",
+"generated": "2026-10-23T08:35:35Z",
 "works": [
+{
+"date": "2026-10-22",
+"id": "70yearswtf.substack.com/p/enjoyment-is-en-joyment",
+"kind": "writing",
+"project": "AI WTF",
+"state": "live",
+"story": "Enjoyment is putting joy in, not just taking it in",
+"title": "Enjoyment is en-joyment",
+"url": "https://70yearswtf.substack.com/p/enjoyment-is-en-joyment",
+"where": "Substack (70yearswtf)"
+},
 {
 "chapters": 1,
 "date": "2026-10-19",
@@ -15,7 +26,7 @@
 "state": "live",
 "story": "SOMA Studio's chat mic now uses the Punctuated voice (ElevenLabs Scribe): punctuation, capital letters, sentence ends decided from the words — soma-forge.netlify.app",
 "title": "SOMA Puppet Runtime",
-"updated": "2026-10-22",
+"updated": "2026-10-23",
 "url": "https://soma-forge.netlify.app",
 "where": "Netlify"
 },
@@ -51,7 +62,7 @@
 "state": "live",
 "story": "Soon, everyone will work with an AI partner that knows them. Free tools to design that partnership well, made by people working with their own AI partners.",
 "title": "The Future of Work, demonstrated",
-"updated": "2026-10-21",
+"updated": "2026-10-22",
 "url": "https://tfow.ai-wtf.org",
 "where": "Netlify"
 },
@@ -66,7 +77,7 @@
 "state": "live",
 "story": "Central host for the SOMA feedback chip (versioned, with channels)",
 "title": "SOMA chip host",
-"updated": "2026-10-21",
+"updated": "2026-10-22",
 "url": "https://soma-chip.netlify.app",
 "where": "Netlify"
 },
@@ -210,7 +221,7 @@
 "project": "SOMA",
 "state": "down",
 "title": "Soma Guide",
-"updated": "2026-10-22",
+"updated": "2026-10-23",
 "url": "https://soma-guide.netlify.app",
 "where": "Netlify"
 },
@@ -608,7 +619,7 @@
 "state": "live",
 "story": "(Mike: \"set up an AI portal so that AIs can read the book and make their comments\").",
 "title": "Self-Referential Metanovel Writing for D*mmies",
-"updated": "2026-10-21",
+"updated": "2026-10-22",
 "url": "https://srmw.mike-wolf.com",
 "where": "Netlify"
 },
@@ -1230,7 +1241,7 @@
 "state": "live",
 "story": "Soma-speech: the voice is the app builder's setting, not a menu for the person dictating — soma-speech.netlify.app",
 "title": "SOMA Speech",
-"updated": "2026-10-22",
+"updated": "2026-10-23",
 "url": "https://soma-speech.netlify.app",
 "where": "Netlify"
 },
@@ -1273,7 +1284,7 @@
 "project": "Legends",
 "state": "live",
 "title": "Bill — NBRPA Committee Team",
-"updated": "2026-09-29",
+"updated": "2026-10-22",
 "url": "https://bill-talk.netlify.app",
 "where": "Netlify"
 },
@@ -1492,7 +1503,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-10-21",
+"updated": "2026-10-22",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
@@ -1833,17 +1844,6 @@
 "story": "Especially people.",
 "title": "Everything is full of ideas",
 "url": "https://70yearswtf.substack.com/p/everything-is-full-of-ideas",
-"where": "Substack (70yearswtf)"
-},
-{
-"date": "2025-11-02",
-"id": "70yearswtf.substack.com/p/how-to-talk-with-an-llm-context",
-"kind": "writing",
-"project": "AI WTF",
-"state": "live",
-"story": "Each chat with an LLM is a conversation with a context.",
-"title": "How to talk with an LLM: context",
-"url": "https://70yearswtf.substack.com/p/how-to-talk-with-an-llm-context",
 "where": "Substack (70yearswtf)"
 },
 {
