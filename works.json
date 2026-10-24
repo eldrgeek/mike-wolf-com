@@ -1,11 +1,35 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 314,
-"team_only": 302
+"public": 316,
+"team_only": 310
 },
-"generated": "2026-10-23T08:35:35Z",
+"generated": "2026-10-24T08:35:34Z",
 "works": [
+{
+"chapters": 1,
+"date": "2026-10-22",
+"id": "youtu.be/NcGCEfVGjlU",
+"kind": "site",
+"project": "Other",
+"state": "live",
+"story": "\"How the Gig Video Was Made\", the 2-minute making-of, is on YouTube, Public — youtu.be",
+"title": "youtu.be/NcGCEfVGjlU",
+"url": "https://youtu.be/NcGCEfVGjlU",
+"where": "youtu.be"
+},
+{
+"chapters": 2,
+"date": "2026-10-22",
+"id": "youtu.be/0LmALRMVo-g",
+"kind": "site",
+"project": "Other",
+"state": "live",
+"story": "\"How the Gig Video Was Made\", the 2-minute making-of, is on YouTube, Public — youtu.be",
+"title": "youtu.be/0LmALRMVo-g",
+"url": "https://youtu.be/0LmALRMVo-g",
+"where": "youtu.be"
+},
 {
 "date": "2026-10-22",
 "id": "70yearswtf.substack.com/p/enjoyment-is-en-joyment",
@@ -26,7 +50,7 @@
 "state": "live",
 "story": "SOMA Studio's chat mic now uses the Punctuated voice (ElevenLabs Scribe): punctuation, capital letters, sentence ends decided from the words — soma-forge.netlify.app",
 "title": "SOMA Puppet Runtime",
-"updated": "2026-10-23",
+"updated": "2026-10-24",
 "url": "https://soma-forge.netlify.app",
 "where": "Netlify"
 },
@@ -67,6 +91,7 @@
 "where": "Netlify"
 },
 {
+"chapters": 1,
 "date": "2026-10-09",
 "id": "soma-chip.netlify.app",
 "kind": "site",
@@ -75,7 +100,7 @@
 },
 "project": "SOMA",
 "state": "live",
-"story": "Central host for the SOMA feedback chip (versioned, with channels)",
+"story": "Soma-chip 4.5.0 is stable",
 "title": "SOMA chip host",
 "updated": "2026-10-22",
 "url": "https://soma-chip.netlify.app",
@@ -221,7 +246,7 @@
 "project": "SOMA",
 "state": "down",
 "title": "Soma Guide",
-"updated": "2026-10-23",
+"updated": "2026-10-24",
 "url": "https://soma-guide.netlify.app",
 "where": "Netlify"
 },
@@ -619,7 +644,7 @@
 "state": "live",
 "story": "(Mike: \"set up an AI portal so that AIs can read the book and make their comments\").",
 "title": "Self-Referential Metanovel Writing for D*mmies",
-"updated": "2026-10-22",
+"updated": "2026-10-23",
 "url": "https://srmw.mike-wolf.com",
 "where": "Netlify"
 },
@@ -1241,7 +1266,7 @@
 "state": "live",
 "story": "Soma-speech: the voice is the app builder's setting, not a menu for the person dictating — soma-speech.netlify.app",
 "title": "SOMA Speech",
-"updated": "2026-10-23",
+"updated": "2026-10-24",
 "url": "https://soma-speech.netlify.app",
 "where": "Netlify"
 },
@@ -1275,6 +1300,7 @@
 "where": "Netlify"
 },
 {
+"chapters": 1,
 "date": "2026-05-21",
 "id": "bill-talk.netlify.app",
 "kind": "site",
@@ -1283,6 +1309,7 @@
 },
 "project": "Legends",
 "state": "live",
+"story": "Bill-talk: el-proxy and kb-upload no longer answer anyone, and Bill's page talks again — bill-talk.netlify.app",
 "title": "Bill — NBRPA Committee Team",
 "updated": "2026-10-22",
 "url": "https://bill-talk.netlify.app",
@@ -1503,7 +1530,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-10-22",
+"updated": "2026-10-23",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
