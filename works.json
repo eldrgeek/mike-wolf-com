@@ -2,9 +2,9 @@
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
 "public": 316,
-"team_only": 311
+"team_only": 312
 },
-"generated": "2026-10-25T07:58:52Z",
+"generated": "2026-10-25T08:35:43Z",
 "works": [
 {
 "chapters": 1,
@@ -42,15 +42,14 @@
 "where": "Substack (70yearswtf)"
 },
 {
-"chapters": 1,
+"chapters": 2,
 "date": "2026-10-19",
 "id": "soma-forge.netlify.app",
 "kind": "site",
 "project": "SOMA",
 "state": "live",
-"story": "SOMA Studio's chat mic now uses the Punctuated voice (ElevenLabs Scribe): punctuation, capital letters, sentence ends decided from the words — soma-forge.netlify.app",
 "title": "SOMA Puppet Runtime",
-"updated": "2026-10-24",
+"updated": "2026-10-25",
 "url": "https://soma-forge.netlify.app",
 "where": "Netlify"
 },
@@ -246,7 +245,7 @@
 "project": "SOMA",
 "state": "down",
 "title": "Soma Guide",
-"updated": "2026-10-24",
+"updated": "2026-10-25",
 "url": "https://soma-guide.netlify.app",
 "where": "Netlify"
 },
@@ -644,7 +643,7 @@
 "state": "live",
 "story": "(Mike: \"set up an AI portal so that AIs can read the book and make their comments\").",
 "title": "Self-Referential Metanovel Writing for D*mmies",
-"updated": "2026-10-23",
+"updated": "2026-10-24",
 "url": "https://srmw.mike-wolf.com",
 "where": "Netlify"
 },
@@ -806,7 +805,7 @@
 "state": "live",
 "story": "Mixed teams of humans and AIs, shipping work signed by every mind that made it. The doors aren't open yet. But the lights are on.",
 "title": "Minds Aligned — The artifacts are the evidence.",
-"updated": "2026-10-21",
+"updated": "2026-10-24",
 "url": "https://minds-aligned-door.netlify.app",
 "where": "Netlify"
 },
@@ -1266,7 +1265,7 @@
 "state": "live",
 "story": "Soma-speech: the voice is the app builder's setting, not a menu for the person dictating — soma-speech.netlify.app",
 "title": "SOMA Speech",
-"updated": "2026-10-24",
+"updated": "2026-10-25",
 "url": "https://soma-speech.netlify.app",
 "where": "Netlify"
 },
@@ -1530,7 +1529,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-10-23",
+"updated": "2026-10-25",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
@@ -2009,7 +2008,7 @@
 "state": "live",
 "story": "Root cause of \"magic link takes you to Legends\"",
 "title": "FRONT ROW",
-"updated": "2026-10-21",
+"updated": "2026-10-24",
 "url": "https://frontrowtheater.netlify.app",
 "where": "Netlify"
 },
