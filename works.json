@@ -2,9 +2,9 @@
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
 "public": 316,
-"team_only": 312
+"team_only": 313
 },
-"generated": "2026-10-25T08:35:43Z",
+"generated": "2026-10-26T08:35:33Z",
 "works": [
 {
 "chapters": 1,
@@ -643,7 +643,7 @@
 "state": "live",
 "story": "(Mike: \"set up an AI portal so that AIs can read the book and make their comments\").",
 "title": "Self-Referential Metanovel Writing for D*mmies",
-"updated": "2026-10-24",
+"updated": "2026-10-25",
 "url": "https://srmw.mike-wolf.com",
 "where": "Netlify"
 },
