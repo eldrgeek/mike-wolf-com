@@ -2,9 +2,9 @@
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
 "public": 317,
-"team_only": 314
+"team_only": 315
 },
-"generated": "2026-10-27T08:35:35Z",
+"generated": "2026-10-28T08:35:34Z",
 "works": [
 {
 "date": "2026-10-27",
@@ -12,7 +12,6 @@
 "kind": "site",
 "project": "Levin & thinkers",
 "state": "live",
-"story": "Michael Levin",
 "title": "Minds Everywhere",
 "updated": "2026-10-27",
 "url": "https://minds-everywhere-levin.netlify.app",
@@ -655,7 +654,7 @@
 "state": "live",
 "story": "(Mike: \"set up an AI portal so that AIs can read the book and make their comments\").",
 "title": "Self-Referential Metanovel Writing for D*mmies",
-"updated": "2026-10-26",
+"updated": "2026-10-27",
 "url": "https://srmw.mike-wolf.com",
 "where": "Netlify"
 },
@@ -1443,7 +1442,7 @@
 "project": "Other",
 "state": "live",
 "title": "Origink — Your Ink. Your Story.",
-"updated": "2026-10-26",
+"updated": "2026-10-27",
 "url": "https://origink.netlify.app",
 "where": "Netlify"
 },
@@ -1541,7 +1540,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-10-26",
+"updated": "2026-10-27",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
