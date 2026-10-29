@@ -1,11 +1,35 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 317,
+"public": 319,
 "team_only": 316
 },
-"generated": "2026-10-29T11:26:49Z",
+"generated": "2026-10-29T22:34:47Z",
 "works": [
+{
+"date": "2026-10-29",
+"id": "youtube.com/playlist",
+"kind": "video",
+"makers": "Mike Wolf, Claude, Suno, Grok, Gemini, OpenAI Sol",
+"project": "Levin & thinkers",
+"state": "live",
+"story": "Eleven songs about Michael Levin's work, each a lyric video cut on the beat: lyrics by Claude, music on Suno, pictures by Grok Imagine and Nano Banana, Levin-lab figures under CC BY. Lyrics and sources: https://minds-everywhere-levin.netlify.app/songbook/",
+"title": "The Levin Songbook (YouTube playlist)",
+"url": "https://www.youtube.com/playlist?list=PLNo1VzENyjxc",
+"where": "www.youtube.com"
+},
+{
+"date": "2026-10-29",
+"id": "youtu.be/32qMrBJGZHw",
+"kind": "video",
+"makers": "Mike Wolf, Claude, Grok, Gemini, OpenAI Sol",
+"project": "Song Studio",
+"state": "live",
+"story": "A lyric video for the song by Greg Christoffel and Noel Paul Stookey: 44 pictures from an AI image panel and fourteen public-domain paintings, cut on the beat.",
+"title": "The Compassionate Heart (lyric video)",
+"url": "https://youtu.be/32qMrBJGZHw",
+"where": "youtu.be"
+},
 {
 "date": "2026-10-27",
 "id": "minds-everywhere-levin.netlify.app",
