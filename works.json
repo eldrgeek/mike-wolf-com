@@ -1,10 +1,10 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 322,
+"public": 323,
 "team_only": 317
 },
-"generated": "2026-10-30T16:28:23Z",
+"generated": "2026-10-30T16:33:44Z",
 "works": [
 {
 "chapters": 1,
@@ -27,6 +27,18 @@
 "story": "Seven Rungs to Zalany published Public on YouTube (youtu.be): Polish drinking-ladder polka, first film with the SOMA Studios ident and credit crawl.",
 "title": "youtu.be/foF2ZdXtZZ8",
 "url": "https://youtu.be/foF2ZdXtZZ8",
+"where": "youtu.be"
+},
+{
+"chapters": 1,
+"date": "2026-10-30",
+"id": "youtu.be/dtZXv2iBcWg",
+"kind": "site",
+"project": "Other",
+"state": "live",
+"story": "Seven Rungs to Zalany moved to the SOMA Studios YouTube channel (youtu.be); the Mike Wolf copy (foF2ZdXtZZ8) is now private.",
+"title": "youtu.be/dtZXv2iBcWg",
+"url": "https://youtu.be/dtZXv2iBcWg",
 "where": "youtu.be"
 },
 {
