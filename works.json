@@ -1,11 +1,22 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 319,
+"public": 320,
 "team_only": 317
 },
-"generated": "2026-10-30T08:35:32Z",
+"generated": "2026-10-30T14:26:55Z",
 "works": [
+{
+"date": "2026-10-30",
+"id": "youtu.be/-NCAY7WCSE4",
+"kind": "video",
+"project": "Levin & thinkers",
+"state": "live",
+"story": "A Chicago blues song from a point Michael Levin makes in more than 20 talks: how much mind a system has is settled by experiment, not from an armchair. Lyrics by Claude, music on Suno, pictures by Grok Imagine, Levin-lab figures under CC BY. Lyrics and sources: https://minds-everywhere-levin.netlify.app/songbook/",
+"title": "Not From the Armchair (lyric video)",
+"url": "https://youtu.be/-NCAY7WCSE4",
+"where": "youtu.be"
+},
 {
 "date": "2026-10-29",
 "id": "youtube.com/playlist",
