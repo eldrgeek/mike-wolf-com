@@ -2,9 +2,9 @@
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
 "public": 319,
-"team_only": 316
+"team_only": 317
 },
-"generated": "2026-10-29T22:34:47Z",
+"generated": "2026-10-30T08:35:32Z",
 "works": [
 {
 "date": "2026-10-29",
@@ -37,7 +37,7 @@
 "project": "Levin & thinkers",
 "state": "live",
 "title": "Minds Everywhere",
-"updated": "2026-10-27",
+"updated": "2026-10-29",
 "url": "https://minds-everywhere-levin.netlify.app",
 "where": "Netlify"
 },
@@ -678,7 +678,7 @@
 "state": "live",
 "story": "(Mike: \"set up an AI portal so that AIs can read the book and make their comments\").",
 "title": "Self-Referential Metanovel Writing for D*mmies",
-"updated": "2026-10-28",
+"updated": "2026-10-29",
 "url": "https://srmw.mike-wolf.com",
 "where": "Netlify"
 },
@@ -1284,7 +1284,7 @@
 "project": "SOMA",
 "state": "live",
 "title": "Pulse Core",
-"updated": "2026-10-21",
+"updated": "2026-10-30",
 "url": "https://github.com/eldrgeek/pulse-core",
 "where": "GitHub"
 },
