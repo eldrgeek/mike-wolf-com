@@ -1,10 +1,10 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 323,
-"team_only": 317
+"public": 324,
+"team_only": 319
 },
-"generated": "2026-10-31T04:58:41Z",
+"generated": "2026-10-31T08:35:23Z",
 "works": [
 {
 "chapters": 1,
@@ -40,6 +40,17 @@
 "title": "youtu.be/dtZXv2iBcWg",
 "url": "https://youtu.be/dtZXv2iBcWg",
 "where": "youtu.be"
+},
+{
+"date": "2026-10-30",
+"id": "somastudios.ai",
+"kind": "site",
+"project": "SOMA",
+"state": "live",
+"title": "Soma Studios",
+"updated": "2026-10-30",
+"url": "https://somastudios.ai",
+"where": "Netlify"
 },
 {
 "chapters": 1,
@@ -85,7 +96,7 @@
 "project": "Levin & thinkers",
 "state": "live",
 "title": "Minds Everywhere",
-"updated": "2026-10-29",
+"updated": "2026-10-30",
 "url": "https://minds-everywhere-levin.netlify.app",
 "where": "Netlify"
 },
@@ -726,7 +737,7 @@
 "state": "live",
 "story": "(Mike: \"set up an AI portal so that AIs can read the book and make their comments\").",
 "title": "Self-Referential Metanovel Writing for D*mmies",
-"updated": "2026-10-29",
+"updated": "2026-10-30",
 "url": "https://srmw.mike-wolf.com",
 "where": "Netlify"
 },
@@ -809,7 +820,7 @@
 "state": "live",
 "story": "Community-seed published (GitHub + Netlify community-seed.netlify.app) — two-stage seed prompts (Sherpa/Founding) live.",
 "title": "Community Seed",
-"updated": "2026-10-20",
+"updated": "2026-10-30",
 "url": "https://community-seed.netlify.app",
 "where": "Netlify"
 },
@@ -1612,7 +1623,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-10-29",
+"updated": "2026-10-31",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
