@@ -1,11 +1,23 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 324,
-"team_only": 319
+"public": 325,
+"team_only": 321
 },
-"generated": "2026-11-01T05:30:08Z",
+"generated": "2026-11-01T09:35:21Z",
 "works": [
+{
+"date": "2026-10-31",
+"id": "carol-fonde.netlify.app",
+"kind": "site",
+"project": "Other",
+"state": "live",
+"story": "Photographs by Carol Fondé.",
+"title": "Carol Fondé | Photography",
+"updated": "2026-10-31",
+"url": "https://carol-fonde.netlify.app",
+"where": "Netlify"
+},
 {
 "chapters": 1,
 "date": "2026-10-30",
@@ -339,7 +351,7 @@
 "project": "SOMA",
 "state": "down",
 "title": "Soma Guide",
-"updated": "2026-10-25",
+"updated": "2026-11-01",
 "url": "https://soma-guide.netlify.app",
 "where": "Netlify"
 },
@@ -737,7 +749,7 @@
 "state": "live",
 "story": "(Mike: \"set up an AI portal so that AIs can read the book and make their comments\").",
 "title": "Self-Referential Metanovel Writing for D*mmies",
-"updated": "2026-10-30",
+"updated": "2026-10-31",
 "url": "https://srmw.mike-wolf.com",
 "where": "Netlify"
 },
@@ -820,7 +832,7 @@
 "state": "live",
 "story": "Community-seed published (GitHub + Netlify community-seed.netlify.app) — two-stage seed prompts (Sherpa/Founding) live.",
 "title": "Community Seed",
-"updated": "2026-10-30",
+"updated": "2026-10-31",
 "url": "https://community-seed.netlify.app",
 "where": "Netlify"
 },
@@ -1359,7 +1371,7 @@
 "state": "live",
 "story": "Soma-speech: the voice is the app builder's setting, not a menu for the person dictating — soma-speech.netlify.app",
 "title": "SOMA Speech",
-"updated": "2026-10-25",
+"updated": "2026-11-01",
 "url": "https://soma-speech.netlify.app",
 "where": "Netlify"
 },
@@ -1623,7 +1635,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-10-31",
+"updated": "2026-11-01",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
@@ -2102,7 +2114,7 @@
 "state": "live",
 "story": "Root cause of \"magic link takes you to Legends\"",
 "title": "FRONT ROW",
-"updated": "2026-10-24",
+"updated": "2026-10-31",
 "url": "https://frontrowtheater.netlify.app",
 "where": "Netlify"
 },
