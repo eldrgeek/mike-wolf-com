@@ -2,9 +2,9 @@
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
 "public": 326,
-"team_only": 324
+"team_only": 325
 },
-"generated": "2026-11-04T09:35:40Z",
+"generated": "2026-11-04T21:46:59Z",
 "works": [
 {
 "date": "2026-11-02",
@@ -653,7 +653,7 @@
 "state": "live",
 "story": "One allow-listed origin for every SOMA app's auth redirect, validated against a database table instead of Supabase's 2048-byte cap.",
 "title": "SOMA auth relay",
-"updated": "2026-08-04",
+"updated": "2026-11-04",
 "url": "https://soma-auth-relay.netlify.app",
 "where": "Netlify"
 },
@@ -2127,7 +2127,7 @@
 "state": "live",
 "story": "Root cause of \"magic link takes you to Legends\"",
 "title": "FRONT ROW",
-"updated": "2026-11-01",
+"updated": "2026-11-04",
 "url": "https://frontrowtheater.netlify.app",
 "where": "Netlify"
 },
