@@ -2,9 +2,9 @@
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
 "public": 326,
-"team_only": 321
+"team_only": 324
 },
-"generated": "2026-11-04T03:11:14Z",
+"generated": "2026-11-04T09:35:40Z",
 "works": [
 {
 "date": "2026-11-02",
@@ -85,7 +85,7 @@
 "state": "live",
 "story": "Make your dreams come true at SOMA Studios. Bring your idea and we",
 "title": "Soma Studios",
-"updated": "2026-11-01",
+"updated": "2026-11-03",
 "url": "https://somastudios.ai",
 "where": "Netlify"
 },
@@ -376,7 +376,7 @@
 "project": "SOMA",
 "state": "down",
 "title": "Soma Guide",
-"updated": "2026-11-01",
+"updated": "2026-11-03",
 "url": "https://soma-guide.netlify.app",
 "where": "Netlify"
 },
@@ -783,9 +783,8 @@
 "id": "comfunctionalism.com",
 "kind": "site",
 "project": "AGI-26",
-"state": "live",
-"story": "The Apocrypha: non-canonical scripture for Comfunctionalism, the philosophy Joscha Bach named at AGI-26 and swore was not a religion. Analects, schisms, and one confirmed heresy, drafted by a council of four AI models who agreed on almost nothing else.",
-"title": "Comfunctionalism — the Apocrypha",
+"state": "down",
+"title": "Comfunctionalism",
 "updated": "2026-08-02",
 "url": "https://comfunctionalism.com",
 "where": "Netlify"
@@ -857,7 +856,7 @@
 "state": "live",
 "story": "Community-seed published (GitHub + Netlify community-seed.netlify.app) — two-stage seed prompts (Sherpa/Founding) live.",
 "title": "Community Seed",
-"updated": "2026-11-02",
+"updated": "2026-11-03",
 "url": "https://community-seed.netlify.app",
 "where": "Netlify"
 },
@@ -1396,7 +1395,7 @@
 "state": "live",
 "story": "Soma-speech: the voice is the app builder's setting, not a menu for the person dictating — soma-speech.netlify.app",
 "title": "SOMA Speech",
-"updated": "2026-11-01",
+"updated": "2026-11-04",
 "url": "https://soma-speech.netlify.app",
 "where": "Netlify"
 },
@@ -1660,7 +1659,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-11-02",
+"updated": "2026-11-04",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
