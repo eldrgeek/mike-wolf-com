@@ -4,7 +4,7 @@
 "public": 326,
 "team_only": 325
 },
-"generated": "2026-11-04T21:46:59Z",
+"generated": "2026-11-05T09:35:37Z",
 "works": [
 {
 "date": "2026-11-02",
@@ -783,8 +783,9 @@
 "id": "comfunctionalism.com",
 "kind": "site",
 "project": "AGI-26",
-"state": "down",
-"title": "Comfunctionalism",
+"state": "live",
+"story": "The Apocrypha: non-canonical scripture for Comfunctionalism, the philosophy Joscha Bach named at AGI-26 and swore was not a religion. Analects, schisms, and one confirmed heresy, drafted by a council of four AI models who agreed on almost nothing else.",
+"title": "Comfunctionalism — the Apocrypha",
 "updated": "2026-08-02",
 "url": "https://comfunctionalism.com",
 "where": "Netlify"
@@ -1379,7 +1380,7 @@
 "project": "SOMA",
 "state": "live",
 "title": "Pulse Core",
-"updated": "2026-10-30",
+"updated": "2026-11-05",
 "url": "https://github.com/eldrgeek/pulse-core",
 "where": "GitHub"
 },
@@ -2127,7 +2128,7 @@
 "state": "live",
 "story": "Root cause of \"magic link takes you to Legends\"",
 "title": "FRONT ROW",
-"updated": "2026-11-04",
+"updated": "2026-11-05",
 "url": "https://frontrowtheater.netlify.app",
 "where": "Netlify"
 },
