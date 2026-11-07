@@ -1,10 +1,10 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 288,
+"public": 287,
 "team_only": 406
 },
-"generated": "2026-11-07T00:02:44Z",
+"generated": "2026-11-07T01:05:51Z",
 "works": [
 {
 "date": "2026-11-02",
@@ -109,6 +109,7 @@
 "kind": "site",
 "project": "Levin & thinkers",
 "state": "live",
+"story": "A site on Michael Levin's ideas that holds the Levin Songbook, a playlist of songs about his work.",
 "title": "Minds Everywhere",
 "updated": "2026-11-05",
 "url": "https://minds-everywhere-levin.netlify.app",
@@ -145,6 +146,7 @@
 "kind": "site",
 "project": "SOMA",
 "state": "live",
+"story": "Where SOMA Studio apps such as VideoMaker and the Puppet Script table read run straight from their Puppet descriptions.",
 "title": "SOMA Puppet Runtime",
 "updated": "2026-10-25",
 "url": "https://soma-forge.netlify.app",
@@ -168,6 +170,7 @@
 "kind": "site",
 "project": "Levin & thinkers",
 "state": "live",
+"story": "A nine-tap survey for Mike's October 2026 OLLI class on Michael Levin, later joined by plain answers to the questions the class left open.",
 "title": "Nine Taps Before Tuesday",
 "updated": "2026-10-21",
 "url": "https://olli-levin-survey.netlify.app",
@@ -209,7 +212,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Public-writing archive and grounded AI guide for Israel Diaz — creator of conxiOS/consciOS, founder of Sunday+Night and ZeroThreeSixNine Ventures.",
-"title": "Home — Israel Diaz",
+"title": "Israel Diaz",
 "updated": "2026-09-22",
 "url": "https://agi26-israel-diaz.netlify.app",
 "where": "Netlify"
@@ -250,7 +253,8 @@
 "makers": "Claude Opus 5",
 "project": "AI WTF",
 "state": "live",
-"title": "AI What the F*ck | Michael Wolf | Substack",
+"story": "Mike's AI WTF essays, moved from ai-wtf.org to Substack in September 2026.",
+"title": "AI What the F*ck on Substack",
 "url": "https://aiwtf.substack.com",
 "where": "aiwtf.substack.com"
 },
@@ -314,7 +318,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Publication archive and grounded AI guide for Neil Gershenfeld — digital fabrication, discrete assembly, digital materials, and the boundary between bits and atoms.",
-"title": "Home — Neil Gershenfeld",
+"title": "Neil Gershenfeld",
 "updated": "2026-09-16",
 "url": "https://agi26-neil-gershenfeld.netlify.app",
 "where": "Netlify"
@@ -326,7 +330,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Publication archive and grounded AI guide for Josef Urban — automated theorem proving, machine learning over formal mathematics, hammers, and autoformalization.",
-"title": "Home — Josef Urban",
+"title": "Josef Urban",
 "updated": "2026-09-16",
 "url": "https://agi26-josef-urban.netlify.app",
 "where": "Netlify"
@@ -338,7 +342,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Publication archive and grounded AI guide for Alexander Lerchner — disentangled representations, object-centric scene understanding, and embodied agents.",
-"title": "Home — Alexander Lerchner",
+"title": "Alexander Lerchner",
 "updated": "2026-09-16",
 "url": "https://agi26-alexander-lerchner.netlify.app",
 "where": "Netlify"
@@ -350,7 +354,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Publication archive and grounded AI guide for Alex Wissner-Gross — causal entropic forces, self-assembly, and intelligence as a physical process.",
-"title": "Home — Alex Wissner-Gross",
+"title": "Alex Wissner-Gross",
 "updated": "2026-09-16",
 "url": "https://agi26-alex-wissner-gross.netlify.app",
 "where": "Netlify"
@@ -362,6 +366,7 @@
 "kind": "site",
 "project": "Other",
 "state": "live",
+"story": "A signed-in page of conclusions from a long conversation, with a live AI that hands questions to Mike rather than guessing.",
 "title": "What we concluded — Common Ground",
 "updated": "2026-08-24",
 "url": "https://common-ground-mw.netlify.app",
@@ -530,6 +535,7 @@
 "makers": "Mike + Claude Opus 5",
 "project": "Other",
 "state": "live",
+"story": "A conversational host that presents Mike's arguments about AI to visitors who are wary of it.",
 "title": "A Different Mind",
 "updated": "2026-10-21",
 "url": "https://a-different-mind.netlify.app",
@@ -559,6 +565,7 @@
 },
 "project": "Other",
 "state": "live",
+"story": "Mike's in-person show-and-tell page: a grid of his most linkable works, each tile opening a full-screen QR code.",
 "title": "Show & Tell — Mike Wolf",
 "updated": "2026-08-24",
 "url": "https://qr-showcase.netlify.app",
@@ -586,7 +593,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Publication archive and grounded AI guide for Hananel Hazan — reservoir computing and liquid state machines, spiking neural networks, and learning in unconventional substrates.",
-"title": "Home — Hananel Hazan",
+"title": "Hananel Hazan",
 "updated": "2026-09-16",
 "url": "https://agi26-hananel-hazan.netlify.app",
 "where": "Netlify"
@@ -930,6 +937,7 @@
 "kind": "site",
 "project": "Legends",
 "state": "live",
+"story": "A proof of concept in which a fan meets a retired player through the player's AI avatar before a warm handoff.",
 "title": "Legends Connect — Proof of Concept",
 "updated": "2026-08-24",
 "url": "https://legends-connect.netlify.app",
@@ -977,7 +985,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Publication archive and grounded AI guide for Karl J. Friston — the free energy principle, active inference, and the physics of sentient systems.",
-"title": "Home — Karl J. Friston",
+"title": "Karl J. Friston",
 "updated": "2026-09-16",
 "url": "https://agi26-karl-friston.netlify.app",
 "where": "Netlify"
@@ -989,7 +997,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Publication archive and grounded AI guide for Gary Marcus — cognitive science, the limits of deep learning, and the case for neurosymbolic AI.",
-"title": "Home — Gary Marcus",
+"title": "Gary Marcus",
 "updated": "2026-09-16",
 "url": "https://agi26-gary-marcus.netlify.app",
 "where": "Netlify"
@@ -1001,7 +1009,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Publication archive and grounded AI guide for David Spivak — applied category theory, operads, and the mathematics of compositional systems.",
-"title": "Home — David Spivak",
+"title": "David Spivak",
 "updated": "2026-09-16",
 "url": "https://agi26-david-spivak.netlify.app",
 "where": "Netlify"
@@ -1013,7 +1021,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Talks archive and grounded AI guide for David Eagleman — neuroscience of perception, time, sensory substitution, and brain plasticity.",
-"title": "Home — David Eagleman",
+"title": "David Eagleman",
 "updated": "2026-09-16",
 "url": "https://agi26-david-eagleman.netlify.app",
 "where": "Netlify"
@@ -1025,7 +1033,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Publication archive and grounded AI guide for Christof Koch — the neural correlates of consciousness and integrated information theory.",
-"title": "Home — Christof Koch",
+"title": "Christof Koch",
 "updated": "2026-09-16",
 "url": "https://agi26-christof-koch.netlify.app",
 "where": "Netlify"
@@ -1037,7 +1045,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Talks archive and grounded AI guide for Chris Fields — quantum information, the free energy principle, and theories of agency and observation.",
-"title": "Home — Chris Fields",
+"title": "Chris Fields",
 "updated": "2026-09-16",
 "url": "https://agi26-chris-fields.netlify.app",
 "where": "Netlify"
@@ -1049,7 +1057,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Publication archive and grounded AI guide for Ben Goertzel — artificial general intelligence, OpenCog and Hyperon, and decentralized beneficial AGI.",
-"title": "Home — Ben Goertzel",
+"title": "Ben Goertzel",
 "updated": "2026-09-16",
 "url": "https://agi26-ben-goertzel.netlify.app",
 "where": "Netlify"
@@ -1061,7 +1069,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Talks archive and grounded AI guide for Anil Seth — consciousness science, predictive processing, and the controlled hallucination of perception.",
-"title": "Home — Anil Seth",
+"title": "Anil Seth",
 "updated": "2026-09-16",
 "url": "https://agi26-anil-seth.netlify.app",
 "where": "Netlify"
@@ -1073,7 +1081,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Talks archive and grounded AI guide for Alison Gopnik — child development, causal learning, and what children teach us about AI.",
-"title": "Home — Alison Gopnik",
+"title": "Alison Gopnik",
 "updated": "2026-09-16",
 "url": "https://agi26-alison-gopnik.netlify.app",
 "where": "Netlify"
@@ -1085,7 +1093,7 @@
 "project": "AGI-26",
 "state": "live",
 "story": "Publication archive and grounded AI guide for Alexander Ororbia — predictive coding, neuromimetic learning, and brain-inspired AI.",
-"title": "Home — Alexander Ororbia",
+"title": "Alexander Ororbia",
 "updated": "2026-09-16",
 "url": "https://agi26-alexander-ororbia.netlify.app",
 "where": "Netlify"
@@ -1109,6 +1117,7 @@
 "kind": "site",
 "project": "SOMA",
 "state": "live",
+"story": "The team's virtual headquarters: a walkable campus of 21 buildings, first built inside FrontRow.",
 "title": "SOMA · Campus",
 "updated": "2026-10-21",
 "url": "https://soma-campus.netlify.app",
@@ -1370,6 +1379,7 @@
 "kind": "site",
 "project": "Other",
 "state": "live",
+"story": "A site for the stories behind tattoos, where feedback left on any page becomes a change an admin approves.",
 "title": "Origink — Your Ink. Your Story.",
 "updated": "2026-11-05",
 "url": "https://origink.netlify.app",
@@ -1510,6 +1520,7 @@
 "makers": "Mike Wolf",
 "project": "Other",
 "state": "live",
+"story": "The daemon that makes email a channel to the AI team: dispatches and board cards sent by mail become work.",
 "title": "Claude Email Daemon",
 "updated": "2026-10-29",
 "url": "https://github.com/eldrgeek/claude-email-daemon",
@@ -2342,7 +2353,7 @@
 "project": "Other",
 "state": "live",
 "story": "An ultra customizable generic theme for Stackbit",
-"title": "Home | Stackbit Starter Theme",
+"title": "Stackbit Starter Theme",
 "updated": "2026-07-18",
 "url": "https://mikeplusplus-c752c.netlify.app",
 "where": "Netlify"
@@ -2354,7 +2365,7 @@
 "project": "Other",
 "state": "live",
 "story": "Personal blogging theme for Stackbit",
-"title": "Home - Stackbit Fresh Theme",
+"title": "Stackbit Fresh Theme",
 "updated": "2020-10-30",
 "url": "https://meplusplus-c6eae.netlify.app",
 "where": "Netlify"
@@ -3016,7 +3027,7 @@
 },
 "project": "Other",
 "state": "live",
-"title": "Home - Stackbit Vanilla Theme",
+"title": "Stackbit Vanilla Theme",
 "updated": "2023-01-11",
 "url": "https://awesometools-2337f.netlify.app",
 "where": "Netlify"
@@ -3156,7 +3167,7 @@
 "kind": "site",
 "project": "Other",
 "state": "live",
-"title": "Great coffee with a conscience | Homepage",
+"title": "Great coffee with a conscience",
 "updated": "2019-09-07",
 "url": "https://eldr-hugo.netlify.app",
 "where": "Netlify"
@@ -3743,16 +3754,6 @@
 "updated": "2011-03-24",
 "url": "https://github.com/eldrgeek/Aptana-Test-Project",
 "where": "GitHub"
-},
-{
-"id": "lutomski-stained-glass-989.netlify.app",
-"kind": "site",
-"project": "Other",
-"state": "down",
-"story": "Portfolio site for a stained-glass artist. Showcases commission work and process with care for the visual weight of the medium.",
-"title": "Lutomski Stained Glass",
-"url": "https://lutomski-stained-glass-989.netlify.app",
-"where": "lutomski-stained-glass-989.netlify.app"
 }
 ]
 }
