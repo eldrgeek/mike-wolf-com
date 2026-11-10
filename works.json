@@ -1,10 +1,10 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 289,
-"team_only": 422
+"public": 288,
+"team_only": 423
 },
-"generated": "2026-11-09T23:02:41Z",
+"generated": "2026-11-10T09:35:36Z",
 "works": [
 {
 "chapters": 1,
@@ -13,8 +13,9 @@
 "kind": "site",
 "project": "Other",
 "state": "down",
+"story": "A read-only public view of the Studio Lot, the spatial map of all of Mike's work, republished every hour; it probes down because the lot.mike-wolf.com DNS is still pending, and the same page is live at studio-lot.netlify.app.",
 "title": "Studio Lot",
-"updated": "2026-11-09",
+"updated": "2026-11-10",
 "url": "https://lot.mike-wolf.com",
 "where": "Netlify"
 },
@@ -1229,6 +1230,7 @@
 "makers": "Mike Wolf",
 "project": "SOMA",
 "state": "live",
+"story": "The data store behind Mike's daily check-in app, and the source its morning summary reads.",
 "title": "Pulse Core",
 "updated": "2026-11-07",
 "url": "https://github.com/eldrgeek/pulse-core",
@@ -1347,6 +1349,7 @@
 "makers": "Mike Wolf",
 "project": "SOMA",
 "state": "live",
+"story": "Sidekick, an Android calendar alarm and morning-routine app for the SOMA stack, later replaced by a newer daily check-in app.",
 "title": "Soma Alarm",
 "updated": "2026-11-06",
 "url": "https://github.com/eldrgeek/soma-alarm",
@@ -1516,7 +1519,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-11-08",
+"updated": "2026-11-09",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
@@ -1763,7 +1766,7 @@
 "state": "live",
 "story": "Root cause of \"magic link takes you to Legends\"",
 "title": "Front Row Theater",
-"updated": "2026-11-07",
+"updated": "2026-11-10",
 "url": "https://frontrowtheater.netlify.app",
 "where": "Netlify"
 },
@@ -1870,18 +1873,6 @@
 "where": "GitHub"
 },
 {
-"date": "2025-05-14",
-"id": "github.com/eldrgeek/sb1-nxvdjcdn",
-"kind": "code",
-"makers": "Mike Wolf",
-"project": "Other",
-"state": "live",
-"title": "Sb1 Nxvdjcdn",
-"updated": "2025-05-14",
-"url": "https://github.com/eldrgeek/sb1-nxvdjcdn",
-"where": "GitHub"
-},
-{
 "date": "2025-04-28",
 "id": "chooser1.netlify.app",
 "kind": "site",
@@ -1911,6 +1902,7 @@
 "makers": "Mike Wolf",
 "project": "Other",
 "state": "live",
+"story": "A 2025 set of AI-made illustrations for a midlife women's journey of self-discovery, told through The Wizard of Oz.",
 "title": "Jollyjack",
 "updated": "2025-03-11",
 "url": "https://github.com/eldrgeek/JollyJack",
@@ -1923,7 +1915,8 @@
 "makers": "Mike Wolf",
 "project": "Early code",
 "state": "live",
-"title": "Tof Temp",
+"story": "A 2024 prototype that maps drum shops, built in StackBlitz on Supabase and Mapbox.",
+"title": "Drum Store Finder",
 "updated": "2024-12-25",
 "url": "https://github.com/eldrgeek/TOF_TEMP",
 "where": "GitHub"
@@ -1960,7 +1953,8 @@
 "makers": "Mike Wolf",
 "project": "Yeshie",
 "state": "live",
-"title": "Turboyeshie",
+"story": "A 2024 Turborepo starter with two Next.js apps and a shared UI package; it holds only the template code.",
+"title": "TurboYeshie",
 "updated": "2024-11-03",
 "url": "https://github.com/eldrgeek/turboyeshie",
 "where": "GitHub"
@@ -2011,6 +2005,7 @@
 "makers": "Mike Wolf",
 "project": "Early code",
 "state": "live",
+"story": "A 2024 experiment serving a React app from an Express server with webpack hot reloading.",
 "title": "Experiment",
 "updated": "2024-08-02",
 "url": "https://github.com/eldrgeek/Experiment",
@@ -2036,6 +2031,7 @@
 "makers": "Mike Wolf",
 "project": "Early code",
 "state": "live",
+"story": "A 2024 Node server that set up an OpenAI assistant, IYAM, to plan and drive a web page for a browser client: open URLs, read the page, type.",
 "title": "Assistant Server",
 "updated": "2024-07-23",
 "url": "https://github.com/eldrgeek/assistant-server",
@@ -2048,6 +2044,7 @@
 "makers": "Mike Wolf",
 "project": "Early code",
 "state": "live",
+"story": "A 2024 copy of Streamlit's chatbot template, a simple chat app on OpenAI's GPT-3.5.",
 "title": "Chatbot",
 "updated": "2024-07-16",
 "url": "https://github.com/eldrgeek/chatbot",
@@ -2124,7 +2121,8 @@
 "makers": "Mike Wolf",
 "project": "A Course in Miracles",
 "state": "live",
-"title": "Eldr Acim Guide",
+"story": "A 2021 React prototype of a practice timer for A Course in Miracles, with its clock running in a web worker.",
+"title": "ACIM practice timer",
 "updated": "2021-07-07",
 "url": "https://github.com/eldrgeek/eldr-ACIM-guide",
 "where": "GitHub"
@@ -2151,7 +2149,8 @@
 "makers": "Mike Wolf",
 "project": "Early code",
 "state": "live",
-"title": "Eldr Selfie Both",
+"story": "A 2021 selfie-booth prototype that saves what is on the page as a picture.",
+"title": "Selfie Booth",
 "updated": "2021-04-28",
 "url": "https://github.com/eldrgeek/eldr-selfie-both",
 "where": "GitHub"
@@ -2163,7 +2162,8 @@
 "makers": "Mike Wolf",
 "project": "Early code",
 "state": "live",
-"title": "Eldr Photobooth",
+"story": "A 2021 browser photobooth: drag and resize pictures on the page and merge them into one image.",
+"title": "Photobooth",
 "updated": "2021-04-26",
 "url": "https://github.com/eldrgeek/eldr-photobooth",
 "where": "GitHub"
@@ -2175,7 +2175,8 @@
 "makers": "Mike Wolf",
 "project": "Revolution 1x1",
 "state": "live",
-"title": "Eldr Rev1X1 Buttons",
+"story": "A 2021 tool that loaded Revolution 1x1 button sign-ups into Firebase.",
+"title": "Revolution 1x1 button import",
 "updated": "2021-04-10",
 "url": "https://github.com/eldrgeek/eldr-rev1x1-buttons",
 "where": "GitHub"
@@ -2235,7 +2236,8 @@
 "makers": "Mike Wolf",
 "project": "Early code",
 "state": "live",
-"title": "Eldr Blogger To Substack Converter",
+"story": "A 2021 tool for moving blog posts from Blogger to Substack.",
+"title": "Blogger to Substack converter",
 "updated": "2021-03-19",
 "url": "https://github.com/eldrgeek/eldr-blogger-to-substack-converter",
 "where": "GitHub"
@@ -2259,6 +2261,7 @@
 "makers": "Mike Wolf",
 "project": "Early code",
 "state": "live",
+"story": "A 2021 site for Just Causes: 15 songs from almost 50 years of songwriting, each linked to a nonprofit that works on the cause it sings about.",
 "title": "Just Causes",
 "updated": "2021-04-07",
 "url": "https://github.com/eldrgeek/just-causes",
@@ -2283,7 +2286,8 @@
 "makers": "Mike Wolf",
 "project": "Revolution 1x1",
 "state": "live",
-"title": "Eldr Rev1X1 Simplified",
+"story": "The 2021 production build of the Revolution 1x1 site, with the button sign-up on Firebase and EmailJS; in 2026 it was the source for recovering the original look.",
+"title": "Revolution 1x1 (2021 build)",
 "updated": "2023-03-31",
 "url": "https://github.com/eldrgeek/eldr-rev1x1-simplified",
 "where": "GitHub"
@@ -2537,7 +2541,8 @@
 "makers": "Mike Wolf",
 "project": "Songs & shows",
 "state": "live",
-"title": "Hootnet Unwinding",
+"story": "A 2020 working fork of HootNet, the Firebase, Overmind and Material UI app for recording singalongs together.",
+"title": "HootNet (working fork)",
 "updated": "2020-08-10",
 "url": "https://github.com/eldrgeek/HootNet-unwinding",
 "where": "GitHub"
