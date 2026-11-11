@@ -1,10 +1,10 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 197,
-"team_only": 423
+"public": 191,
+"team_only": 427
 },
-"generated": "2026-11-10T23:20:49Z",
+"generated": "2026-11-11T09:49:21Z",
 "works": [
 {
 "chapters": 1,
@@ -15,7 +15,7 @@
 "state": "down",
 "story": "A read-only public view of the Studio Lot, the spatial map of all of Mike's work, republished every hour; it probes down because the lot.mike-wolf.com DNS is still pending, and the same page is live at studio-lot.netlify.app.",
 "title": "Studio Lot",
-"updated": "2026-11-10",
+"updated": "2026-11-11",
 "url": "https://lot.mike-wolf.com",
 "where": "Netlify"
 },
@@ -749,7 +749,7 @@
 "state": "live",
 "story": "Community-seed published (GitHub + Netlify community-seed.netlify.app) — two-stage seed prompts (Sherpa/Founding) live.",
 "title": "Community Seed",
-"updated": "2026-11-03",
+"updated": "2026-11-10",
 "url": "https://community-seed.netlify.app",
 "where": "Netlify"
 },
@@ -788,7 +788,7 @@
 "kind": "site",
 "project": "Revolution 1x1",
 "state": "down",
-"story": "(GitHub eldrgeek/revolution1x1, CI/CD wired headlessly via deploy-key + webhook APIs after netlify init's cached GitHub token expired): five theme \"arrangements\" of a revived revolution1x1.org for Noel to choose among — Raggle-Taggle Army (folk poster), One Light Passed (candle chain), Wave at…",
+"story": "Five theme arrangements of a revived revolution1x1.org, built in July 2026 for Noel Paul Stookey to choose among, each with a working demo of the pass-it-on QR sign-up; the site was taken down in August 2026.",
 "title": "Revolution 1x1 (first site)",
 "url": "https://revolution-1x1.netlify.app",
 "where": "revolution-1x1.netlify.app"
@@ -1519,7 +1519,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-11-09",
+"updated": "2026-11-10",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
@@ -1766,7 +1766,7 @@
 "state": "live",
 "story": "Root cause of \"magic link takes you to Legends\"",
 "title": "Front Row Theater",
-"updated": "2026-11-10",
+"updated": "2026-11-11",
 "url": "https://frontrowtheater.netlify.app",
 "where": "Netlify"
 },
@@ -1884,18 +1884,6 @@
 "where": "Netlify"
 },
 {
-"date": "2025-04-12",
-"id": "github.com/eldrgeek/Assets",
-"kind": "code",
-"makers": "Mike Wolf",
-"project": "Other",
-"state": "live",
-"title": "Assets",
-"updated": "2025-04-12",
-"url": "https://github.com/eldrgeek/Assets",
-"where": "GitHub"
-},
-{
 "date": "2025-03-11",
 "id": "github.com/eldrgeek/JollyJack",
 "kind": "code",
@@ -1919,18 +1907,6 @@
 "title": "Drum Store Finder",
 "updated": "2024-12-25",
 "url": "https://github.com/eldrgeek/TOF_TEMP",
-"where": "GitHub"
-},
-{
-"date": "2024-11-21",
-"id": "github.com/eldrgeek/ViteJSJunk",
-"kind": "code",
-"makers": "Mike Wolf",
-"project": "Early code",
-"state": "live",
-"title": "Vitejsjunk",
-"updated": "2024-11-21",
-"url": "https://github.com/eldrgeek/ViteJSJunk",
 "where": "GitHub"
 },
 {
@@ -2074,18 +2050,6 @@
 "title": "React Gitpod",
 "updated": "2022-07-25",
 "url": "https://github.com/eldrgeek/React-GitPod",
-"where": "GitHub"
-},
-{
-"date": "2022-06-21",
-"id": "github.com/eldrgeek/remix-demo",
-"kind": "code",
-"makers": "Mike Wolf",
-"project": "Early code",
-"state": "live",
-"title": "Remix Demo",
-"updated": "2022-06-21",
-"url": "https://github.com/eldrgeek/remix-demo",
 "where": "GitHub"
 },
 {
@@ -2284,18 +2248,6 @@
 "where": "GitHub"
 },
 {
-"date": "2020-07-31",
-"id": "github.com/eldrgeek/eldr-HootNet-Material-Firebase-React",
-"kind": "code",
-"makers": "Mike Wolf",
-"project": "Songs & shows",
-"state": "live",
-"title": "Eldr Hootnet Material Firebase React",
-"updated": "2020-07-31",
-"url": "https://github.com/eldrgeek/eldr-HootNet-Material-Firebase-React",
-"where": "GitHub"
-},
-{
 "date": "2020-02-21",
 "id": "github.com/eldrgeek/mike-test",
 "kind": "code",
@@ -2335,20 +2287,6 @@
 "where": "GitHub"
 },
 {
-"date": "2019-10-12",
-"id": "awesometools-2337f.netlify.app",
-"kind": "site",
-"links": {
-"source": "https://github.com/eldrgeek/awesometools-copy-01"
-},
-"project": "Other",
-"state": "live",
-"title": "Stackbit Vanilla Theme",
-"updated": "2023-01-11",
-"url": "https://awesometools-2337f.netlify.app",
-"where": "Netlify"
-},
-{
 "date": "2019-09-29",
 "id": "github.com/eldrgeek/eldr-rev-podcasts",
 "kind": "code",
@@ -2362,17 +2300,6 @@
 "where": "GitHub"
 },
 {
-"date": "2019-09-07",
-"id": "eldr-hugo.netlify.app",
-"kind": "site",
-"project": "Other",
-"state": "live",
-"title": "Great coffee with a conscience",
-"updated": "2019-09-07",
-"url": "https://eldr-hugo.netlify.app",
-"where": "Netlify"
-},
-{
 "date": "2019-07-24",
 "id": "revolution1x1.org",
 "kind": "site",
@@ -2381,6 +2308,7 @@
 },
 "project": "Revolution 1x1",
 "state": "down",
+"story": "The home of Revolution 1x1, Noel Paul Stookey's one-person-at-a-time movement, first hosted here in 2019; it is offline now, and the 2026 concept site was built to revive it.",
 "title": "Revolution1X1",
 "updated": "2026-08-13",
 "url": "https://revolution1x1.org",
