@@ -1,11 +1,23 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 191,
+"public": 192,
 "team_only": 427
 },
-"generated": "2026-11-11T09:49:21Z",
+"generated": "2026-11-12T09:38:59Z",
 "works": [
+{
+"date": "2026-11-12",
+"id": "soma-artifact-gallery.netlify.app",
+"kind": "site",
+"project": "SOMA",
+"state": "live",
+"story": "Films, sites and documents made by Mike Wolf and his team of people and AIs at SOMA Studios.",
+"title": "Artifact Gallery",
+"updated": "2026-11-12",
+"url": "https://soma-artifact-gallery.netlify.app",
+"where": "Netlify"
+},
 {
 "chapters": 1,
 "date": "2026-11-07",
@@ -15,7 +27,7 @@
 "state": "down",
 "story": "A read-only public view of the Studio Lot, the spatial map of all of Mike's work, republished every hour; it probes down because the lot.mike-wolf.com DNS is still pending, and the same page is live at studio-lot.netlify.app.",
 "title": "Studio Lot",
-"updated": "2026-11-11",
+"updated": "2026-11-12",
 "url": "https://lot.mike-wolf.com",
 "where": "Netlify"
 },
@@ -302,9 +314,9 @@
 "id": "soma-gallery.netlify.app",
 "kind": "site",
 "project": "SOMA",
-"state": "live",
+"state": "down",
 "story": "Carries The Ringer List, a two-hander written by Opus 5 and rendered to a 1:44 stage read through three ElevenLabs voices (one per character, a narrator for the stage directions; samples/.../render.py parses Fountain and concatenates with a longer beat after each direction).",
-"title": "SOMA Gallery — every-dimension samples",
+"title": "Soma Gallery",
 "updated": "2026-09-17",
 "url": "https://soma-gallery.netlify.app",
 "where": "Netlify"
@@ -539,9 +551,9 @@
 "kind": "site",
 "makers": "Mike + Claude Opus 5",
 "project": "SOMA",
-"state": "live",
+"state": "down",
 "story": "One allow-listed origin for every SOMA app's auth redirect, validated against a database table instead of Supabase's 2048-byte cap.",
-"title": "SOMA auth relay",
+"title": "Soma Auth Relay",
 "updated": "2026-11-04",
 "url": "https://soma-auth-relay.netlify.app",
 "where": "Netlify"
@@ -587,10 +599,9 @@
 "links": {
 "source": "https://github.com/eldrgeek/portable-canon"
 },
-"project": "SOMA",
-"state": "live",
-"story": "Six operating standards, distilled into prompt blocks anyone can hand to their own AI.",
-"title": "Portable Canon — SOMA",
+"project": "Other",
+"state": "down",
+"title": "Portable Canon",
 "updated": "2026-07-31",
 "url": "https://portable-canon.netlify.app",
 "where": "Netlify"
@@ -749,7 +760,7 @@
 "state": "live",
 "story": "Community-seed published (GitHub + Netlify community-seed.netlify.app) — two-stage seed prompts (Sherpa/Founding) live.",
 "title": "Community Seed",
-"updated": "2026-11-10",
+"updated": "2026-11-12",
 "url": "https://community-seed.netlify.app",
 "where": "Netlify"
 },
@@ -826,9 +837,9 @@
 "id": "soma-guest-gatehouse.netlify.app",
 "kind": "site",
 "project": "SOMA",
-"state": "live",
+"state": "down",
 "story": "New: The Gatehouse",
-"title": "SOMA · Guest Gatehouse",
+"title": "Soma Guest Gatehouse",
 "updated": "2026-10-21",
 "url": "https://soma-guest-gatehouse.netlify.app",
 "where": "Netlify"
@@ -909,7 +920,7 @@
 },
 "makers": "Mike Wolf + netlify",
 "project": "Other",
-"state": "live",
+"state": "down",
 "story": "Fund-for-catholic-genius/ → GitHub eldrgeek/fund-for-catholic-genius → Netlify (github CI/CD wired, deploy key verified).",
 "title": "The Fund for Catholic Genius",
 "updated": "2026-07-09",
@@ -1390,7 +1401,7 @@
 "id": "llms4elders.netlify.app",
 "kind": "site",
 "project": "AI WTF",
-"state": "live",
+"state": "down",
 "story": "Practical AI literacy resource aimed at older adults — real tools, plain language, no hype.",
 "title": "LLMs for Elders",
 "updated": "2026-10-21",
@@ -1450,7 +1461,7 @@
 "id": "pollen-is-not-consent.netlify.app",
 "kind": "site",
 "project": "Satire",
-"state": "live",
+"state": "down",
 "story": "A mock campaign that holds flowers to account for spreading pollen without asking, one of four botanical satire sites made in April 2026.",
 "title": "Pollen Is Not Consent",
 "updated": "2026-09-05",
@@ -1519,7 +1530,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-11-10",
+"updated": "2026-11-11",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
@@ -1604,7 +1615,7 @@
 "state": "live",
 "story": "Ai-wtf.org serves the January \"Silicon Siblings\" site again, with a new /since-january page.",
 "title": "AI for eLLders (AI-WTF)",
-"updated": "2026-09-24",
+"updated": "2026-11-12",
 "url": "https://ai-wtf.org",
 "where": "Netlify"
 },
