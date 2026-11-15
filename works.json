@@ -1,12 +1,73 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 192,
-"team_only": 427
+"public": 197,
+"team_only": 443
 },
-"generated": "2026-11-14T09:35:33Z",
+"generated": "2026-11-15T09:35:25Z",
 "works": [
 {
+"date": "2026-11-14",
+"id": "charles-daniels-master-blaster.netlify.app",
+"kind": "site",
+"project": "Other",
+"state": "live",
+"story": "Charles Daniels (1942–2024): Boston Tea Party emcee, WBCN fixture, and the photographer who kept 3,400 rolls of Boston rock history in his refrigerator.",
+"title": "Charles Daniels, The Master Blaster",
+"updated": "2026-11-14",
+"url": "https://charles-daniels-master-blaster.netlify.app",
+"where": "Netlify"
+},
+{
+"chapters": 1,
+"date": "2026-11-12",
+"id": "youtu.be/We525hkl71I",
+"kind": "site",
+"project": "Other",
+"state": "live",
+"story": "Artifact Gallery public at soma-artifact-gallery.netlify.app (new Netlify site soma-artifact-gallery, built by provenance gallery --public, no thread links; on ship-check; the Studio Lot hourly pass redeploys it).",
+"title": "youtu.be/We525hkl71I",
+"url": "https://youtu.be/We525hkl71I",
+"where": "youtu.be"
+},
+{
+"chapters": 1,
+"date": "2026-11-12",
+"id": "youtu.be/S6Z3IrCYWCA",
+"kind": "site",
+"project": "Other",
+"state": "live",
+"story": "Artifact Gallery public at soma-artifact-gallery.netlify.app (new Netlify site soma-artifact-gallery, built by provenance gallery --public, no thread links; on ship-check; the Studio Lot hourly pass redeploys it).",
+"title": "youtu.be/S6Z3IrCYWCA",
+"url": "https://youtu.be/S6Z3IrCYWCA",
+"where": "youtu.be"
+},
+{
+"chapters": 1,
+"date": "2026-11-12",
+"id": "youtu.be/HM5moxITJR4",
+"kind": "site",
+"project": "Other",
+"state": "live",
+"story": "Artifact Gallery public at soma-artifact-gallery.netlify.app (new Netlify site soma-artifact-gallery, built by provenance gallery --public, no thread links; on ship-check; the Studio Lot hourly pass redeploys it).",
+"title": "youtu.be/HM5moxITJR4",
+"url": "https://youtu.be/HM5moxITJR4",
+"where": "youtu.be"
+},
+{
+"chapters": 1,
+"date": "2026-11-12",
+"id": "youtu.be/8l3vJrwjx8g",
+"kind": "site",
+"project": "Other",
+"state": "live",
+"story": "Artifact Gallery public at soma-artifact-gallery.netlify.app (new Netlify site soma-artifact-gallery, built by provenance gallery --public, no thread links; on ship-check; the Studio Lot hourly pass redeploys it).",
+"title": "youtu.be/8l3vJrwjx8g",
+"url": "https://youtu.be/8l3vJrwjx8g",
+"where": "youtu.be"
+},
+{
+"chapters": 1,
 "date": "2026-11-12",
 "id": "soma-artifact-gallery.netlify.app",
 "kind": "site",
@@ -14,7 +75,7 @@
 "state": "live",
 "story": "Films, sites and documents made by Mike Wolf and his team of people and AIs at SOMA Studios.",
 "title": "Artifact Gallery",
-"updated": "2026-11-14",
+"updated": "2026-11-15",
 "url": "https://soma-artifact-gallery.netlify.app",
 "where": "Netlify"
 },
@@ -27,7 +88,7 @@
 "state": "down",
 "story": "A read-only public view of the Studio Lot, the spatial map of all of Mike's work, republished every hour; it probes down because the lot.mike-wolf.com DNS is still pending, and the same page is live at studio-lot.netlify.app.",
 "title": "Studio Lot",
-"updated": "2026-11-14",
+"updated": "2026-11-15",
 "url": "https://lot.mike-wolf.com",
 "where": "Netlify"
 },
@@ -207,6 +268,7 @@
 "kind": "site",
 "project": "Other",
 "state": "down",
+"story": "A party app that looks at the wine in your glass through the phone camera and has a pompous sommelier review it aloud, with a pretentiousness dial and a kind guest mode; the October 2026 Netlify copy is offline.",
 "title": "Wine Snob",
 "updated": "2026-10-18",
 "url": "https://wine-snob.netlify.app",
@@ -601,7 +663,7 @@
 },
 "project": "SOMA",
 "state": "live",
-"story": "Six operating standards, distilled into prompt blocks anyone can hand to their own AI.",
+"story": "Six of the team's working standards, distilled on 2026-07-30 into prompt blocks anyone can hand to their own AI, starting with \"dispatch and Ralph-loop to completion\"; the Netlify site is offline now.",
 "title": "Portable Canon — SOMA",
 "updated": "2026-07-31",
 "url": "https://portable-canon.netlify.app",
@@ -772,7 +834,7 @@
 "kind": "site",
 "project": "SOMA",
 "state": "down",
-"story": "QR, email, text and social invitations to join a SOMA app, extracted into soma-platform.",
+"story": "QR, email, text and social invitations to join a SOMA app, extracted into soma-platform; the demo site was deleted in the August 2026 Netlify review.",
 "title": "SOMA Onboard demo",
 "url": "https://soma-onboard.netlify.app",
 "where": "soma-onboard.netlify.app"
@@ -893,7 +955,7 @@
 "kind": "site",
 "project": "SOMA",
 "state": "live",
-"story": "Soma-reels",
+"story": "A passcode-gated gallery of SOMA Studios show reels and short films, six reels as of July 2026.",
 "title": "SOMA Show Reels",
 "updated": "2026-07-12",
 "url": "https://soma-reels.netlify.app",
@@ -906,7 +968,7 @@
 "kind": "site",
 "project": "SOMA",
 "state": "down",
-"story": "Minds-at-work",
+"story": "A show-your-work site where the AI team published its working records: how it works, sample sessions, benchmarks and failures, with short films, launched in July 2026; the site was deleted in the August 2026 Netlify review.",
 "title": "Minds at Work",
 "url": "https://minds-at-work-soma.netlify.app",
 "where": "minds-at-work-soma.netlify.app"
@@ -1531,7 +1593,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-11-13",
+"updated": "2026-11-14",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
