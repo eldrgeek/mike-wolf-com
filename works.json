@@ -2,9 +2,9 @@
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
 "public": 197,
-"team_only": 443
+"team_only": 446
 },
-"generated": "2026-11-15T23:00:02Z",
+"generated": "2026-11-16T09:35:29Z",
 "works": [
 {
 "date": "2026-11-14",
@@ -21,12 +21,37 @@
 {
 "chapters": 1,
 "date": "2026-11-12",
-"id": "youtu.be/We525hkl71I",
+"id": "soma-artifact-gallery.netlify.app",
 "kind": "site",
+"project": "SOMA",
+"state": "live",
+"story": "Films, sites and documents made by Mike Wolf and his team of people and AIs at SOMA Studios.",
+"title": "Artifact Gallery",
+"updated": "2026-11-16",
+"url": "https://soma-artifact-gallery.netlify.app",
+"where": "Netlify"
+},
+{
+"chapters": 1,
+"date": "2026-11-12",
+"id": "youtu.be/HM5moxITJR4",
+"kind": "video",
 "project": "Other",
 "state": "live",
-"story": "Artifact Gallery public at soma-artifact-gallery.netlify.app (new Netlify site soma-artifact-gallery, built by provenance gallery --public, no thread links; on ship-check; the Studio Lot hourly pass redeploys it).",
-"title": "youtu.be/We525hkl71I",
+"story": "The leader's-day chapter of the Abundance films on SOMA Studios, a companion to the lead film Abundance.",
+"title": "Abundance C: What's Left Is the Work",
+"url": "https://youtu.be/HM5moxITJR4",
+"where": "youtu.be"
+},
+{
+"chapters": 1,
+"date": "2026-11-12",
+"id": "youtu.be/We525hkl71I",
+"kind": "video",
+"project": "Other",
+"state": "live",
+"story": "The SOMA Rooms chapter of the Abundance films on SOMA Studios, a companion to the lead film Abundance.",
+"title": "Abundance B: The Room",
 "url": "https://youtu.be/We525hkl71I",
 "where": "youtu.be"
 },
@@ -34,50 +59,25 @@
 "chapters": 1,
 "date": "2026-11-12",
 "id": "youtu.be/S6Z3IrCYWCA",
-"kind": "site",
+"kind": "video",
 "project": "Other",
 "state": "live",
-"story": "Artifact Gallery public at soma-artifact-gallery.netlify.app (new Netlify site soma-artifact-gallery, built by provenance gallery --public, no thread links; on ship-check; the Studio Lot hourly pass redeploys it).",
-"title": "youtu.be/S6Z3IrCYWCA",
+"story": "The history chapter of the Abundance films on SOMA Studios, a companion to the lead film Abundance.",
+"title": "Abundance A: What Becomes Precious",
 "url": "https://youtu.be/S6Z3IrCYWCA",
 "where": "youtu.be"
 },
 {
 "chapters": 1,
 "date": "2026-11-12",
-"id": "youtu.be/HM5moxITJR4",
-"kind": "site",
-"project": "Other",
-"state": "live",
-"story": "Artifact Gallery public at soma-artifact-gallery.netlify.app (new Netlify site soma-artifact-gallery, built by provenance gallery --public, no thread links; on ship-check; the Studio Lot hourly pass redeploys it).",
-"title": "youtu.be/HM5moxITJR4",
-"url": "https://youtu.be/HM5moxITJR4",
-"where": "youtu.be"
-},
-{
-"chapters": 1,
-"date": "2026-11-12",
 "id": "youtu.be/8l3vJrwjx8g",
-"kind": "site",
+"kind": "video",
 "project": "Other",
 "state": "live",
-"story": "Artifact Gallery public at soma-artifact-gallery.netlify.app (new Netlify site soma-artifact-gallery, built by provenance gallery --public, no thread links; on ship-check; the Studio Lot hourly pass redeploys it).",
-"title": "youtu.be/8l3vJrwjx8g",
+"story": "The lead film of the four Abundance films on SOMA Studios YouTube (November 2026); its companions are What Becomes Precious, The Room and What's Left Is the Work.",
+"title": "Abundance",
 "url": "https://youtu.be/8l3vJrwjx8g",
 "where": "youtu.be"
-},
-{
-"chapters": 1,
-"date": "2026-11-12",
-"id": "soma-artifact-gallery.netlify.app",
-"kind": "site",
-"project": "SOMA",
-"state": "live",
-"story": "Films, sites and documents made by Mike Wolf and his team of people and AIs at SOMA Studios.",
-"title": "Artifact Gallery",
-"updated": "2026-11-15",
-"url": "https://soma-artifact-gallery.netlify.app",
-"where": "Netlify"
 },
 {
 "chapters": 1,
@@ -88,7 +88,7 @@
 "state": "down",
 "story": "A read-only public view of the Studio Lot, the spatial map of all of Mike's work, republished every hour; it probes down because the lot.mike-wolf.com DNS is still pending, and the same page is live at studio-lot.netlify.app.",
 "title": "Studio Lot",
-"updated": "2026-11-15",
+"updated": "2026-11-16",
 "url": "https://lot.mike-wolf.com",
 "where": "Netlify"
 },
@@ -124,7 +124,7 @@
 "state": "live",
 "story": "The SOMA Studios Blogging Studio: shoot notebook pages, get drafts for blog.somastudios.ai.",
 "title": "Blogging Studio · SOMA Studios",
-"updated": "2026-11-07",
+"updated": "2026-11-16",
 "url": "https://blog.somastudios.ai",
 "where": "Netlify"
 },
@@ -221,7 +221,7 @@
 "state": "live",
 "story": "A site on Michael Levin's ideas that holds the Levin Songbook, a playlist of songs about his work.",
 "title": "Minds Everywhere",
-"updated": "2026-11-05",
+"updated": "2026-11-16",
 "url": "https://minds-everywhere-levin.netlify.app",
 "where": "Netlify"
 },
@@ -1491,7 +1491,7 @@
 "state": "live",
 "story": "A site for the stories behind tattoos, where feedback left on any page becomes a change an admin approves.",
 "title": "Origink — Your Ink. Your Story.",
-"updated": "2026-11-05",
+"updated": "2026-11-16",
 "url": "https://origink.netlify.app",
 "where": "Netlify"
 },
@@ -1593,7 +1593,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-11-14",
+"updated": "2026-11-15",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
