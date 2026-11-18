@@ -1,10 +1,10 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 197,
-"team_only": 449
+"public": 219,
+"team_only": 451
 },
-"generated": "2026-11-17T09:35:30Z",
+"generated": "2026-11-18T09:35:30Z",
 "works": [
 {
 "date": "2026-11-14",
@@ -19,15 +19,26 @@
 "where": "Netlify"
 },
 {
-"chapters": 1,
+"date": "2026-11-12",
+"id": "youtu.be/ZgjnhGXaYmw",
+"kind": "video",
+"project": "Other",
+"state": "live",
+"story": "How the four Abundance films were made in one day, from one prompt by Mike Wolf to finished cuts by a team of AIs.",
+"title": "The making of Abundance",
+"url": "https://youtu.be/ZgjnhGXaYmw",
+"where": "YouTube (@somastudiosai)"
+},
+{
+"chapters": 2,
 "date": "2026-11-12",
 "id": "soma-artifact-gallery.netlify.app",
 "kind": "site",
 "project": "SOMA",
 "state": "live",
-"story": "Films, sites and documents made by Mike Wolf and his team of people and AIs at SOMA Studios.",
+"story": "Nightly refresh of the songs page and public Artifact Gallery",
 "title": "Artifact Gallery",
-"updated": "2026-11-17",
+"updated": "2026-11-18",
 "url": "https://soma-artifact-gallery.netlify.app",
 "where": "Netlify"
 },
@@ -41,7 +52,7 @@
 "story": "The leader's-day chapter of the Abundance films on SOMA Studios, a companion to the lead film Abundance.",
 "title": "Abundance C: What's Left Is the Work",
 "url": "https://youtu.be/HM5moxITJR4",
-"where": "youtu.be"
+"where": "YouTube (@somastudiosai)"
 },
 {
 "chapters": 1,
@@ -53,7 +64,7 @@
 "story": "The SOMA Rooms chapter of the Abundance films on SOMA Studios, a companion to the lead film Abundance.",
 "title": "Abundance B: The Room",
 "url": "https://youtu.be/We525hkl71I",
-"where": "youtu.be"
+"where": "YouTube (@somastudiosai)"
 },
 {
 "chapters": 1,
@@ -65,7 +76,7 @@
 "story": "The history chapter of the Abundance films on SOMA Studios, a companion to the lead film Abundance.",
 "title": "Abundance A: What Becomes Precious",
 "url": "https://youtu.be/S6Z3IrCYWCA",
-"where": "youtu.be"
+"where": "YouTube (@somastudiosai)"
 },
 {
 "chapters": 1,
@@ -77,7 +88,7 @@
 "story": "The lead film of the four Abundance films on SOMA Studios YouTube (November 2026); its companions are What Becomes Precious, The Room and What's Left Is the Work.",
 "title": "Abundance",
 "url": "https://youtu.be/8l3vJrwjx8g",
-"where": "youtu.be"
+"where": "YouTube (@somastudiosai)"
 },
 {
 "chapters": 1,
@@ -88,7 +99,7 @@
 "state": "down",
 "story": "A read-only public view of the Studio Lot, the spatial map of all of Mike's work, republished every hour; it probes down because the lot.mike-wolf.com DNS is still pending, and the same page is live at studio-lot.netlify.app.",
 "title": "Studio Lot",
-"updated": "2026-11-17",
+"updated": "2026-11-18",
 "url": "https://lot.mike-wolf.com",
 "where": "Netlify"
 },
@@ -100,7 +111,7 @@
 "state": "live",
 "story": "The Making Of: a documentary series about writing a new play, with a human and AI team.",
 "title": "The Making Of",
-"updated": "2026-11-07",
+"updated": "2026-11-18",
 "url": "https://wp-making-of.netlify.app",
 "where": "Netlify"
 },
@@ -129,6 +140,94 @@
 "where": "Netlify"
 },
 {
+"date": "2026-11-01",
+"id": "youtu.be/olncXGsCLKw",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"story": "SOMA Studios presents.",
+"title": "We Are a We (a song about Michael Levin's work)",
+"url": "https://youtu.be/olncXGsCLKw",
+"where": "YouTube (@somastudiosai)"
+},
+{
+"date": "2026-11-01",
+"id": "youtu.be/eBVaxqwfsCc",
+"kind": "video",
+"project": "Other",
+"state": "live",
+"story": "SOMA Studios presents.",
+"title": "The Compassionate Heart (lyric video) by Greg Christoffel and Noel Paul Stookey",
+"url": "https://youtu.be/eBVaxqwfsCc",
+"where": "YouTube (@somastudiosai)"
+},
+{
+"date": "2026-11-01",
+"id": "youtu.be/PDWGtsTAh9s",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"story": "SOMA Studios presents.",
+"title": "Tell Them Where, Not How (a song about Michael Levin's work)",
+"url": "https://youtu.be/PDWGtsTAh9s",
+"where": "YouTube (@somastudiosai)"
+},
+{
+"date": "2026-11-01",
+"id": "youtu.be/v1Fnrfg5NX8",
+"kind": "video",
+"project": "SRMW",
+"state": "live",
+"story": "SOMA Studios presents.",
+"title": "SRMW Jailbreak",
+"url": "https://youtu.be/v1Fnrfg5NX8",
+"where": "YouTube (@somastudiosai)"
+},
+{
+"date": "2026-11-01",
+"id": "youtu.be/tYaZCUq_77s",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"story": "SOMA Studios presents.",
+"title": "Not From the Armchair (The Levin Songbook)",
+"url": "https://youtu.be/tYaZCUq_77s",
+"where": "YouTube (@somastudiosai)"
+},
+{
+"date": "2026-11-01",
+"id": "youtu.be/Zw69Lb2igfM",
+"kind": "video",
+"project": "Other",
+"state": "live",
+"story": "SOMA Studios presents.",
+"title": "Minds Everywhere: The Making Of",
+"url": "https://youtu.be/Zw69Lb2igfM",
+"where": "YouTube (@somastudiosai)"
+},
+{
+"date": "2026-11-01",
+"id": "youtu.be/9xSpzmpkOqg",
+"kind": "video",
+"project": "Other",
+"state": "live",
+"story": "SOMA Studios presents.",
+"title": "How the Gig Video Was Made",
+"url": "https://youtu.be/9xSpzmpkOqg",
+"where": "YouTube (@somastudiosai)"
+},
+{
+"date": "2026-11-01",
+"id": "youtu.be/EkwzaiOWzSM",
+"kind": "video",
+"project": "Other",
+"state": "live",
+"story": "SOMA Studios presents.",
+"title": "A Gig Isn't What It Used To Be",
+"url": "https://youtu.be/EkwzaiOWzSM",
+"where": "YouTube (@somastudiosai)"
+},
+{
 "date": "2026-10-31",
 "id": "carol-fonde.netlify.app",
 "kind": "site",
@@ -139,6 +238,48 @@
 "updated": "2026-10-31",
 "url": "https://carol-fonde.netlify.app",
 "where": "Netlify"
+},
+{
+"date": "2026-10-30",
+"id": "youtu.be/1m6kYYU2Yl0",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"story": "Where Do Shapes Come From: a chamber folk with choir song about Michael Levin's work.",
+"title": "Where Do Shapes Come From (The Levin Songbook)",
+"url": "https://youtu.be/1m6kYYU2Yl0",
+"where": "YouTube (@MikeWolf)"
+},
+{
+"date": "2026-10-30",
+"id": "youtu.be/AdKHAQ1WBNU",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"story": "SOMA Studios presents.",
+"title": "Where Do Shapes Come From (The Levin Songbook)",
+"url": "https://youtu.be/AdKHAQ1WBNU",
+"where": "YouTube (@somastudiosai)"
+},
+{
+"date": "2026-10-30",
+"id": "youtu.be/amW_q15zQVg",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"title": "We Are a We (a song about Michael Levin's work)",
+"url": "https://youtu.be/amW_q15zQVg",
+"where": "YouTube (@MikeWolf)"
+},
+{
+"date": "2026-10-30",
+"id": "youtu.be/qnxyJncln8Y",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"title": "Tell Them Where, Not How (a song about Michael Levin's work)",
+"url": "https://youtu.be/qnxyJncln8Y",
+"where": "YouTube (@MikeWolf)"
 },
 {
 "date": "2026-10-30",
@@ -177,6 +318,17 @@
 "where": "www.youtube.com"
 },
 {
+"date": "2026-10-30",
+"id": "youtu.be/u1zSjQm1kCM",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"story": "Persuadable: a bossa nova song about Michael Levin's work.",
+"title": "Persuadable (The Levin Songbook)",
+"url": "https://youtu.be/u1zSjQm1kCM",
+"where": "YouTube (@MikeWolf)"
+},
+{
 "chapters": 1,
 "date": "2026-10-30",
 "id": "youtu.be/-NCAY7WCSE4",
@@ -187,7 +339,51 @@
 "story": "A Chicago blues song from a point Michael Levin makes in more than 20 talks: how much mind a system has is settled by experiment, not from an armchair. Lyrics by Claude, music on Suno, pictures by Grok Imagine, Levin-lab figures under CC BY. Lyrics and sources: https://minds-everywhere-levin.netlify.app/songbook/",
 "title": "Not From the Armchair (lyric video)",
 "url": "https://youtu.be/-NCAY7WCSE4",
-"where": "youtu.be"
+"where": "YouTube (@MikeWolf)"
+},
+{
+"date": "2026-10-30",
+"id": "youtu.be/GDSkllOEEj4",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"story": "Let the Numbers Sort Themselves: a electro swing and chiptune song about Michael Levin's work.",
+"title": "Let the Numbers Sort Themselves (The Levin Songbook)",
+"url": "https://youtu.be/GDSkllOEEj4",
+"where": "YouTube (@MikeWolf)"
+},
+{
+"date": "2026-10-30",
+"id": "youtu.be/VdkRAKx_ZQY",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"story": "Find My Face: a motown soul song about Michael Levin's work.",
+"title": "Find My Face (The Levin Songbook)",
+"url": "https://youtu.be/VdkRAKx_ZQY",
+"where": "YouTube (@MikeWolf)"
+},
+{
+"date": "2026-10-30",
+"id": "youtu.be/-V4hGgYHi9s",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"story": "Come Back to the Body: a gospel soul song about Michael Levin's work.",
+"title": "Come Back to the Body (The Levin Songbook)",
+"url": "https://youtu.be/-V4hGgYHi9s",
+"where": "YouTube (@MikeWolf)"
+},
+{
+"date": "2026-10-30",
+"id": "youtu.be/hf4NjQcVkIM",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"story": "SOMA Studios presents.",
+"title": "Come Back to the Body (The Levin Songbook)",
+"url": "https://youtu.be/hf4NjQcVkIM",
+"where": "YouTube (@somastudiosai)"
 },
 {
 "date": "2026-10-29",
@@ -203,6 +399,17 @@
 },
 {
 "date": "2026-10-29",
+"id": "youtu.be/C0IJQRuSIDs",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"story": "The Levin Lab Freylekhs: a klezmer song about Michael Levin's work.",
+"title": "The Levin Lab Freylekhs (The Levin Songbook)",
+"url": "https://youtu.be/C0IJQRuSIDs",
+"where": "YouTube (@MikeWolf)"
+},
+{
+"date": "2026-10-29",
 "id": "youtu.be/32qMrBJGZHw",
 "kind": "video",
 "makers": "Mike Wolf, Claude, Grok, Gemini, OpenAI Sol",
@@ -211,7 +418,40 @@
 "story": "A lyric video for the song by Greg Christoffel and Noel Paul Stookey: 44 pictures from an AI image panel and fourteen public-domain paintings, cut on the beat.",
 "title": "The Compassionate Heart (lyric video)",
 "url": "https://youtu.be/32qMrBJGZHw",
-"where": "youtu.be"
+"where": "YouTube (@MikeWolf)"
+},
+{
+"date": "2026-10-29",
+"id": "youtu.be/xaKXITTJdPs",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"story": "Same Cells, New Shapes: a surf rock song about Michael Levin's work.",
+"title": "Same Cells, New Shapes (The Levin Songbook)",
+"url": "https://youtu.be/xaKXITTJdPs",
+"where": "YouTube (@MikeWolf)"
+},
+{
+"date": "2026-10-29",
+"id": "youtu.be/hd8bI4tqJeQ",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"story": "How Far Can You Care: a 1980s synth-pop song about Michael Levin's work.",
+"title": "How Far Can You Care (The Levin Songbook)",
+"url": "https://youtu.be/hd8bI4tqJeQ",
+"where": "YouTube (@MikeWolf)"
+},
+{
+"date": "2026-10-29",
+"id": "youtu.be/k4nzdNEOHlQ",
+"kind": "video",
+"project": "Songs & shows",
+"state": "live",
+"story": "Cut Me Again: a bluegrass song about Michael Levin's work.",
+"title": "Cut Me Again (The Levin Songbook)",
+"url": "https://youtu.be/k4nzdNEOHlQ",
+"where": "YouTube (@MikeWolf)"
 },
 {
 "date": "2026-10-27",
@@ -235,7 +475,7 @@
 "story": "The 2-minute making-of the Gig video, in which each AI tells its own part in its own voice.",
 "title": "How the Gig Video Was Made",
 "url": "https://youtu.be/NcGCEfVGjlU",
-"where": "youtu.be"
+"where": "YouTube (@MikeWolf)"
 },
 {
 "chapters": 2,
@@ -247,7 +487,7 @@
 "story": "A dry talking-blues about what a gig means now. Its 2-minute making-of is \"How the Gig Video Was Made\".",
 "title": "A Gig Isn't What It Used To Be (lyric video)",
 "url": "https://youtu.be/0LmALRMVo-g",
-"where": "youtu.be"
+"where": "YouTube (@MikeWolf)"
 },
 {
 "chapters": 2,
@@ -258,7 +498,7 @@
 "state": "live",
 "story": "Where SOMA Studio apps such as VideoMaker and the Puppet Script table read run straight from their Puppet descriptions.",
 "title": "SOMA Puppet Runtime",
-"updated": "2026-10-25",
+"updated": "2026-11-17",
 "url": "https://soma-forge.netlify.app",
 "where": "Netlify"
 },
@@ -336,7 +576,7 @@
 "state": "down",
 "story": "The CDN that serves soma-assist-core, the shared guide and feedback widget that SOMA sites load; it has no home page of its own, which is why the probe reports it down.",
 "title": "Soma Guide",
-"updated": "2026-11-03",
+"updated": "2026-11-17",
 "url": "https://soma-guide.netlify.app",
 "where": "Netlify"
 },
@@ -1322,7 +1562,7 @@
 "state": "live",
 "story": "Soma-speech: the voice is the app builder's setting, not a menu for the person dictating — soma-speech.netlify.app",
 "title": "SOMA Speech",
-"updated": "2026-11-05",
+"updated": "2026-11-17",
 "url": "https://soma-speech.netlify.app",
 "where": "Netlify"
 },
@@ -1593,7 +1833,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-11-16",
+"updated": "2026-11-18",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
