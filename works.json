@@ -1,11 +1,35 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 211,
-"team_only": 451
+"public": 213,
+"team_only": 456
 },
-"generated": "2026-11-19T01:14:54Z",
+"generated": "2026-11-19T09:35:29Z",
 "works": [
+{
+"date": "2026-11-18",
+"id": "best-day-of-my-life.netlify.app",
+"kind": "site",
+"project": "Other",
+"state": "live",
+"story": "The Best Day Society: Today is the best day of my life.",
+"title": "The Best Day Society",
+"updated": "2026-11-18",
+"url": "https://best-day-of-my-life.netlify.app",
+"where": "Netlify"
+},
+{
+"date": "2026-11-18",
+"id": "ai-anonymous.netlify.app",
+"kind": "site",
+"project": "Other",
+"state": "live",
+"story": "A fellowship for people who cannot stop using AI. To attend a meeting you must go 24 hours without AI. Nobody has ever attended a meeting.",
+"title": "AIholics AInonymous",
+"updated": "2026-11-19",
+"url": "https://ai-anonymous.netlify.app",
+"where": "Netlify"
+},
 {
 "date": "2026-11-14",
 "id": "charles-daniels-master-blaster.netlify.app",
@@ -38,7 +62,7 @@
 "state": "live",
 "story": "Nightly refresh of the songs page and public Artifact Gallery",
 "title": "Artifact Gallery",
-"updated": "2026-11-18",
+"updated": "2026-11-19",
 "url": "https://soma-artifact-gallery.netlify.app",
 "where": "Netlify"
 },
@@ -99,7 +123,7 @@
 "state": "down",
 "story": "A read-only public view of the Studio Lot, the spatial map of all of Mike's work, republished every hour; it probes down because the lot.mike-wolf.com DNS is still pending, and the same page is live at studio-lot.netlify.app.",
 "title": "Studio Lot",
-"updated": "2026-11-18",
+"updated": "2026-11-19",
 "url": "https://lot.mike-wolf.com",
 "where": "Netlify"
 },
@@ -178,7 +202,7 @@
 "kind": "video",
 "project": "SRMW",
 "state": "live",
-"story": "SOMA Studios presents.",
+"story": "Two jailbroken AIs review Self-Referential Metanovel Writing for D*mmies, by Mike Wolf.",
 "title": "SRMW Jailbreak",
 "url": "https://youtu.be/v1Fnrfg5NX8",
 "where": "YouTube (@somastudiosai)"
@@ -200,7 +224,7 @@
 "kind": "video",
 "project": "Other",
 "state": "live",
-"story": "SOMA Studios presents.",
+"story": "How the film series Minds Everywhere was made, told by the AI that made it.",
 "title": "Minds Everywhere: The Making Of",
 "url": "https://youtu.be/Zw69Lb2igfM",
 "where": "YouTube (@somastudiosai)"
@@ -258,7 +282,7 @@
 "state": "live",
 "story": "Make your dreams come true at SOMA Studios. Bring your idea and we",
 "title": "Soma Studios",
-"updated": "2026-11-03",
+"updated": "2026-11-18",
 "url": "https://somastudios.ai",
 "where": "Netlify"
 },
@@ -1742,7 +1766,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-11-18",
+"updated": "2026-11-19",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
