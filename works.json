@@ -1,10 +1,10 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 219,
+"public": 211,
 "team_only": 451
 },
-"generated": "2026-11-19T00:00:37Z",
+"generated": "2026-11-19T01:14:54Z",
 "works": [
 {
 "date": "2026-11-14",
@@ -145,7 +145,7 @@
 "kind": "video",
 "project": "Songs & shows",
 "state": "live",
-"story": "SOMA Studios presents.",
+"story": "We Are a We: an indie folk-pop song about Michael Levin's work.",
 "title": "We Are a We (a song about Michael Levin's work)",
 "url": "https://youtu.be/olncXGsCLKw",
 "where": "YouTube (@somastudiosai)"
@@ -156,8 +156,8 @@
 "kind": "video",
 "project": "Other",
 "state": "live",
-"story": "SOMA Studios presents.",
-"title": "The Compassionate Heart (lyric video) by Greg Christoffel and Noel Paul Stookey",
+"story": "A lyric video for the song by Greg Christoffel and Noel Paul Stookey: 44 pictures from an AI image panel and fourteen public-domain paintings, cut on the beat.",
+"title": "The Compassionate Heart (lyric video)",
 "url": "https://youtu.be/eBVaxqwfsCc",
 "where": "YouTube (@somastudiosai)"
 },
@@ -167,7 +167,7 @@
 "kind": "video",
 "project": "Songs & shows",
 "state": "live",
-"story": "SOMA Studios presents.",
+"story": "Tell Them Where, Not How: an Afrobeat funk song about Michael Levin's work.",
 "title": "Tell Them Where, Not How (a song about Michael Levin's work)",
 "url": "https://youtu.be/PDWGtsTAh9s",
 "where": "YouTube (@somastudiosai)"
@@ -189,7 +189,7 @@
 "kind": "video",
 "project": "Songs & shows",
 "state": "live",
-"story": "SOMA Studios presents.",
+"story": "A Chicago blues song from a point Michael Levin makes in more than 20 talks: how much mind a system has is settled by experiment, not from an armchair.",
 "title": "Not From the Armchair (The Levin Songbook)",
 "url": "https://youtu.be/tYaZCUq_77s",
 "where": "YouTube (@somastudiosai)"
@@ -211,7 +211,7 @@
 "kind": "video",
 "project": "Other",
 "state": "live",
-"story": "SOMA Studios presents.",
+"story": "The 2-minute making-of the Gig video, in which each AI tells its own part in its own voice.",
 "title": "How the Gig Video Was Made",
 "url": "https://youtu.be/9xSpzmpkOqg",
 "where": "YouTube (@somastudiosai)"
@@ -222,7 +222,7 @@
 "kind": "video",
 "project": "Other",
 "state": "live",
-"story": "SOMA Studios presents.",
+"story": "A dry talking-blues about what a gig means now. Its 2-minute making-of is \"How the Gig Video Was Made\".",
 "title": "A Gig Isn't What It Used To Be",
 "url": "https://youtu.be/EkwzaiOWzSM",
 "where": "YouTube (@somastudiosai)"
@@ -241,45 +241,14 @@
 },
 {
 "date": "2026-10-30",
-"id": "youtu.be/1m6kYYU2Yl0",
+"id": "youtu.be/AdKHAQ1WBNU",
 "kind": "video",
 "project": "Songs & shows",
 "state": "live",
 "story": "Where Do Shapes Come From: a chamber folk with choir song about Michael Levin's work.",
 "title": "Where Do Shapes Come From (The Levin Songbook)",
-"url": "https://youtu.be/1m6kYYU2Yl0",
-"where": "YouTube (@MikeWolf)"
-},
-{
-"date": "2026-10-30",
-"id": "youtu.be/AdKHAQ1WBNU",
-"kind": "video",
-"project": "Songs & shows",
-"state": "live",
-"story": "SOMA Studios presents.",
-"title": "Where Do Shapes Come From (The Levin Songbook)",
 "url": "https://youtu.be/AdKHAQ1WBNU",
 "where": "YouTube (@somastudiosai)"
-},
-{
-"date": "2026-10-30",
-"id": "youtu.be/amW_q15zQVg",
-"kind": "video",
-"project": "Songs & shows",
-"state": "live",
-"title": "We Are a We (a song about Michael Levin's work)",
-"url": "https://youtu.be/amW_q15zQVg",
-"where": "YouTube (@MikeWolf)"
-},
-{
-"date": "2026-10-30",
-"id": "youtu.be/qnxyJncln8Y",
-"kind": "video",
-"project": "Songs & shows",
-"state": "live",
-"title": "Tell Them Where, Not How (a song about Michael Levin's work)",
-"url": "https://youtu.be/qnxyJncln8Y",
-"where": "YouTube (@MikeWolf)"
 },
 {
 "date": "2026-10-30",
@@ -329,19 +298,6 @@
 "where": "YouTube (@MikeWolf)"
 },
 {
-"chapters": 1,
-"date": "2026-10-30",
-"id": "youtu.be/-NCAY7WCSE4",
-"kind": "video",
-"makers": "Mike Wolf, Claude, Suno, Grok, Gemini, OpenAI Sol",
-"project": "Levin & thinkers",
-"state": "live",
-"story": "A Chicago blues song from a point Michael Levin makes in more than 20 talks: how much mind a system has is settled by experiment, not from an armchair. Lyrics by Claude, music on Suno, pictures by Grok Imagine, Levin-lab figures under CC BY. Lyrics and sources: https://minds-everywhere-levin.netlify.app/songbook/",
-"title": "Not From the Armchair (lyric video)",
-"url": "https://youtu.be/-NCAY7WCSE4",
-"where": "YouTube (@MikeWolf)"
-},
-{
 "date": "2026-10-30",
 "id": "youtu.be/GDSkllOEEj4",
 "kind": "video",
@@ -365,22 +321,11 @@
 },
 {
 "date": "2026-10-30",
-"id": "youtu.be/-V4hGgYHi9s",
-"kind": "video",
-"project": "Songs & shows",
-"state": "live",
-"story": "Come Back to the Body: a gospel soul song about Michael Levin's work.",
-"title": "Come Back to the Body (The Levin Songbook)",
-"url": "https://youtu.be/-V4hGgYHi9s",
-"where": "YouTube (@MikeWolf)"
-},
-{
-"date": "2026-10-30",
 "id": "youtu.be/hf4NjQcVkIM",
 "kind": "video",
 "project": "Songs & shows",
 "state": "live",
-"story": "SOMA Studios presents.",
+"story": "Come Back to the Body: a gospel soul song about Michael Levin's work.",
 "title": "Come Back to the Body (The Levin Songbook)",
 "url": "https://youtu.be/hf4NjQcVkIM",
 "where": "YouTube (@somastudiosai)"
@@ -406,18 +351,6 @@
 "story": "The Levin Lab Freylekhs: a klezmer song about Michael Levin's work.",
 "title": "The Levin Lab Freylekhs (The Levin Songbook)",
 "url": "https://youtu.be/C0IJQRuSIDs",
-"where": "YouTube (@MikeWolf)"
-},
-{
-"date": "2026-10-29",
-"id": "youtu.be/32qMrBJGZHw",
-"kind": "video",
-"makers": "Mike Wolf, Claude, Grok, Gemini, OpenAI Sol",
-"project": "Song Studio",
-"state": "live",
-"story": "A lyric video for the song by Greg Christoffel and Noel Paul Stookey: 44 pictures from an AI image panel and fourteen public-domain paintings, cut on the beat.",
-"title": "The Compassionate Heart (lyric video)",
-"url": "https://youtu.be/32qMrBJGZHw",
 "where": "YouTube (@MikeWolf)"
 },
 {
@@ -464,30 +397,6 @@
 "updated": "2026-11-16",
 "url": "https://minds-everywhere-levin.netlify.app",
 "where": "Netlify"
-},
-{
-"chapters": 1,
-"date": "2026-10-22",
-"id": "youtu.be/NcGCEfVGjlU",
-"kind": "video",
-"project": "Other",
-"state": "live",
-"story": "The 2-minute making-of the Gig video, in which each AI tells its own part in its own voice.",
-"title": "How the Gig Video Was Made",
-"url": "https://youtu.be/NcGCEfVGjlU",
-"where": "YouTube (@MikeWolf)"
-},
-{
-"chapters": 2,
-"date": "2026-10-22",
-"id": "youtu.be/0LmALRMVo-g",
-"kind": "video",
-"project": "Other",
-"state": "live",
-"story": "A dry talking-blues about what a gig means now. Its 2-minute making-of is \"How the Gig Video Was Made\".",
-"title": "A Gig Isn't What It Used To Be (lyric video)",
-"url": "https://youtu.be/0LmALRMVo-g",
-"where": "YouTube (@MikeWolf)"
 },
 {
 "chapters": 2,
