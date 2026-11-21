@@ -1,11 +1,23 @@
 {
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
-"public": 213,
+"public": 214,
 "team_only": 456
 },
-"generated": "2026-11-20T09:35:38Z",
+"generated": "2026-11-21T11:35:28Z",
 "works": [
+{
+"date": "2026-11-21",
+"id": "soma-studios-plan.netlify.app",
+"kind": "site",
+"project": "SOMA",
+"state": "live",
+"story": "SOMA Plan Studio: photograph tonight",
+"title": "Plan Studio · SOMA Studios",
+"updated": "2026-11-21",
+"url": "https://soma-studios-plan.netlify.app",
+"where": "Netlify"
+},
 {
 "date": "2026-11-18",
 "id": "best-day-of-my-life.netlify.app",
@@ -62,7 +74,7 @@
 "state": "live",
 "story": "Nightly refresh of the songs page and public Artifact Gallery",
 "title": "Artifact Gallery",
-"updated": "2026-11-19",
+"updated": "2026-11-21",
 "url": "https://soma-artifact-gallery.netlify.app",
 "where": "Netlify"
 },
@@ -123,7 +135,7 @@
 "state": "down",
 "story": "A read-only public view of the Studio Lot, the spatial map of all of Mike's work, republished every hour; it probes down because the lot.mike-wolf.com DNS is still pending, and the same page is live at studio-lot.netlify.app.",
 "title": "Studio Lot",
-"updated": "2026-11-20",
+"updated": "2026-11-21",
 "url": "https://lot.mike-wolf.com",
 "where": "Netlify"
 },
@@ -1766,7 +1778,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-11-19",
+"updated": "2026-11-20",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
@@ -1781,7 +1793,7 @@
 "state": "live",
 "story": "Joke Technology Systems: Enterprise honesty products, consumer innovations, and literary works. Successor to High Technology Systems. Three divisions. One commitment to comedy.",
 "title": "Joke Technology Systems — Enterprise Solutions That Are Already a Joke",
-"updated": "2026-10-21",
+"updated": "2026-11-21",
 "url": "https://joketechnologysystems.com",
 "where": "Netlify"
 },
@@ -1809,7 +1821,7 @@
 "state": "live",
 "story": "The daemon that makes email a channel to the AI team: dispatches and board cards sent by mail become work.",
 "title": "Claude Email Daemon",
-"updated": "2026-10-29",
+"updated": "2026-11-21",
 "url": "https://github.com/eldrgeek/claude-email-daemon",
 "where": "GitHub"
 },
@@ -1851,7 +1863,7 @@
 "state": "live",
 "story": "Ai-wtf.org serves the January \"Silicon Siblings\" site again, with a new /since-january page.",
 "title": "AI for eLLders (AI-WTF)",
-"updated": "2026-11-12",
+"updated": "2026-11-20",
 "url": "https://ai-wtf.org",
 "where": "Netlify"
 },
