@@ -4,7 +4,7 @@
 "public": 213,
 "team_only": 461
 },
-"generated": "2026-11-22T09:35:28Z",
+"generated": "2026-11-23T09:35:30Z",
 "works": [
 {
 "date": "2026-11-18",
@@ -62,7 +62,7 @@
 "state": "live",
 "story": "Nightly refresh of the songs page and public Artifact Gallery",
 "title": "Artifact Gallery",
-"updated": "2026-11-21",
+"updated": "2026-11-22",
 "url": "https://soma-artifact-gallery.netlify.app",
 "where": "Netlify"
 },
@@ -123,7 +123,7 @@
 "state": "down",
 "story": "A read-only public view of the Studio Lot, the spatial map of all of Mike's work, republished every hour; it probes down because the lot.mike-wolf.com DNS is still pending, and the same page is live at studio-lot.netlify.app.",
 "title": "Studio Lot",
-"updated": "2026-11-22",
+"updated": "2026-11-23",
 "url": "https://lot.mike-wolf.com",
 "where": "Netlify"
 },
@@ -1766,7 +1766,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-11-21",
+"updated": "2026-11-22",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
@@ -1851,7 +1851,7 @@
 "state": "live",
 "story": "Ai-wtf.org serves the January \"Silicon Siblings\" site again, with a new /since-january page.",
 "title": "AI for eLLders (AI-WTF)",
-"updated": "2026-11-20",
+"updated": "2026-11-23",
 "url": "https://ai-wtf.org",
 "where": "Netlify"
 },
