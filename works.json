@@ -2,9 +2,9 @@
 "about": "Everything Mike Wolf and his AI team have made, wherever it lives. Built by _estate/bin/works from Netlify, GitHub, the estate changelog, the portfolio and Substack.",
 "counts": {
 "public": 213,
-"team_only": 474
+"team_only": 497
 },
-"generated": "2026-11-27T09:35:28Z",
+"generated": "2026-11-28T09:35:28Z",
 "works": [
 {
 "date": "2026-11-18",
@@ -62,7 +62,7 @@
 "state": "live",
 "story": "Nightly refresh of the songs page and public Artifact Gallery",
 "title": "Artifact Gallery",
-"updated": "2026-11-27",
+"updated": "2026-11-28",
 "url": "https://soma-artifact-gallery.netlify.app",
 "where": "Netlify"
 },
@@ -123,7 +123,7 @@
 "state": "down",
 "story": "A read-only public view of the Studio Lot, the spatial map of all of Mike's work, republished every hour; it probes down because the lot.mike-wolf.com DNS is still pending, and the same page is live at studio-lot.netlify.app.",
 "title": "Studio Lot",
-"updated": "2026-11-27",
+"updated": "2026-11-28",
 "url": "https://lot.mike-wolf.com",
 "where": "Netlify"
 },
@@ -1766,7 +1766,7 @@
 "state": "live",
 "story": "Mike-wolf.com",
 "title": "Legends of Basketball — visitor tour",
-"updated": "2026-11-26",
+"updated": "2026-11-27",
 "url": "https://mike-wolf.com",
 "where": "mike-wolf.com"
 },
